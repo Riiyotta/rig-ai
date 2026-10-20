@@ -1,0 +1,109 @@
+/* CLONE_SPEC §2 The problem - verbatim port of recon/source/index.pretty.css L508-616
+   (Astro cid oo6sugl5 attribute selectors dropped). Funnel CSS: components/problem/review-funnel.css */
+.problem-section {
+  padding: 0;
+  border-bottom: none;
+}
+.problem-container {
+  padding: 0;
+}
+.problem-outer {
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.problem-top {
+  padding: 3rem 3rem 2.5rem;
+}
+.problem-badge {
+  margin-bottom: 2rem;
+}
+.problem-headline {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 0.92;
+}
+.problem-divider {
+  border-top: 1px solid var(--border);
+}
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  min-height: 420px;
+}
+.problem-checkpoint-col {
+  grid-row: 1 / 3;
+  border-right: 1px solid var(--border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.problem-card {
+  padding: 2rem;
+}
+.problem-grid > :nth-child(2),
+.problem-grid > :nth-child(4) {
+  border-right: 1px solid var(--border);
+}
+.problem-grid > :nth-child(2),
+.problem-grid > :nth-child(3) {
+  border-bottom: 1px solid var(--border);
+}
+.problem-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.problem-card-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.problem-card-number {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--paper-20);
+}
+.problem-card h3 {
+  font-size: 1.35rem;
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+}
+.problem-card p {
+  color: var(--paper-dim);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .problem-top {
+    padding: 1.5rem 1.25rem !important;
+  }
+  .problem-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    min-height: auto !important;
+  }
+  .problem-checkpoint-col {
+    grid-row: auto !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    min-height: 280px;
+  }
+  .problem-card {
+    padding: 1.25rem !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+  .problem-card:last-child {
+    border-bottom: none !important;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  .problem-top {
+    padding: 2rem !important;
+  }
+}

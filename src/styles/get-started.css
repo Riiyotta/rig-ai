@@ -1,0 +1,146 @@
+/* CLONE_SPEC §7 Get started (HTML L3023-3328).
+ * Ported verbatim from recon/source/index.pretty.css L2094-2237 (Astro cid attrs dropped). */
+.setup-section {
+  padding: 7rem 0;
+}
+.setup-section > .container {
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+.setup-heading {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.setup-heading .badge {
+  margin-bottom: 1.5rem;
+}
+.setup-heading h2 {
+  font-family: Chalet, sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+.setup-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.setup-steps li {
+  min-width: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+.step-number {
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  color: var(--primary);
+  margin-bottom: 0.85rem;
+}
+.setup-steps h3 {
+  font-family: Chalet, sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.setup-steps p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--paper-dim);
+  margin: 0;
+}
+.cli-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin: 2.5rem 0 0;
+  border-block: 1px solid var(--border);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--paper-dim);
+}
+.cli-note > span:first-child {
+  font-family: monospace;
+  color: var(--paper);
+  font-size: 1.25rem;
+}
+.stack-strip {
+  padding-top: 2.5rem;
+}
+.stack-strip h3 {
+  font-family: Chalet, sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+.stack-grid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1.25fr 1fr;
+  gap: 1.5rem;
+}
+.stack-group h4 {
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--paper-dim);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.stack-items {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.stack-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  align-items: center;
+  color: var(--paper-dim);
+}
+.stack-item svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--paper);
+  opacity: 0.8;
+}
+@media (max-width: 1000px) {
+  .setup-steps {
+    gap: 1.25rem;
+  }
+  .stack-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .setup-section {
+    padding: 4rem 0;
+  }
+  .setup-heading {
+    margin-bottom: 2.5rem;
+  }
+  .setup-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+  .setup-steps h3 {
+    font-size: 1.65rem;
+  }
+  .cli-note {
+    padding-inline: 0;
+    align-items: flex-start;
+  }
+}

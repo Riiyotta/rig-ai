@@ -1,0 +1,144 @@
+/* CLONE_SPEC §6 Benefits - verbatim port of recon/source/index.pretty.css L1329-1474
+   (Astro cid aafkaq3q dropped; the section-level :before rule is scoped by
+   [data-section="benefits"] so it doesn't leak to other .offline-section blocks).
+   Funnel CSS: components/problem/review-funnel.css */
+.offline-section[data-section="benefits"]:before {
+  display: none;
+}
+.offline-main-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--border);
+  pointer-events: none;
+  z-index: 1;
+}
+.offline-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 4rem;
+  align-items: center;
+  min-height: 560px;
+  padding: 3rem 0;
+}
+.offline-visual {
+  min-width: 0;
+}
+.offline-badge {
+  margin: 0 0 1.5rem;
+}
+.offline-content h2 {
+  font-family: Chalet, sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+.offline-content > p {
+  color: var(--paper-dim);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 1280px) {
+  .offline-main-container {
+    max-width: 90%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .offline-layout {
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .offline-main-container:before {
+    display: none;
+  }
+  .offline-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+  .offline-content {
+    order: 1;
+    text-align: center;
+  }
+  .offline-visual {
+    order: 2;
+  }
+  .offline-content .offline-badge {
+    justify-content: center;
+  }
+  .offline-content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.three-col-container {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+}
+.three-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  align-items: center;
+  min-width: 0;
+}
+.three-col-grid > div:not(.three-col-divider) {
+  min-width: 0;
+}
+.three-col-grid > div:not(.three-col-divider):first-child {
+  padding-left: 2rem;
+}
+.three-col-grid > div:not(.three-col-divider):last-child {
+  padding-right: 2rem;
+}
+.three-col-cell {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.three-col-inner {
+  padding: 2rem 0;
+  text-align: center;
+}
+.three-col-badge {
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.three-col-heading {
+  font-family: Chalet, sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+.three-col-text {
+  color: var(--paper-dim);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.three-col-text--dim {
+  color: var(--paper-dim);
+}
+.three-col-divider {
+  background: var(--border);
+  width: 1px;
+  align-self: stretch;
+}
+@media (max-width: 768px) {
+  .three-col-grid {
+    grid-template-columns: 1fr;
+  }
+  .three-col-divider {
+    width: 100%;
+    height: 1px;
+    align-self: auto;
+  }
+}

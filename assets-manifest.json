@@ -1,0 +1,43 @@
+{
+  "source": "https://rig.ai/",
+  "measuredAt": "2026-10-20",
+  "notes": "All assets below were observed in network requests for https://rig.ai/ (homepage). Local copies of every file are already downloaded under recon/assets/ (fonts, svgs, png, favicon) for verification. Inline SVGs (logo paths, badge icons, illustrations, stack icons) are not network assets; they are saved under recon/svg/. No raster images, videos, Lottie, canvas or WebGL are rendered on the homepage.",
+  "fonts": [
+    { "family": "Chalet", "weight": "400 (only face; headings rely on synthesized bold)", "style": "normal", "format": "woff2", "bytes": 22500, "url": "https://rig.ai/fonts/chalet_londonnineteensixty.woff2", "local": "public/assets/fonts/chalet_londonnineteensixty.woff2", "preload": true, "unicodeRange": null },
+    { "family": "Geist Pixel Square", "weight": "normal", "style": "normal", "format": "woff2", "bytes": 28616, "url": "https://rig.ai/fonts/GeistPixel-Square.woff2", "local": "public/assets/fonts/GeistPixel-Square.woff2", "preload": true, "unicodeRange": null },
+    { "family": "Instrument Sans", "weight": "400 700 (variable)", "style": "normal", "format": "woff2", "bytes": 29904, "url": "https://rig.ai/fonts/InstrumentSans-latin.woff2", "local": "public/assets/fonts/InstrumentSans-latin.woff2", "preload": true, "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD" },
+    { "family": "Instrument Sans", "weight": "400 700 (variable)", "style": "normal", "format": "woff2", "bytes": 11092, "url": "https://rig.ai/fonts/InstrumentSans-latin-ext.woff2", "local": "public/assets/fonts/InstrumentSans-latin-ext.woff2", "preload": false, "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF" },
+    { "family": "Chivo Mono", "weight": "400 800 (variable)", "style": "normal", "format": "woff2", "bytes": 26380, "url": "https://rig.ai/fonts/ChivoMono-latin.woff2", "local": "public/assets/fonts/ChivoMono-latin.woff2", "preload": true, "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD" },
+    { "family": "Chivo Mono", "weight": "400 800 (variable)", "style": "normal", "format": "woff2", "bytes": 22944, "url": "https://rig.ai/fonts/ChivoMono-latin-ext.woff2", "local": "public/assets/fonts/ChivoMono-latin-ext.woff2", "preload": false, "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF" }
+  ],
+  "images": [
+    { "role": "Nav wordmark (hero variant, rendered black via filter: brightness(0))", "format": "svg", "intrinsic": "433x165", "rendered": "60x22 (width/height attrs 60x22, CSS height 22px)", "url": "https://rig.ai/assets/rig-wordmark.svg", "local": "public/assets/rig-wordmark.svg" },
+    { "role": "Footer logo (fills #FFF8E9)", "format": "svg", "intrinsic": "432x105", "rendered": "98.7x24 (CSS height 24px)", "url": "https://rig.ai/assets/logo-white.svg", "local": "public/assets/logo-white.svg" },
+    { "role": "CTA wave grid background, used as <image href> inside the inline .cta-grid svg (35 paths, fill #2981E0)", "format": "svg", "intrinsic": "2372x814", "rendered": "1944x667 at 1440vw (width max(135%,1450px)); 1250x429 at <=768", "url": "https://rig.ai/assets/cta-wave-grid.svg", "local": "public/assets/cta-wave-grid.svg" }
+  ],
+  "meta": [
+    { "role": "og:image / twitter:image (alt: 'Rig — Make Agents Write More Secure Code')", "format": "png", "intrinsic": "1200x630", "url": "https://rig.ai/rig-security.png", "local": "public/assets/rig-security.png" },
+    { "role": "favicon.ico (not linked in <head>, served at root; 16x16 + 32x32 PNG-in-ICO)", "format": "ico", "url": "https://rig.ai/favicon.ico", "local": "public/favicon.ico" },
+    { "role": "<link rel=icon> actually used by the page: inline data-URI SVG (256x256, rx 48, fill #0a0a0a bg, logo paths fill #ed462d)", "format": "svg data URI", "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' rx='48' fill='%230a0a0a'/%3E%3Cg transform='translate(60 61) scale(0.835)'%3E%3Cpath d='M162.809 89.412H82.684c-7.9 0-15.478 3.14-21.063 8.73-5.577 5.583-8.71 13.152-8.71 21.043v40.811h19.26v-33.546c0-9.638.173-18.449.173-18.449h90.465V89.412z' fill='%23ed462d'/%3E%3Cpath d='M162.808 118.61h-50.993c-7.9 0-15.478 3.14-21.063 8.73-5.577 5.583-8.71 13.152-8.71 21.044v11.613h22.867v-15.945c0-9.638 0-9.97 0-9.97h57.899v-15.472z' fill='%23ed462d'/%3E%3Cpath d='M162.809 146.002c-18.103 0-28.242-.006-46.345.002V160h46.345v-13.998z' fill='%23ed462d'/%3E%3Cpath d='M162.809.003H70.886C52.08.003 34.045 7.476 20.75 20.777 7.464 34.07 0 52.095 0 70.889c0 28.397 0 69.878 0 89.108h15.785V67.714c0-14.457 0-26.177 0-26.177h147.027V0l-.003.003z' fill='%23ed462d'/%3E%3Cpath d='M162.809 51.87H56.804c-7.9 0-15.478 3.141-21.063 8.73-5.577 5.583-8.71 13.152-8.71 21.044v78.353h14.785V96.318c0-9.638 0-17.449 0-17.449h120.993V51.867v.003z' fill='%23ed462d'/%3E%3C/g%3E%3C/svg%3E", "local": "inline in index.html <link rel=icon>" }
+  ],
+  "inlineSvgs": {
+    "dir": "recon/svg/",
+    "files": [
+      "hero-watermark.svg", "badge-problem.svg", "badge-difference.svg", "badge-how.svg", "badge-benefits.svg", "badge-get-started.svg", "badge-faq.svg",
+      "review-funnel-problem.html", "review-funnel-with-rig.html",
+      "how-schematic-stage-1.svg", "how-schematic-stage-2.svg", "how-schematic-stage-3.svg",
+      "stack-codex.svg", "stack-claude-code.svg", "stack-opencode.svg", "stack-vs-code.svg", "stack-terminal.svg", "stack-python.svg", "stack-javascript.svg", "stack-rust.svg", "stack-github.svg", "stack-gitlab.svg",
+      "faq-chevron.svg", "cta-grid.svg", "cta-oversized-logo-outline.svg", "cta-bloom-filter.svg", "cta-logo.svg", "cta-btn-arrow.svg", "grainy-filter.svg",
+      "rig-wordmark.svg", "logo-white.svg", "cta-wave-grid.svg"
+    ],
+    "note": "Illustration SVGs use CSS classes (.guides, .queued, .flow-pr, .route, .data-stream, .flow-dot ...) and CSS vars; their styling/keyframes are in recon/source/index.pretty.css and must be ported with them. cta-grid.svg references /assets/cta-wave-grid.svg via <image href>."
+  },
+  "notLoaded": [
+    "No video, Lottie, <canvas> or WebGL on the homepage. index_2 script contains a WebGL dither shader for #shader1/#shader2 canvases but those elements do not exist on this page (dead code) - do not build.",
+    "Footer watermark CSS (.footer-watermark) exists but no element is rendered.",
+    "#surveillance-eye script is present but element absent (dead code)."
+  ],
+  "thirdParty": [
+    "PostHog analytics via https://d.rig.ai/static/array.js (+config.js, surveys.js, dead-clicks-autocapture.js, web-vitals-with-attribution.js) - analytics only, not needed for the clone."
+  ]
+}

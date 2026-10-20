@@ -1,0 +1,306 @@
+/* Hero + nav - ported from recon/source/index.pretty.html inline <style> (nav, L194-236)
+   and recon/source/index.pretty.css L1-265 (hero). Astro cid selectors dropped. */
+
+/* ── Nav ── */
+.site-header {
+  display: flex;
+}
+.site-nav {
+  max-width: calc(1200px + 6rem);
+  margin: 0 auto;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.site-logo {
+  flex-shrink: 0;
+}
+.site-logo img {
+  height: 22px;
+  filter: invert(1) brightness(2);
+}
+.site-nav-cta {
+  flex-shrink: 0;
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.site-header[data-variant="hero"] .site-logo img {
+  filter: brightness(0);
+}
+@media (max-width: 768px) {
+  .site-nav {
+    padding: 1rem 1.25rem;
+  }
+}
+
+/* ── Hero ── */
+.hero {
+  min-height: 50vh;
+  background: var(--primary);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  z-index: 10000;
+}
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 3rem;
+  max-width: calc(1200px + 6rem);
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+.hero h1 {
+  font-family: Chalet, Inter, sans-serif;
+  font-weight: 700; /* synthesized bold, CLONE_SPEC §0 */
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.88;
+  color: var(--text);
+  margin-bottom: 2rem;
+  position: relative;
+}
+.hero-sub {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  opacity: 0.85;
+  max-width: 580px;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.hero-ticker {
+  border-top: 1px solid rgba(10, 10, 10, 0.15);
+  padding: 0.75rem 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+.hero-ticker-inner {
+  display: flex;
+  width: max-content;
+  animation: ticker var(--ticker-duration, 0s) linear infinite;
+  white-space: nowrap;
+  font-family: "Geist Pixel Square", monospace;
+  font-size: 0.8rem;
+  color: var(--background);
+  opacity: 0.7;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.5px var(--background);
+}
+.hero-ticker-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 4rem;
+  min-width: 100vw;
+  padding-right: 4rem;
+}
+.hero-ticker a {
+  color: inherit;
+  text-decoration: none;
+}
+.hero-ticker a:hover,
+.hero-ticker a:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+.hero-ticker:hover
+  .hero-ticker-inner,
+.hero-ticker:focus-within
+  .hero-ticker-inner {
+  animation-play-state: paused;
+}
+.hero-watermark {
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55%;
+  opacity: 0.08;
+  pointer-events: none;
+  animation: watermark-glitch 4s infinite linear;
+}
+@media (max-width: 1280px) {
+  .hero-content {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .hero-content {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 0 1.25rem;
+  }
+  .hero h1 {
+    font-size: clamp(3.5rem, 12vw, 7rem);
+  }
+  .hero-sub {
+    font-size: 1rem;
+  }
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+  .hero-actions .btn-chamfer {
+    flex: 1 1 100%;
+    justify-content: center;
+    padding: 1.25rem 2rem;
+    font-size: 1rem;
+  }
+  .hero-ticker-group {
+    gap: 2rem;
+    padding-right: 2rem;
+  }
+  .hero-watermark {
+    width: 80%;
+    right: -10%;
+  }
+}
+.hero:not(.is-visible)
+  .hero-watermark {
+  animation-play-state: paused;
+}
+.hero:not(.is-visible)
+  .hero-ticker-inner {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-ticker {
+    overflow-x: auto;
+  }
+  .hero-ticker-inner {
+    animation: none;
+  }
+  .hero-ticker-group[aria-hidden="true"] {
+    display: none;
+  }
+}
+@keyframes watermark-glitch {
+  0% {
+    transform: translateY(-50%) translate(0);
+    filter: none;
+    opacity: 0.08;
+  }
+  2% {
+    transform: translateY(-50%) translate(8px, -3px);
+    filter: hue-rotate(90deg) saturate(3);
+    opacity: 0.12;
+  }
+  4% {
+    transform: translateY(-50%) translate(-6px, 2px);
+    filter: hue-rotate(-60deg);
+    opacity: 0.06;
+  }
+  5% {
+    transform: translateY(-50%) translate(0);
+    filter: none;
+    opacity: 0.08;
+  }
+  15% {
+    transform: translateY(-50%) translate(0);
+    filter: none;
+    opacity: 0.08;
+  }
+  15.5% {
+    transform: translateY(-50%) translate(-10px) skew(-3deg);
+    filter: hue-rotate(180deg) saturate(4);
+    opacity: 0.15;
+  }
+  16% {
+    transform: translateY(-50%) translate(5px, -2px) skew(2deg);
+    filter: hue-rotate(-90deg) brightness(1.5);
+    opacity: 0.1;
+  }
+  17% {
+    transform: translateY(-50%) translate(-3px, 1px);
+    filter: saturate(2);
+    opacity: 0.12;
+  }
+  18% {
+    transform: translateY(-50%) translate(0);
+    filter: none;
+    opacity: 0.08;
+  }
+  40% {
+    transform: translateY(-50%) translate(0);
+    filter: none;
+    opacity: 0.08;
+  }
+  40.3% {
+    transform: translateY(-50%) translate(12px) scaleX(1.02);
+    filter: hue-rotate(120deg) saturate(5);
+    opacity: 0.18;
+  }
+  40.6% {
+    transform: translateY(-50%) translate(-8px, 3px) scaleX(0.98);
+    filter: hue-rotate(-45deg);
+    opacity: 0.05;
+  }
+  41% {
+    transform: translateY(-50%) translate(4px, -1px);
+    filter: brightness(1.3);
+    opacity: 0.1;
+  }
+  41.5% {
+    transform: translateY(-50%) translate(0);
+    filter: none;
+    opacity: 0.08;
+  }
+  65% {
+    transform: translateY(-50%) translate(0);
+    filter: none;
+    opacity: 0.08;
+  }
+  65.2% {
+    transform: translateY(-50%) translate(-5px, -4px) skew(-5deg);
+    filter: hue-rotate(200deg) saturate(3) brightness(1.4);
+    opacity: 0.2;
+  }
+  65.5% {
+    transform: translateY(-50%) translate(7px, 2px) skew(2deg);
+    filter: hue-rotate(-120deg);
+    opacity: 0.04;
+  }
+  66% {
+    transform: translateY(-50%) translate(-2px);
+    filter: saturate(2);
+    opacity: 0.1;
+  }
+  66.5% {
+    transform: translateY(-50%) translate(0);
+    filter: none;
+    opacity: 0.08;
+  }
+  to {
+    transform: translateY(-50%) translate(0);
+    filter: none;
+    opacity: 0.08;
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "$comment": "Transcribed from the clone's own source (src/App.jsx render order + src/components/*.jsx), cross-checked against CLONE_SPEC.md §1-10 and recon/source/index.pretty.html. Single-route site. /terms and /privacy are linked from the footer but are not built in this clone (dead internal routes) and are deliberately NOT modeled as templates. All outbound links were removed from the clone (hrefs are '#', '/', '/terms', '/privacy').",
+  "meta": {
+    "source": "Local clone of https://rig.ai/ at /Users/riyaghosh/V3/rig.ai (React 18 + Vite + Tailwind v3)",
+    "status": "measured-from-clone",
+    "productionApproved": false,
+    "totalRoutes": 1,
+    "totalTemplates": 1
+  },
+  "categories": {
+    "SHELL": "Page-wide chrome and fixed decoration: overlays, site header/nav, footer, section rhythm.",
+    "HERO": "Above-the-fold opening block and its attached news ticker.",
+    "NARRATIVE": "Problem framing and product explanation blocks that tell the story in sequence.",
+    "DEMO": "Interactive or self-playing product demonstrations and schematic animations.",
+    "ONBOARDING": "Setup steps and integration/stack information.",
+    "SUPPORT": "Question-and-answer content.",
+    "CONVERSION": "Closing call-to-action block."
+  },
+  "sections": {
+    "shell.overlays": {
+      "category": "SHELL",
+      "description": "Fixed, non-interactive full-viewport layers stacked above content: animated film grain (SVG #grainy feTurbulence filter, seed 0→100 over 10s), scanlines, RGB colour fringe, plus the two vertical guide lines at the 1200px container edges (div.content-lines).",
+      "scope": "Present on the 1 route, rendered once at the top of App.",
+      "implementedBy": "src/components/Overlays.jsx + .content-lines in src/App.jsx"
+    },
+    "shell.site-header": {
+      "category": "SHELL",
+      "description": "Non-sticky top navigation inside the hero: Rig wordmark linking to '/' and a chamfered dark 'Get a Demo' button (href '#'). No mobile menu at any width.",
+      "scope": "Present on the 1 route, inside the hero section.",
+      "implementedBy": "src/components/Hero.jsx > header.site-header"
+    },
+    "hero.headline": {
+      "category": "HERO",
+      "description": "Blue (#2981e0) opening panel: two-line Chalet H1, supporting paragraph, chamfered CTA button (href '#'), and a faded Rig-mark watermark that glitches on a 4s loop.",
+      "scope": "Present on the 1 route as the first content block.",
+      "implementedBy": "src/components/Hero.jsx > section.hero"
+    },
+    "hero.news-ticker": {
+      "category": "HERO",
+      "description": "Horizontally scrolling strip of third-party AI-security news headlines in Geist Pixel at 30px/s; pauses on hover/focus and when the hero is off-screen. Links neutralised to '#'.",
+      "scope": "Present on the 1 route, pinned to the bottom edge of the hero.",
+      "implementedBy": "src/components/Hero.jsx > div.hero-ticker"
+    },
+    "shell.section-divider": {
+      "category": "SHELL",
+      "description": "Thin horizontal rule plus 4rem spacers placed between consecutive main-content sections; owned by App, not by any section component.",
+      "scope": "Present on the 1 route, repeated between each of the 7 main sections.",
+      "implementedBy": "src/App.jsx > div.section-divider"
+    },
+    "narrative.problem": {
+      "category": "NARRATIVE",
+      "description": "'The problem' block: badge, display headline, and a 3-column grid pairing a looping 12s CSS review-funnel SVG (backlog building up) with four numbered problem cards.",
+      "scope": "Present on the 1 route, first section inside main.",
+      "implementedBy": "src/components/ProblemSection.jsx (+ problem/ProblemFunnel.jsx)"
+    },
+    "demo.agent-walkthrough": {
+      "category": "DEMO",
+      "description": "'Introducing Rig' block: heading and copy over a fake IDE + agent-chat panel that self-plays 4 steps × 10s (1.8s sub-phases) once ≥35% visible, with step markers, prev/next/play controls and a two-column step caption.",
+      "scope": "Present on the 1 route (#intro-rig).",
+      "implementedBy": "src/components/IntroRig.jsx (+ intro-rig/useWalkthrough.js)"
+    },
+    "narrative.difference": {
+      "category": "NARRATIVE",
+      "description": "'The Difference' block: static-analysis vs runtime-testing two-panel comparison figure, followed by three numbered evidence points. No motion.",
+      "scope": "Present on the 1 route (#runtime-evidence).",
+      "implementedBy": "src/components/Difference.jsx"
+    },
+    "demo.how-stepper": {
+      "category": "DEMO",
+      "description": "'How it Works' block: intro heading/copy and a three-step accordion that auto-advances every 6s with a progress bar, pauses on hover, and swaps between three animated schematic SVGs.",
+      "scope": "Present on the 1 route (#our-approach).",
+      "implementedBy": "src/components/HowItWorks.jsx (+ how-it-works/useHowStepper.js, schematic-stage-{1,2,3}.svg)"
+    },
+    "narrative.benefits": {
+      "category": "NARRATIVE",
+      "description": "'Benefits' block: a second review-funnel animation (flow with Rig) beside the benefits headline and copy, then a three-column row of outcome statements.",
+      "scope": "Present on the 1 route, after the how-it-works stepper.",
+      "implementedBy": "src/components/Benefits.jsx (+ benefits/RigFunnel.jsx)"
+    },
+    "onboarding.setup-steps": {
+      "category": "ONBOARDING",
+      "description": "'Get started' block: badge, two-line heading, three numbered setup steps in an ordered list, and a CLI note.",
+      "scope": "Present on the 1 route (#setup-rig).",
+      "implementedBy": "src/components/GetStarted.jsx > ol.setup-steps + .cli-note"
+    },
+    "onboarding.stack-strip": {
+      "category": "ONBOARDING",
+      "description": "'Works with your stack' strip: 4 labelled groups holding 10 third-party tool icons (inline SVG brand marks).",
+      "scope": "Present on the 1 route, closing the get-started section.",
+      "implementedBy": "src/components/GetStarted.jsx > div.stack-strip (+ get-started/StackIcons.jsx)"
+    },
+    "support.faq": {
+      "category": "SUPPORT",
+      "description": "Numbered list of 6 native details/summary questions with chevrons; answers open with a 0.3s grid-rows transition.",
+      "scope": "Present on the 1 route, last section inside main.",
+      "implementedBy": "src/components/Faq.jsx"
+    },
+    "conversion.closing-cta": {
+      "category": "CONVERSION",
+      "description": "'Ship Confidently' block: animated wave grid with glowing dots flowing along 8 paths (14/16/18s), oversized outline mark, pulsing glow logo, glitch heading and a 500px chamfered 'Book a Demo' button (href '#').",
+      "scope": "Present on the 1 route, outside main, directly above the footer.",
+      "implementedBy": "src/components/Cta.jsx (+ cta/flowPaths.js, cta/logoPaths.js)"
+    },
+    "shell.footer": {
+      "category": "SHELL",
+      "description": "#0a0a0a footer: logo + tagline, Connect column (social links neutralised to '#'), Legal column (/terms, /privacy — unbuilt), copyright row and a blinking 'All systems local' status.",
+      "scope": "Present on the 1 route as the final block.",
+      "implementedBy": "src/components/Footer.jsx"
+    }
+  },
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Home (marketing landing page)",
+      "routeCount": 1,
+      "routes": ["/"],
+      "routePattern": null,
+      "chrome": "full",
+      "sections": [
+        "shell.overlays",
+        "shell.site-header",
+        "hero.headline",
+        "hero.news-ticker",
+        "narrative.problem",
+        "shell.section-divider",
+        "demo.agent-walkthrough",
+        "narrative.difference",
+        "demo.how-stepper",
+        "narrative.benefits",
+        "onboarding.setup-steps",
+        "onboarding.stack-strip",
+        "support.faq",
+        "conversion.closing-cta",
+        "shell.footer"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,553 @@
+/*
+ * Global styles - ported from recon/source/slug.pretty.css (CLONE_SPEC §0).
+ * Font URLs remapped /fonts/* -> /assets/fonts/*.
+ * Tailwind preflight is DISABLED (tailwind.config.js) so this file is the full reset,
+ * exactly like the original.
+ *
+ * Omitted from the original global sheet because nothing on the homepage uses them:
+ * .prose*, .card, .status-dot*, .grid-bg, .blink-dot, .pixel-transition, .section-label,
+ * .btn-primary/.btn-secondary/.btn-red/.btn-light/.btn-outline/.btn-ghost,
+ * @keyframes glitch-shift / pulse-ring, .how-bottom media rule.
+ */
+@tailwind base;
+
+/* ───────── Fonts ───────── */
+@font-face {
+  font-family: Chalet;
+  src: url(/assets/fonts/chalet_londonnineteensixty.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Pixel Square";
+  src: url(/assets/fonts/GeistPixel-Square.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(/assets/fonts/InstrumentSans-latin-ext.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(/assets/fonts/InstrumentSans-latin.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Chivo Mono";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(/assets/fonts/ChivoMono-latin-ext.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Chivo Mono";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(/assets/fonts/ChivoMono-latin.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+/* ───────── Tokens ───────── */
+:root {
+  --blue: oklch(0.6014 0.1657 253.83);
+  --blue-dim: oklch(0.6014 0.1657 253.83 / 15%);
+  --yellow: oklch(0.6973 0.1443 72.87);
+  --yellow-dim: oklch(0.6973 0.1443 72.87 / 15%);
+  --red: oklch(0.6329 0.2075 31.49);
+  --red-glow: oklch(0.6329 0.2075 31.49 / 40%);
+  --green: oklch(0.8003 0.1821 151.71);
+  --green-dim: oklch(0.8003 0.1821 151.71 / 75%);
+  --ink: oklch(0.225 0.013 188.03);
+  --paper: oklch(0.8946 0.0155 90.24);
+  --primary: var(--blue);
+  --primary-glow: var(--blue-dim);
+  --secondary: var(--yellow);
+  /* original has the typo `var(--yelow-dim)` (resolves to nothing); kept as-is */
+  --secondary-dim: var(--yelow-dim);
+  --tertiary: var(--red);
+  --tertiary-dim: var(--red-glow);
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --text: var(--paper);
+  --paper-dim: oklch(0.8946 0.0155 90.24 / 75%);
+  --paper-faint: oklch(0.8946 0.0155 90.24 / 8%);
+  --border: oklch(0.8946 0.0155 90.24 / 18%);
+  --border-dim: oklch(0.8946 0.0155 90.24 / 14%);
+  --paper-70: rgba(240, 237, 230, 0.7);
+  --paper-60: rgba(240, 237, 230, 0.6);
+  --paper-50: rgba(240, 237, 230, 0.5);
+  --paper-45: rgba(240, 237, 230, 0.45);
+  --paper-40: rgba(240, 237, 230, 0.4);
+  --paper-35: rgba(240, 237, 230, 0.35);
+  --paper-30: rgba(240, 237, 230, 0.3);
+  --paper-25: rgba(240, 237, 230, 0.25);
+  --paper-20: rgba(240, 237, 230, 0.2);
+  --paper-15: rgba(240, 237, 230, 0.15);
+  --paper-12: rgba(240, 237, 230, 0.12);
+  --paper-06: rgba(240, 237, 230, 0.06);
+  --paper-04: rgba(240, 237, 230, 0.04);
+  --paper-02: rgba(240, 237, 230, 0.02);
+  --text-muted: var(--paper-40);
+  --text-tertiary: var(--paper-35);
+  --text-faint: var(--paper-25);
+  --chamfer: 14px;
+}
+
+/* ───────── Base ───────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+::selection {
+  background: var(--secondary);
+  color: var(--background);
+}
+body {
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+/*
+ * Chalet ships only a 400 face; the original headings render UA-bold (700, synthesized).
+ * Preflight is off so UA bold already applies, but it is pinned here explicitly
+ * (CLONE_SPEC §0 / §12.1). Keep font-synthesis at its default.
+ */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+/* ───────── Type helpers ───────── */
+.mono {
+  font-family: "Chivo Mono", monospace;
+}
+.display {
+  font-family: Chalet, Inter, sans-serif;
+  letter-spacing: -0.03em;
+}
+.display-heavy {
+  font-family: Chalet, Inter, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* ───────── Fixed overlays ───────── */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 10002;
+}
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10001;
+  opacity: 0.08;
+  filter: url(#grainy);
+}
+.rgb-fringe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(90deg, #e5332a05, #2b4fff04, #e5332a05);
+  background-size: 3px 100%;
+  pointer-events: none;
+  z-index: 10003;
+}
+
+/* ───────── Buttons ───────── */
+.btn-chamfer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-family: "Chivo Mono", monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  clip-path: polygon(
+    var(--chamfer) 0,
+    100% 0,
+    100% calc(100% - var(--chamfer)),
+    calc(100% - var(--chamfer)) 100%,
+    0 100%,
+    0 var(--chamfer)
+  );
+}
+.btn-chamfer:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.btn-cta {
+  background: var(--primary);
+  color: var(--background);
+}
+.btn-cta:hover {
+  text-shadow:
+    -1px 0 rgba(43, 79, 255, 0.35),
+    1px 0 rgba(237, 70, 45, 0.35);
+  box-shadow: 4px 4px 0 var(--secondary);
+  animation: btn-glitch 0.3s ease-in-out;
+}
+.btn-dark {
+  background: var(--background);
+  color: var(--text);
+}
+.btn-dark:hover {
+  text-shadow:
+    -1px 0 rgba(43, 79, 255, 0.35),
+    1px 0 rgba(237, 70, 45, 0.35);
+  box-shadow: 4px 4px 0 var(--primary);
+  animation: btn-glitch 0.3s ease-in-out;
+}
+@keyframes btn-glitch {
+  0% {
+    transform: translate(0);
+    text-shadow: none;
+    opacity: 1;
+  }
+  12% {
+    transform: translate(-1px, 0.5px);
+    text-shadow:
+      -1.5px 0 rgba(43, 79, 255, 0.4),
+      1.5px 0 rgba(237, 70, 45, 0.4);
+    opacity: 0.8;
+  }
+  24% {
+    transform: translate(1px, -0.5px);
+    text-shadow:
+      1px 0 rgba(237, 70, 45, 0.3),
+      -1px 0 rgba(43, 79, 255, 0.3);
+    opacity: 0.92;
+  }
+  36% {
+    transform: translate(-0.5px);
+    text-shadow: none;
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(0);
+    text-shadow: none;
+    opacity: 1;
+  }
+  to {
+    transform: translate(0);
+    text-shadow: none;
+    opacity: 1;
+  }
+}
+
+/* ───────── Glitch text (used by CTA heading) ───────── */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+.glitch-text:before,
+.glitch-text:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.glitch-text:before {
+  left: 0.5px;
+  text-shadow: -0.5px 0 rgba(43, 79, 255, 0.2);
+  clip: rect(24px, 9999px, 90px, 0);
+  animation: glitch-subtle-1 5s infinite linear alternate-reverse;
+  opacity: 0.6;
+}
+.glitch-text:after {
+  left: -0.5px;
+  text-shadow: 0.5px 0 rgba(237, 70, 45, 0.2);
+  clip: rect(85px, 9999px, 140px, 0);
+  animation: glitch-subtle-2 4.5s infinite linear alternate-reverse;
+  opacity: 0.6;
+}
+.hero .glitch-text:before,
+.hero .glitch-text:after {
+  background: var(--primary);
+}
+.content .glitch-text:before,
+.content .glitch-text:after {
+  background: var(--background);
+}
+@keyframes glitch-subtle-1 {
+  0% {
+    clip: rect(12px, 9999px, 5px, 0);
+  }
+  20% {
+    clip: rect(80px, 9999px, 100px, 0);
+  }
+  40% {
+    clip: rect(40px, 9999px, 5px, 0);
+  }
+  60% {
+    clip: rect(10px, 9999px, 80px, 0);
+  }
+  80% {
+    clip: rect(120px, 9999px, 50px, 0);
+  }
+  to {
+    clip: rect(60px, 9999px, 100px, 0);
+  }
+}
+@keyframes glitch-subtle-2 {
+  0% {
+    clip: rect(65px, 9999px, 100px, 0);
+  }
+  20% {
+    clip: rect(10px, 9999px, 80px, 0);
+  }
+  40% {
+    clip: rect(90px, 9999px, 10px, 0);
+  }
+  60% {
+    clip: rect(20px, 9999px, 5px, 0);
+  }
+  80% {
+    clip: rect(50px, 9999px, 120px, 0);
+  }
+  to {
+    clip: rect(10px, 9999px, 60px, 0);
+  }
+}
+
+/* ───────── Status (footer) ───────── */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ───────── Shared keyframes ───────── */
+@keyframes blink {
+  0%,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes ticker {
+  0% {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-50%);
+  }
+}
+@keyframes hdr-glow-pulse {
+  0%,
+  to {
+    opacity: 0.4;
+    filter: blur(8px);
+  }
+  50% {
+    opacity: 0.7;
+    filter: blur(12px);
+  }
+}
+
+/* ───────── Section furniture ───────── */
+.badge {
+  display: flex;
+  margin: 0 auto 2rem;
+  width: fit-content;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  background: #0a0a0ae0;
+  border: 1px solid var(--border);
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.section-title {
+  font-family: Chalet, sans-serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+.mono-label {
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.offline-section {
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.offline-section:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--border);
+  pointer-events: none;
+  z-index: 1;
+}
+.offline-section.three-col:before {
+  display: none;
+}
+
+/* ───────── Layout ───────── */
+.content {
+  background: var(--background);
+  position: relative;
+}
+.content-lines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+.content-lines:before,
+.content-lines:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.content-lines:before {
+  left: calc(50% - 600px);
+}
+.content-lines:after {
+  right: calc(50% - 600px);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+.content section {
+  border-bottom: none;
+  border-top: none;
+}
+.section-divider {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 1px;
+  background: var(--border);
+}
+
+@media (max-width: 1280px) {
+  .content-lines:before {
+    left: 5%;
+  }
+  .content-lines:after {
+    right: 5%;
+  }
+  .container,
+  .section-divider,
+  footer > .container {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  .section-divider {
+    max-width: calc(100% - 2.5rem);
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+  .content-lines:before {
+    left: 1.25rem;
+  }
+  .content-lines:after {
+    right: 1.25rem;
+  }
+  .offline-section {
+    padding: 4rem 0;
+  }
+  .btn-chamfer {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;

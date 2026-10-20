@@ -1,0 +1,17 @@
+section,category,templates,routes,Home (marketing landing page)
+shell.overlays,SHELL,1,1,x
+shell.site-header,SHELL,1,1,x
+hero.headline,HERO,1,1,x
+hero.news-ticker,HERO,1,1,x
+shell.section-divider,SHELL,1,1,x
+narrative.problem,NARRATIVE,1,1,x
+demo.agent-walkthrough,DEMO,1,1,x
+narrative.difference,NARRATIVE,1,1,x
+demo.how-stepper,DEMO,1,1,x
+narrative.benefits,NARRATIVE,1,1,x
+onboarding.setup-steps,ONBOARDING,1,1,x
+onboarding.stack-strip,ONBOARDING,1,1,x
+support.faq,SUPPORT,1,1,x
+conversion.closing-cta,CONVERSION,1,1,x
+shell.footer,SHELL,1,1,x
+ROUTE COUNT,,,1,1

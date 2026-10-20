@@ -1,0 +1,352 @@
+/* CLONE_SPEC §5 How it Works (HTML L1956-2775).
+ * Ported verbatim from recon/source/index.pretty.css L1743-2093. Astro scope
+ * [data-astro-cid-cmgpsf2k] replaced by a `.how-section` ancestor prefix.
+ * The unused .how-bottom rules are ported too (no element renders them, as on the original). */
+.how-section {
+  padding: 8rem 0 0;
+}
+.how-section > .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (max-width: 768px) {
+  .how-section > .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+.how-section .how-intro {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 3rem;
+}
+.how-section .how-intro-badge {
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.how-section .how-intro-body {
+  color: var(--paper-dim);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 1.5rem auto 0;
+}
+.how-section .how-stepper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 0;
+  margin-top: 3rem;
+  align-items: start;
+}
+.how-section .how-steps-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.how-section .how-step {
+  padding: 1.5rem 2rem 1.5rem 1.25rem;
+  border: none;
+  border-top: 1px solid var(--border);
+  cursor: pointer;
+  position: relative;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  display: block;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  overflow: visible;
+}
+.how-section .how-step:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+.how-section .how-step:last-child {
+  border-bottom: 1px solid var(--border);
+}
+.how-section .how-step-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--paper-faint);
+}
+.how-section .how-step-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--primary);
+  transition: none;
+}
+.how-section .how-step.active .how-step-progress-fill {
+  animation: howProgressFill 6s linear forwards;
+  animation-play-state: paused;
+}
+@keyframes howProgressFill {
+  0% {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+.how-section .how-step-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.how-section .how-step-num {
+  font-family:
+    Chivo Mono,
+    monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  transition: color 0.3s ease;
+}
+.how-section .how-step.active .how-step-num {
+  color: var(--primary);
+}
+.how-section .how-step h3 {
+  font-family: Chalet, sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--text-tertiary);
+  transition: color 0.3s ease;
+}
+.how-section .how-step.active h3 {
+  color: var(--text);
+}
+.how-section .how-step-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition:
+    grid-template-rows 0.4s ease,
+    opacity 0.3s ease;
+  opacity: 0;
+}
+.how-section .how-step.active .how-step-body {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.how-section .how-step-body-inner {
+  overflow: hidden;
+}
+.how-section .how-step-body p {
+  color: var(--paper-dim);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+.how-section .how-step-body p + p {
+  margin-top: 0.5rem;
+}
+.how-section .how-illustration {
+  position: relative;
+  min-height: 680px;
+  border: 1px solid var(--border);
+  border-right: none;
+  --diagram-background: var(--background);
+  background-color: var(--diagram-background);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.how-section .how-graphic {
+  width: 90%;
+  max-width: 400px;
+  min-width: 0;
+}
+.how-section .card-content {
+  display: none;
+}
+.how-section .card-content.active {
+  display: block;
+}
+@media (max-width: 768px) {
+  .how-section {
+    padding: 4rem 0 0;
+  }
+  .how-section .how-stepper {
+    grid-template-columns: 1fr;
+  }
+  .how-section .how-illustration {
+    min-height: 400px;
+    order: 1;
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+  }
+  .how-section .how-steps-left {
+    order: 2;
+  }
+  .how-section .how-step {
+    padding: 1.25rem 1.25rem 1.25rem 1rem;
+    border-right: 1px solid var(--border);
+  }
+  .how-section .how-step-body p {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  .how-section .how-stepper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .how-section .how-illustration {
+    min-height: 500px;
+  }
+}
+.how-section .how-bottom {
+  margin-top: 0.5rem;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 3rem;
+}
+.how-section .how-bottom p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.how-section .how-bottom .highlight {
+  color: var(--paper-70);
+}
+
+/* ───────── Schematics (index.pretty.css L1966-2093) ───────── */
+.how-section .schematic {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  stroke-width: 1.25;
+}
+.how-section .schematic-grid {
+  pointer-events: none;
+}
+.how-section .guides {
+  stroke: var(--paper-12);
+}
+.how-section .labels {
+  fill: var(--paper-50);
+  font:
+    9px Chivo Mono,
+    monospace;
+  letter-spacing: 1.2px;
+}
+.how-section .branches {
+  stroke: var(--paper-30);
+}
+.how-section .route,
+.how-section .nodes,
+.how-section .node-icons,
+.how-section .sink {
+  stroke: var(--primary);
+}
+.how-section .nodes,
+.how-section .sink-body {
+  fill: var(--diagram-background);
+}
+.how-section .route {
+  stroke-width: 1.75;
+}
+.how-section .discovery {
+  stroke: var(--tertiary);
+  animation: discover 3s ease-in-out infinite;
+}
+.how-section .pixel {
+  fill: var(--tertiary);
+  stroke: none;
+}
+.how-section .stage-1 .route {
+  animation: map-route 3s ease-out both;
+}
+.how-section .stage-2 .branches,
+.how-section .stage-3 .branches {
+  opacity: 0.35;
+}
+.how-section .stage-2 .node-icons,
+.how-section .stage-3 .node-icons {
+  opacity: 0;
+}
+.how-section .data {
+  fill: var(--secondary);
+}
+.how-section .data-stream {
+  stroke: var(--secondary);
+  stroke-width: 3;
+  stroke-dasharray: 2 23;
+  animation: track-data 3s linear infinite;
+}
+.how-section .detail-leader,
+.how-section .detail-frame {
+  stroke: var(--paper-30);
+}
+.how-section .detail-frame,
+.how-section .evidence-frame {
+  fill: var(--diagram-background);
+}
+.how-section .code-lines {
+  stroke: var(--paper-40);
+  stroke-width: 2;
+}
+.how-section .data-bars {
+  stroke: var(--secondary);
+  stroke-width: 3;
+}
+.how-section .stage-3 .sink,
+.how-section .evidence-leader,
+.how-section .evidence-frame,
+.how-section .finding {
+  stroke: var(--tertiary);
+}
+.how-section .trace {
+  stroke: var(--primary);
+  stroke-width: 1.75;
+}
+.how-section .confirmed {
+  fill: var(--tertiary);
+  font:
+    9px Chivo Mono,
+    monospace;
+  letter-spacing: 1.8px;
+}
+@keyframes map-route {
+  0% {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes discover {
+  0%,
+  to {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes track-data {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .how-section .stage-1 .route,
+  .how-section .discovery,
+  .how-section .data-stream {
+    animation: none;
+  }
+}
