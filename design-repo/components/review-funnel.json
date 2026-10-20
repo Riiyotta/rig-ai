@@ -1,0 +1,34 @@
+{
+  "id": "review-funnel",
+  "kind": "component",
+  "purpose": "480x500 line-art funnel figure (PRs -> REVIEW gate -> SHIP); 'manual' variant with rework loop, 'with-rig' variant with passed checks.",
+  "composes": [],
+  "tokens": [
+    "color.accent.primary",
+    "color.accent.tertiary",
+    "motion.funnel-loop"
+  ],
+  "evidence": [
+    {
+      "path": "src/components/problem/ProblemFunnel.jsx",
+      "lines": [
+        14,
+        14
+      ],
+      "anchor": "export default function ProblemFunnel() {"
+    },
+    {
+      "path": "src/components/benefits/RigFunnel.jsx",
+      "lines": [
+        10,
+        10
+      ],
+      "anchor": "export default function RigFunnel() {"
+    }
+  ],
+  "usedBy": [
+    "problem.funnel-cards",
+    "benefits.funnel-split"
+  ],
+  "assetRole": "illustration.review-funnel"
+}

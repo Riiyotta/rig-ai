@@ -1,0 +1,198 @@
+{
+  "id": "steps.stepper",
+  "category": "process",
+  "purpose": "Explain how the product works through a 3-step auto-advancing stepper paired with a schematic per step.",
+  "region": "main",
+  "surfaceToken": "color.surface.page",
+  "implementedBy": "src/components/HowItWorks.jsx",
+  "componentsUsed": [
+    "how-step",
+    "schematic-card"
+  ],
+  "evidence": {
+    "code": [
+      {
+        "path": "src/components/HowItWorks.jsx",
+        "lines": [
+          40,
+          80
+        ],
+        "anchor": "export default function HowItWorks() {"
+      },
+      {
+        "path": "src/components/how-it-works/useHowStepper.js",
+        "lines": [
+          88,
+          88
+        ],
+        "anchor": "setHowStep(cur < 3 ? cur + 1 : 1)"
+      }
+    ],
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          412,
+          412
+        ],
+        "anchor": "## 5. \"How it Works\""
+      }
+    ]
+  },
+  "content": {
+    "fieldRefsResolveIn": "schema/pagespec.schema.json (#/definitions/...)",
+    "additionalProperties": false,
+    "required": [
+      "eyebrow",
+      "title",
+      "body",
+      "steps"
+    ],
+    "fields": {
+      "eyebrow": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "glyph": {
+            "$ref": "#/definitions/media"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "body": {
+        "type": "string",
+        "minLength": 1
+      },
+      "steps": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "number": {
+              "type": "string",
+              "minLength": 1
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "body": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ariaLabel": {
+              "type": "string",
+              "minLength": 1
+            },
+            "schematic": {
+              "$ref": "#/definitions/media"
+            }
+          },
+          "required": [
+            "number",
+            "title",
+            "body",
+            "ariaLabel",
+            "schematic"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 3,
+        "maxItems": 3
+      }
+    },
+    "maxWords": {
+      "eyebrow.label": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 7 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "title": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 1 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "body": {
+        "maxWords": 16,
+        "basis": "observed max 12 words over 1 instance(s) -> max(3, ceil(12*1.3))"
+      },
+      "steps[].number": {
+        "maxWords": 3,
+        "basis": "observed max 2 words over 3 instance(s) -> max(3, ceil(2*1.3))"
+      },
+      "steps[].title": {
+        "maxWords": 3,
+        "basis": "observed max 2 words over 3 instance(s) -> max(3, ceil(2*1.3))"
+      },
+      "steps[].body": {
+        "maxWords": 28,
+        "basis": "observed max 21 words over 3 instance(s) -> max(3, ceil(21*1.3))"
+      },
+      "steps[].ariaLabel": {
+        "maxWords": 10,
+        "basis": "observed max 7 words over 3 instance(s) -> max(3, ceil(7*1.3))"
+      }
+    }
+  },
+  "observedCopy": {
+    "title": "Runtime and Inline",
+    "body": "Rig understands your application so it can thoroughly test it for vulnerabilities.",
+    "steps": [
+      {
+        "number": "Step 01",
+        "title": "Runtime Discovery",
+        "body": "Rig uses advanced algorithms to develop a detailed map of of your application including entry points, code paths, and sinks.",
+        "ariaLabel": "Step 1: Runtime Discovery"
+      },
+      {
+        "number": "Step 02",
+        "title": "Inline Tainting",
+        "body": "Rig runs your application and automates testing and tainting to track how data flows through your source code.",
+        "ariaLabel": "Step 2: Inline Tainting"
+      },
+      {
+        "number": "Step 03",
+        "title": "Proven Exploitability",
+        "body": "Rig's runtime testing confirms the vulnerable path before reporting it, and reports exactly where vulnerabilities are located, and should be fixed.",
+        "ariaLabel": "Step 3: Static tools predict. Rig proves"
+      }
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "stepper-autoadvance",
+      "none"
+    ],
+    "primaryPattern": "stepper-autoadvance",
+    "reducedMotionFallbacks": {
+      "stepper-autoadvance": "stepper-autoadvance-schematics-static",
+      "none": "none"
+    }
+  },
+  "assetRoles": [
+    "decor.badge-glyph",
+    "illustration.schematic"
+  ],
+  "responsive": {
+    ">1024": "grid 2fr 3fr",
+    "769-1024": "grid 1fr 1fr; illustration min-height 500",
+    "<=768": "1 column, illustration FIRST (order 1), min-height 400"
+  },
+  "constraints": {
+    "onePerPage": true,
+    "exactSteps": 3,
+    "exactStepsBasis": "advance logic cur < 3 ? cur + 1 : 1"
+  },
+  "notes": [
+    "'map of of' (step 01) is the live site's own typo, preserved verbatim.",
+    "Step 3 aria-label differs from its visible title, as on live."
+  ]
+}

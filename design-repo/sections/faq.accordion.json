@@ -1,0 +1,168 @@
+{
+  "id": "faq.accordion",
+  "category": "faq",
+  "purpose": "Answer objections in a numbered <details> accordion.",
+  "region": "main",
+  "surfaceToken": "color.surface.page",
+  "implementedBy": "src/components/Faq.jsx",
+  "componentsUsed": [
+    "faq-item"
+  ],
+  "evidence": {
+    "code": [
+      {
+        "path": "src/components/Faq.jsx",
+        "lines": [
+          40,
+          86
+        ],
+        "anchor": "export default function Faq() {"
+      },
+      {
+        "path": "src/styles/faq.css",
+        "lines": [
+          59,
+          63
+        ],
+        "anchor": ".faq-answer-wrap {"
+      }
+    ],
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          518,
+          518
+        ],
+        "anchor": "## 8. FAQ"
+      }
+    ]
+  },
+  "content": {
+    "fieldRefsResolveIn": "schema/pagespec.schema.json (#/definitions/...)",
+    "additionalProperties": false,
+    "required": [
+      "eyebrow",
+      "title",
+      "items"
+    ],
+    "fields": {
+      "eyebrow": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "glyph": {
+            "$ref": "#/definitions/media"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "question": {
+              "type": "string",
+              "minLength": 1
+            },
+            "answer": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "question",
+            "answer"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 1,
+        "maxItems": 6
+      }
+    },
+    "maxWords": {
+      "eyebrow.label": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 7 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "title": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 1 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "items[].question": {
+        "maxWords": 13,
+        "basis": "observed max 10 words over 6 instance(s) -> max(3, ceil(10*1.3))"
+      },
+      "items[].answer": {
+        "maxWords": 41,
+        "basis": "observed max 31 words over 6 instance(s) -> max(3, ceil(31*1.3))"
+      }
+    }
+  },
+  "observedCopy": {
+    "title": "Frequently asked questions.",
+    "items": [
+      {
+        "question": "Does Rig work with my existing coding agents?",
+        "answer": "Rig connects to a supported coding agent through its completion hook. During the demo, we’ll review the team’s agent and application to confirm fit."
+      },
+      {
+        "question": "Who makes the code changes / fixes to reported vulnerabilities?",
+        "answer": "Your existing coding agent makes the fix. Rig supplies the finding, code location, and fix guidance, then checks the updated code."
+      },
+      {
+        "question": "Is Rig checking every keystroke?",
+        "answer": "No. The automatic check starts when the agent signals that it has finished its work. Developers can also run a check manually through the CL"
+      },
+      {
+        "question": "What happens if a fix does not work?",
+        "answer": "Rig reports that the vulnerability remains. If testing cannot complete, that is reported separately from a passed check."
+      },
+      {
+        "question": "Does a clean scan mean the entire application is secure?",
+        "answer": "No. It means Rig completed the checks within that scan’s scope without confirming a vulnerability. Untested paths are not proven safe, and incomplete checks are reported separately."
+      },
+      {
+        "question": "Will Rig Collect my Data?",
+        "answer": "No, Rig is committed to being the most secure and private security testing tool available.. Our telemetry is limited. Tests run on device and code and conversations never leave the machine."
+      }
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "disclosure-grid-rows",
+      "none"
+    ],
+    "primaryPattern": "disclosure-grid-rows",
+    "reducedMotionFallbacks": {
+      "disclosure-grid-rows": "ungated-in-source",
+      "none": "none"
+    }
+  },
+  "assetRoles": [
+    "decor.badge-glyph"
+  ],
+  "responsive": {
+    "<=768": "section 4rem 0; title mb 2rem; question 1.05rem; answer padding-left 2.5rem .85rem"
+  },
+  "constraints": {
+    "onePerPage": true,
+    "maxItems": 6,
+    "maxItemsBasis": "6 observed"
+  },
+  "notes": [
+    "Answer 03 ends 'through the CL' (no period) and answer 06 has 'available..' - both the live site's own typos, preserved verbatim.",
+    "The live page's FAQPage JSON-LD was removed in this clone; PageSpecs have no jsonLd field."
+  ]
+}

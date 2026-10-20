@@ -1,0 +1,97 @@
+{
+  "$description": "Semantic color roles -> foundation refs. Generators reference these, never raw values.",
+  "color": {
+    "surface.page": {
+      "$value": "{color.ink}",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          137,
+          137
+        ],
+        "anchor": "background: var(--background);"
+      }
+    },
+    "surface.hero": {
+      "$value": "{color.blue}",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          45,
+          45
+        ],
+        "anchor": "background: var(--primary);"
+      }
+    },
+    "surface.footer": {
+      "$value": "{color.footer-bg}",
+      "source": {
+        "path": "src/styles/footer.css",
+        "lines": [
+          10,
+          10
+        ],
+        "anchor": "background: #0a0a0a;"
+      }
+    },
+    "surface.badge": {
+      "$value": "{color.badge-bg}"
+    },
+    "surface.demo": {
+      "$value": "{color.demo-frame-bg}"
+    },
+    "text.primary": {
+      "$value": "{color.paper}"
+    },
+    "text.body": {
+      "$value": "{color.paper-dim}"
+    },
+    "text.muted": {
+      "$value": "{color.paper-40}"
+    },
+    "text.tertiary": {
+      "$value": "{color.paper-35}"
+    },
+    "text.faint": {
+      "$value": "{color.paper-25}"
+    },
+    "text.on-hero-ticker": {
+      "$value": "{color.ink}"
+    },
+    "accent.primary": {
+      "$value": "{color.blue}"
+    },
+    "accent.primary-glow": {
+      "$value": "{color.blue-dim}"
+    },
+    "accent.secondary": {
+      "$value": "{color.yellow}"
+    },
+    "accent.tertiary": {
+      "$value": "{color.red}"
+    },
+    "border.default": {
+      "$value": "{color.border}"
+    },
+    "border.dim": {
+      "$value": "{color.border-dim}"
+    },
+    "border.ticker": {
+      "$value": "{color.ticker-border}"
+    },
+    "selection.bg": {
+      "$value": "{color.yellow}",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          132,
+          132
+        ],
+        "anchor": "background: var(--secondary);"
+      }
+    },
+    "selection.fg": {
+      "$value": "{color.ink}"
+    }
+  }
+}

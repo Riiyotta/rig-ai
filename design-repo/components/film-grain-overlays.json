@@ -1,0 +1,42 @@
+{
+  "id": "film-grain-overlays",
+  "kind": "component",
+  "purpose": "Fixed full-viewport overlays: #grainy SVG filter (animated seed) on .noise, scanlines, RGB fringe, plus .content-lines vertical guides. pointer-events:none.",
+  "composes": [],
+  "tokens": [
+    "elevation.z-noise",
+    "elevation.z-scanlines",
+    "elevation.z-fringe",
+    "elevation.z-lines",
+    "elevation.overlay-noise-opacity"
+  ],
+  "evidence": [
+    {
+      "path": "src/components/Overlays.jsx",
+      "lines": [
+        4,
+        32
+      ],
+      "anchor": "export default function Overlays() {"
+    },
+    {
+      "path": "src/index.css",
+      "lines": [
+        167,
+        182
+      ],
+      "anchor": ".scanlines {"
+    },
+    {
+      "path": "src/index.css",
+      "lines": [
+        465,
+        471
+      ],
+      "anchor": ".content-lines {"
+    }
+  ],
+  "usedBy": [
+    "chrome.overlays"
+  ]
+}

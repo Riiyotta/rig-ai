@@ -1,0 +1,27 @@
+{
+  "id": "pixel-glyph",
+  "kind": "primitive",
+  "purpose": "16px pixel-art glyph on a 24-unit grid (assetRole decor.badge-glyph).",
+  "tokens": [
+    "iconSize.badge-glyph",
+    "color.accent.primary"
+  ],
+  "evidence": [
+    {
+      "path": "src/components/ProblemSection.jsx",
+      "lines": [
+        45,
+        45
+      ],
+      "anchor": "width=\"16\" height=\"16\" viewBox=\"0 0 24 24\""
+    }
+  ],
+  "usedBy": [
+    "problem.funnel-cards",
+    "comparison.evidence",
+    "steps.stepper",
+    "benefits.funnel-split",
+    "setup.steps-stack",
+    "faq.accordion"
+  ]
+}

@@ -3,8 +3,7 @@ dist/
 .DS_Store
 # design-repo zip is regenerated from design-repo/ and must not be committed alongside it
 design-repo.zip
-# in-progress design-repo build — added in a later commit once verified
-design-repo/
 # raw browser "Save Page As" snapshot of the live site (third-party original, not part of the clone)
 Rig _ Security Verification for AI Coding Agents.html
 Rig _ Security Verification for AI Coding Agents_files/
+__pycache__/

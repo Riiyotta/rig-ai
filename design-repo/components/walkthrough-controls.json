@@ -1,0 +1,34 @@
+{
+  "id": "walkthrough-controls",
+  "kind": "component",
+  "purpose": "4 step markers (border-top 2px, aria-current = accent.primary) + prev/next/play transport (44x44). Rendered ABOVE the copy (order:-1).",
+  "composes": [
+    "mono-label"
+  ],
+  "tokens": [
+    "color.accent.primary",
+    "color.border.default"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/intro-rig.css",
+      "lines": [
+        96,
+        100
+      ],
+      "anchor": "#intro-rig .walkthrough-controls {"
+    },
+    {
+      "path": "src/styles/intro-rig.css",
+      "lines": [
+        107,
+        119
+      ],
+      "anchor": "#intro-rig .step-markers button {"
+    }
+  ],
+  "usedBy": [
+    "feature.walkthrough"
+  ],
+  "hoverNote": "The 8% primary hover tint never renders (specificity) - QA-verified; no hover state."
+}

@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "$description": "The ONLY token names a generator may reference. Semantic roles only; raw foundation values are not referenceable.",
+  "color": [
+    "color.accent.primary",
+    "color.accent.primary-glow",
+    "color.accent.secondary",
+    "color.accent.tertiary",
+    "color.border.default",
+    "color.border.dim",
+    "color.border.ticker",
+    "color.selection.bg",
+    "color.selection.fg",
+    "color.surface.badge",
+    "color.surface.demo",
+    "color.surface.footer",
+    "color.surface.hero",
+    "color.surface.page",
+    "color.text.body",
+    "color.text.faint",
+    "color.text.muted",
+    "color.text.on-hero-ticker",
+    "color.text.primary",
+    "color.text.tertiary"
+  ],
+  "typography": [
+    "typography.body.default",
+    "typography.body.lead",
+    "typography.button.label",
+    "typography.display.cta",
+    "typography.display.hero",
+    "typography.display.section",
+    "typography.heading.card",
+    "typography.label.eyebrow",
+    "typography.label.mono",
+    "typography.label.ticker"
+  ],
+  "motion": [
+    "motion.disclosure.open",
+    "motion.hover.glitch",
+    "motion.marquee.speed",
+    "motion.stepper.advance",
+    "motion.stepper.height",
+    "motion.walkthrough.step"
+  ],
+  "surfaces": [
+    "color.surface.footer",
+    "color.surface.hero",
+    "color.surface.page"
+  ],
+  "excluded": {
+    "color.secondary-dim": "broken in source (var(--yelow-dim) typo)",
+    "foundation.*": "raw values are not referenceable"
+  }
+}

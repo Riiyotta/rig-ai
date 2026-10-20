@@ -1,0 +1,38 @@
+{
+  "ticker": {
+    "type": {
+      "$value": "{typography.label.ticker}"
+    },
+    "fg": {
+      "$value": "{color.text.on-hero-ticker}"
+    },
+    "border": {
+      "$value": "{color.border.ticker}"
+    },
+    "opacity": {
+      "$value": "0.7",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          105,
+          105
+        ],
+        "anchor": "opacity: 0.7;"
+      }
+    },
+    "speed": {
+      "$value": "{motion.marquee.speed}"
+    },
+    "gap": {
+      "$value": "4rem",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          114,
+          114
+        ],
+        "anchor": "gap: 4rem;"
+      }
+    }
+  }
+}

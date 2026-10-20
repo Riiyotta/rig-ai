@@ -1,0 +1,36 @@
+{
+  "id": "problem-card",
+  "kind": "component",
+  "purpose": "Grid card: mono label (accent.primary) + mono number (paper-20), Chalet 1.35rem title, 0.8rem body.",
+  "composes": [
+    "mono-label",
+    "display-heading",
+    "body-text"
+  ],
+  "tokens": [
+    "typography.heading.card",
+    "color.accent.primary",
+    "color.text.body"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/problem.css",
+      "lines": [
+        43,
+        45
+      ],
+      "anchor": ".problem-card {"
+    },
+    {
+      "path": "src/styles/problem.css",
+      "lines": [
+        54,
+        80
+      ],
+      "anchor": ".problem-card-header {"
+    }
+  ],
+  "usedBy": [
+    "problem.funnel-cards"
+  ]
+}

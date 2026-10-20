@@ -1,0 +1,36 @@
+{
+  "badge": {
+    "bg": {
+      "$value": "{color.surface.badge}"
+    },
+    "border": {
+      "$value": "{color.border.default}"
+    },
+    "fg": {
+      "$value": "{color.accent.primary}"
+    },
+    "type": {
+      "$value": "{typography.label.eyebrow}"
+    },
+    "blur": {
+      "$value": "{elevation.blur-badge}"
+    },
+    "margin": {
+      "$value": "{spacing.badge-gap-below}"
+    },
+    "padding": {
+      "$value": "0.5rem 1rem",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          417,
+          417
+        ],
+        "anchor": "padding: 0.5rem 1rem;"
+      }
+    },
+    "glyph": {
+      "$value": "{iconSize.badge-glyph}"
+    }
+  }
+}

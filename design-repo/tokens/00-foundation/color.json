@@ -1,0 +1,576 @@
+{
+  "$description": "Foundation colors. Values verbatim from src/index.css :root (ported from the live slug.pretty.css) plus literal colors used by section CSS.",
+  "color": {
+    "blue": {
+      "$type": "color",
+      "$value": "oklch(0.6014 0.1657 253.83)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          76,
+          76
+        ],
+        "anchor": "--blue: oklch(0.6014 0.1657 253.83);"
+      },
+      "note": "sRGB #2981e0 (CLONE_SPEC §0 canvas conversion)"
+    },
+    "blue-dim": {
+      "$type": "color",
+      "$value": "oklch(0.6014 0.1657 253.83 / 15%)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          77,
+          77
+        ],
+        "anchor": "--blue-dim: oklch(0.6014 0.1657 253.83 / 15%);"
+      }
+    },
+    "yellow": {
+      "$type": "color",
+      "$value": "oklch(0.6973 0.1443 72.87)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          78,
+          78
+        ],
+        "anchor": "--yellow: oklch(0.6973 0.1443 72.87);"
+      },
+      "note": "sRGB #d38d14"
+    },
+    "yellow-dim": {
+      "$type": "color",
+      "$value": "oklch(0.6973 0.1443 72.87 / 15%)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          79,
+          79
+        ],
+        "anchor": "--yellow-dim: oklch(0.6973 0.1443 72.87 / 15%);"
+      }
+    },
+    "red": {
+      "$type": "color",
+      "$value": "oklch(0.6329 0.2075 31.49)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          80,
+          80
+        ],
+        "anchor": "--red: oklch(0.6329 0.2075 31.49);"
+      },
+      "note": "sRGB #ed462d"
+    },
+    "red-glow": {
+      "$type": "color",
+      "$value": "oklch(0.6329 0.2075 31.49 / 40%)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          81,
+          81
+        ],
+        "anchor": "--red-glow: oklch(0.6329 0.2075 31.49 / 40%);"
+      }
+    },
+    "green": {
+      "$type": "color",
+      "$value": "oklch(0.8003 0.1821 151.71)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          82,
+          82
+        ],
+        "anchor": "--green: oklch(0.8003 0.1821 151.71);"
+      },
+      "note": "sRGB #4ade80; declared but no homepage element references --green"
+    },
+    "green-dim": {
+      "$type": "color",
+      "$value": "oklch(0.8003 0.1821 151.71 / 75%)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          83,
+          83
+        ],
+        "anchor": "--green-dim: oklch(0.8003 0.1821 151.71 / 75%);"
+      }
+    },
+    "ink": {
+      "$type": "color",
+      "$value": "oklch(0.225 0.013 188.03)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          84,
+          84
+        ],
+        "anchor": "--ink: oklch(0.225 0.013 188.03);"
+      },
+      "note": "sRGB #151e1d, page background"
+    },
+    "paper": {
+      "$type": "color",
+      "$value": "oklch(0.8946 0.0155 90.24)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          85,
+          85
+        ],
+        "anchor": "--paper: oklch(0.8946 0.0155 90.24);"
+      },
+      "note": "sRGB #e0dcd1, text"
+    },
+    "paper-dim": {
+      "$type": "color",
+      "$value": "oklch(0.8946 0.0155 90.24 / 75%)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          96,
+          96
+        ],
+        "anchor": "--paper-dim: oklch(0.8946 0.0155 90.24 / 75%);"
+      }
+    },
+    "paper-faint": {
+      "$type": "color",
+      "$value": "oklch(0.8946 0.0155 90.24 / 8%)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          97,
+          97
+        ],
+        "anchor": "--paper-faint: oklch(0.8946 0.0155 90.24 / 8%);"
+      }
+    },
+    "border": {
+      "$type": "color",
+      "$value": "oklch(0.8946 0.0155 90.24 / 18%)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          98,
+          98
+        ],
+        "anchor": "--border: oklch(0.8946 0.0155 90.24 / 18%);"
+      }
+    },
+    "border-dim": {
+      "$type": "color",
+      "$value": "oklch(0.8946 0.0155 90.24 / 14%)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          99,
+          99
+        ],
+        "anchor": "--border-dim: oklch(0.8946 0.0155 90.24 / 14%);"
+      }
+    },
+    "paper-70": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.7)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          100,
+          100
+        ],
+        "anchor": "--paper-70: rgba(240, 237, 230, 0.7);"
+      }
+    },
+    "paper-60": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.6)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          101,
+          101
+        ],
+        "anchor": "--paper-60: rgba(240, 237, 230, 0.6);"
+      }
+    },
+    "paper-50": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.5)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          102,
+          102
+        ],
+        "anchor": "--paper-50: rgba(240, 237, 230, 0.5);"
+      }
+    },
+    "paper-45": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.45)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          103,
+          103
+        ],
+        "anchor": "--paper-45: rgba(240, 237, 230, 0.45);"
+      }
+    },
+    "paper-40": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.4)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          104,
+          104
+        ],
+        "anchor": "--paper-40: rgba(240, 237, 230, 0.4);"
+      }
+    },
+    "paper-35": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.35)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          105,
+          105
+        ],
+        "anchor": "--paper-35: rgba(240, 237, 230, 0.35);"
+      }
+    },
+    "paper-30": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.3)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          106,
+          106
+        ],
+        "anchor": "--paper-30: rgba(240, 237, 230, 0.3);"
+      }
+    },
+    "paper-25": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.25)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          107,
+          107
+        ],
+        "anchor": "--paper-25: rgba(240, 237, 230, 0.25);"
+      }
+    },
+    "paper-20": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.2)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          108,
+          108
+        ],
+        "anchor": "--paper-20: rgba(240, 237, 230, 0.2);"
+      }
+    },
+    "paper-15": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.15)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          109,
+          109
+        ],
+        "anchor": "--paper-15: rgba(240, 237, 230, 0.15);"
+      }
+    },
+    "paper-12": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.12)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          110,
+          110
+        ],
+        "anchor": "--paper-12: rgba(240, 237, 230, 0.12);"
+      }
+    },
+    "paper-06": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.06)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          111,
+          111
+        ],
+        "anchor": "--paper-06: rgba(240, 237, 230, 0.06);"
+      }
+    },
+    "paper-04": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.04)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          112,
+          112
+        ],
+        "anchor": "--paper-04: rgba(240, 237, 230, 0.04);"
+      }
+    },
+    "paper-02": {
+      "$type": "color",
+      "$value": "rgba(240, 237, 230, 0.02)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          113,
+          113
+        ],
+        "anchor": "--paper-02: rgba(240, 237, 230, 0.02);"
+      }
+    },
+    "footer-bg": {
+      "$type": "color",
+      "$value": "#0a0a0a",
+      "source": {
+        "path": "src/styles/footer.css",
+        "lines": [
+          10,
+          10
+        ],
+        "anchor": "background: #0a0a0a;"
+      }
+    },
+    "badge-bg": {
+      "$type": "color",
+      "$value": "#0a0a0ae0",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          418,
+          418
+        ],
+        "anchor": "background: #0a0a0ae0;"
+      }
+    },
+    "ticker-border": {
+      "$type": "color",
+      "$value": "rgba(10, 10, 10, 0.15)",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          91,
+          91
+        ],
+        "anchor": "border-top: 1px solid rgba(10, 10, 10, 0.15);"
+      }
+    },
+    "cta-grid-glow": {
+      "$type": "color",
+      "$value": "oklch(0.7132 0.1431 253.83 / 0.5)",
+      "source": {
+        "path": "src/styles/cta.css",
+        "lines": [
+          159,
+          159
+        ],
+        "anchor": "oklch(0.7132 0.1431 253.83 / 0.5)"
+      },
+      "note": "sRGB #5ea5f9 at 50%"
+    },
+    "flow-glow": {
+      "$type": "color",
+      "$value": "oklch(0.952739 0.066525 92.420907)",
+      "source": {
+        "path": "src/styles/cta.css",
+        "lines": [
+          172,
+          172
+        ],
+        "anchor": "oklch(0.952739 0.066525 92.420907)"
+      },
+      "note": "sRGB #ffefbd"
+    },
+    "wave-grid": {
+      "$type": "color",
+      "$value": "#2981E0",
+      "source": {
+        "path": "tailwind.config.js",
+        "lines": [
+          77,
+          77
+        ],
+        "anchor": "'wave-grid': '#2981E0'"
+      },
+      "note": "fill baked into public/assets/img/cta-wave-grid.svg"
+    },
+    "fringe-red": {
+      "$type": "color",
+      "$value": "#e5332a05",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          200,
+          200
+        ],
+        "anchor": "background: linear-gradient(90deg, #e5332a05, #2b4fff04, #e5332a05);"
+      }
+    },
+    "fringe-blue": {
+      "$type": "color",
+      "$value": "#2b4fff04",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          200,
+          200
+        ],
+        "anchor": "background: linear-gradient(90deg, #e5332a05, #2b4fff04, #e5332a05);"
+      }
+    },
+    "scanline": {
+      "$type": "color",
+      "$value": "rgba(0, 0, 0, 0.08)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          177,
+          177
+        ],
+        "anchor": "rgba(0, 0, 0, 0.08) 2px,"
+      }
+    },
+    "demo-frame-bg": {
+      "$type": "color",
+      "$value": "#101214",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          162,
+          162
+        ],
+        "anchor": "background: #101214;"
+      },
+      "note": "product-demo only"
+    },
+    "demo-frame-border": {
+      "$type": "color",
+      "$value": "#363a3e",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          161,
+          161
+        ],
+        "anchor": "border: 1px solid #363a3e;"
+      },
+      "note": "product-demo only"
+    },
+    "demo-editor-bar": {
+      "$type": "color",
+      "$value": "#171a1e",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          194,
+          194
+        ],
+        "anchor": "background: #171a1e;"
+      },
+      "note": "product-demo only"
+    },
+    "demo-conversation-bg": {
+      "$type": "color",
+      "$value": "#15181b",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          277,
+          277
+        ],
+        "anchor": "background: #15181b;"
+      },
+      "note": "product-demo only"
+    },
+    "demo-tool-heading": {
+      "$type": "color",
+      "$value": "#1c2026",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          377,
+          377
+        ],
+        "anchor": "background: #1c2026;"
+      },
+      "note": "product-demo only"
+    },
+    "demo-file-tab-accent": {
+      "$type": "color",
+      "$value": "#ed462d",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          255,
+          255
+        ],
+        "anchor": "box-shadow: inset 2px 0 #ed462d;"
+      },
+      "note": "product-demo only; also file-tab border-top"
+    },
+    "demo-fixed-line": {
+      "$type": "color",
+      "$value": "#98c69f12",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          270,
+          270
+        ],
+        "anchor": "background: #98c69f12;"
+      },
+      "note": "product-demo only"
+    },
+    "demo-passed": {
+      "$type": "color",
+      "$value": "#a8dcb1",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          542,
+          542
+        ],
+        "anchor": "background: #a8dcb1;"
+      },
+      "note": "product-demo only"
+    }
+  },
+  "knownBroken": {
+    "secondary-dim": {
+      "declared": "var(--yelow-dim)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          90,
+          90
+        ],
+        "anchor": "--secondary-dim: var(--yelow-dim);"
+      },
+      "status": "BROKEN in source (typo for --yellow-dim, resolves to nothing). Excluded from the catalog; never reference."
+    }
+  }
+}

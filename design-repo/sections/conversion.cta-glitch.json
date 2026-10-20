@@ -1,0 +1,107 @@
+{
+  "id": "conversion.cta-glitch",
+  "category": "conversion",
+  "purpose": "Close with a single glowing brand mark, a glitching two-word promise and one large demo button over an animated wave grid.",
+  "region": "post-main",
+  "surfaceToken": "color.surface.page",
+  "implementedBy": "src/components/Cta.jsx",
+  "componentsUsed": [
+    "glitch-heading"
+  ],
+  "evidence": {
+    "code": [
+      {
+        "path": "src/components/Cta.jsx",
+        "lines": [
+          12,
+          112
+        ],
+        "anchor": "export default function Cta() {"
+      },
+      {
+        "path": "src/styles/cta.css",
+        "lines": [
+          3,
+          11
+        ],
+        "anchor": ".cta-section {"
+      }
+    ],
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          544,
+          544
+        ],
+        "anchor": "## 9. CTA"
+      }
+    ]
+  },
+  "content": {
+    "fieldRefsResolveIn": "schema/pagespec.schema.json (#/definitions/...)",
+    "additionalProperties": false,
+    "required": [
+      "mark",
+      "heading",
+      "cta"
+    ],
+    "fields": {
+      "mark": {
+        "$ref": "#/definitions/media"
+      },
+      "backdrop": {
+        "$ref": "#/definitions/media"
+      },
+      "heading": {
+        "type": "string",
+        "minLength": 1
+      },
+      "cta": {
+        "$ref": "#/definitions/cta"
+      }
+    },
+    "maxWords": {
+      "heading": {
+        "maxWords": 3,
+        "basis": "observed max 2 words over 1 instance(s) -> max(3, ceil(2*1.3))"
+      },
+      "cta.label": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 1 instance(s) -> max(3, ceil(3*1.3))"
+      }
+    }
+  },
+  "observedCopy": {
+    "heading": "Ship Confidently",
+    "cta": "Book a Demo"
+  },
+  "motion": {
+    "allowedPatterns": [
+      "cta-flow-glow-glitch",
+      "none"
+    ],
+    "primaryPattern": "cta-flow-glow-glitch",
+    "reducedMotionFallbacks": {
+      "cta-flow-glow-glitch": "flow-dots-hidden",
+      "none": "none"
+    }
+  },
+  "assetRoles": [
+    "brand.mark",
+    "decor.wave-grid"
+  ],
+  "responsive": {
+    ">1024": "padding 12rem 0 16rem; heading clamp(4rem,8vw,7rem) max-width 600 (wraps to 2 lines); button 500x88.5",
+    "769-1024": "padding 8rem 0 10rem",
+    "<=768": "padding 6rem 0 8rem; heading clamp(2.5rem,8vw,7rem); oversized outline hidden; button 1.25rem 2rem / 1rem (59px tall)"
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecede": "shell.footer"
+  },
+  "notes": [
+    "Section sits OUTSIDE <main>; no background of its own (shows body ink).",
+    "Button hover keeps 0 0 40px primary-glow (the .btn-cta:hover secondary shadow is overridden, QA-verified)."
+  ]
+}

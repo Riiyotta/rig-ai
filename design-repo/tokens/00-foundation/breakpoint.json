@@ -1,0 +1,114 @@
+{
+  "$description": "Desktop-first max-width breakpoints (plus min-width 769/901 bands).",
+  "breakpoint": {
+    "max1280": {
+      "$type": "dimension",
+      "$value": "1280px",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          502,
+          502
+        ],
+        "anchor": "@media (max-width: 1280px) {"
+      },
+      "note": "container -> 90%, zero padding"
+    },
+    "max1024": {
+      "$type": "dimension",
+      "$value": "1024px",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          523,
+          523
+        ],
+        "anchor": "@media (max-width: 1024px) {"
+      },
+      "note": "container padding 0 2rem"
+    },
+    "max1000": {
+      "$type": "dimension",
+      "$value": "1000px",
+      "source": {
+        "path": "src/styles/difference.css",
+        "lines": [
+          225,
+          225
+        ],
+        "anchor": "@media (max-width: 1000px) {"
+      }
+    },
+    "max900": {
+      "$type": "dimension",
+      "$value": "900px",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          614,
+          614
+        ],
+        "anchor": "@media (max-width: 900px) {"
+      }
+    },
+    "min901": {
+      "$type": "dimension",
+      "$value": "901px",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          575,
+          575
+        ],
+        "anchor": "@media (min-width: 901px) {"
+      },
+      "note": "product-demo 2-column grid"
+    },
+    "max768": {
+      "$type": "dimension",
+      "$value": "768px",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          528,
+          528
+        ],
+        "anchor": "@media (max-width: 768px) {"
+      },
+      "note": "mobile: container 0 1.25rem; single-column sections"
+    },
+    "min769": {
+      "$type": "dimension",
+      "$value": "769px",
+      "source": {
+        "path": "src/styles/problem.css",
+        "lines": [
+          105,
+          105
+        ],
+        "anchor": "@media (max-width: 1024px) and (min-width: 769px) {"
+      },
+      "note": "tablet band 769-1024"
+    },
+    "max700": {
+      "$type": "dimension",
+      "$value": "700px",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          625,
+          625
+        ],
+        "anchor": "@media (max-width: 700px) {"
+      }
+    }
+  },
+  "tailwindScreens": {
+    "path": "tailwind.config.js",
+    "lines": [
+      20,
+      29
+    ],
+    "anchor": "max1280: { max: '1280px' },"
+  }
+}

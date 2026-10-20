@@ -1,0 +1,114 @@
+{
+  "$description": "Icon / mark sizes.",
+  "iconSize": {
+    "badge-glyph": {
+      "$type": "dimension",
+      "$value": "16",
+      "source": {
+        "path": "src/components/ProblemSection.jsx",
+        "lines": [
+          45,
+          45
+        ],
+        "anchor": "width=\"16\" height=\"16\" viewBox=\"0 0 24 24\""
+      },
+      "note": "pixel-art eyebrow glyph"
+    },
+    "faq-chevron": {
+      "$type": "dimension",
+      "$value": "20",
+      "source": {
+        "path": "src/components/Faq.jsx",
+        "lines": [
+          64,
+          64
+        ],
+        "anchor": "width=\"20\""
+      }
+    },
+    "cta-arrow": {
+      "$type": "dimension",
+      "$value": "18",
+      "source": {
+        "path": "src/components/Cta.jsx",
+        "lines": [
+          100,
+          100
+        ],
+        "anchor": "width=\"18\""
+      }
+    },
+    "stack-logo": {
+      "$type": "dimension",
+      "$value": "24px",
+      "source": {
+        "path": "src/styles/get-started.css",
+        "lines": [
+          114,
+          114
+        ],
+        "anchor": "width: 24px;"
+      }
+    },
+    "result-icon": {
+      "$type": "dimension",
+      "$value": "28px",
+      "source": {
+        "path": "src/styles/difference.css",
+        "lines": [
+          166,
+          166
+        ],
+        "anchor": "width: 28px;"
+      }
+    },
+    "node-symbol": {
+      "$type": "dimension",
+      "$value": "48px",
+      "source": {
+        "path": "src/styles/difference.css",
+        "lines": [
+          124,
+          124
+        ],
+        "anchor": "width: 48px;"
+      }
+    },
+    "nav-wordmark-height": {
+      "$type": "dimension",
+      "$value": "22px",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          22,
+          22
+        ],
+        "anchor": "height: 22px;"
+      }
+    },
+    "footer-logo-height": {
+      "$type": "dimension",
+      "$value": "24px",
+      "source": {
+        "path": "src/styles/footer.css",
+        "lines": [
+          20,
+          20
+        ],
+        "anchor": "height: 24px;"
+      }
+    },
+    "cta-mark-height": {
+      "$type": "dimension",
+      "$value": "64px",
+      "source": {
+        "path": "src/styles/cta.css",
+        "lines": [
+          42,
+          42
+        ],
+        "anchor": "height: 64px;"
+      }
+    }
+  }
+}

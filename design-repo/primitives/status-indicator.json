@@ -1,0 +1,30 @@
+{
+  "id": "status-indicator",
+  "kind": "primitive",
+  "purpose": "Mono uppercase status label with a 6x6 accent.primary square that blinks 1.5s step-end.",
+  "tokens": [
+    "footer.status.dot",
+    "motion.status-blink"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/footer.css",
+      "lines": [
+        66,
+        72
+      ],
+      "anchor": ".footer-status-dot {"
+    },
+    {
+      "path": "src/index.css",
+      "lines": [
+        371,
+        379
+      ],
+      "anchor": ".status {"
+    }
+  ],
+  "usedBy": [
+    "shell.footer"
+  ]
+}

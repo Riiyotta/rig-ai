@@ -1,0 +1,313 @@
+{
+  "version": "1.0.0",
+  "$description": "Closed assetRole vocabulary. Every media/content-role field in a PageSpec must use one of these roles. Rig is a real company: brand and third-party roles are protected.",
+  "generationPolicies": [
+    "placeholder-or-user-supplied-licensed-only",
+    "must-not-fabricate",
+    "generate-original-only"
+  ],
+  "sources": [
+    "placeholder",
+    "user-supplied-licensed",
+    "generated-original"
+  ],
+  "pinnedPolicies": {
+    "brand.wordmark": "placeholder-or-user-supplied-licensed-only",
+    "brand.logo": "placeholder-or-user-supplied-licensed-only",
+    "brand.mark": "placeholder-or-user-supplied-licensed-only",
+    "meta.og-image": "placeholder-or-user-supplied-licensed-only",
+    "thirdparty.tool-logo": "placeholder-or-user-supplied-licensed-only",
+    "editorial.news-headline": "must-not-fabricate"
+  },
+  "pinnedPoliciesNote": "verify_all.py checks these exact values (not just enum membership): changing a protected role to another valid policy must fail.",
+  "roles": {
+    "brand.wordmark": {
+      "kind": "svg-image",
+      "owner": "Rig AI Inc. (real company)",
+      "protected": true,
+      "generationPolicy": "placeholder-or-user-supplied-licensed-only",
+      "allowedSources": [
+        "placeholder",
+        "user-supplied-licensed"
+      ],
+      "observedAssets": [
+        "public/assets/img/rig-wordmark.svg"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/Hero.jsx",
+          "lines": [
+            90,
+            90
+          ],
+          "anchor": "src=\"/assets/img/rig-wordmark.svg\""
+        }
+      ],
+      "guidance": "Rig (Rig AI Inc.) is a real, live company. This role carries a real trademark/brand mark. AI generators must NEVER fabricate, redraw, approximate, trace or reproduce it. Use a neutral placeholder (source:\"placeholder\") or an asset the user supplies with a licence to use it (source:\"user-supplied-licensed\")."
+    },
+    "brand.logo": {
+      "kind": "svg-image",
+      "owner": "Rig AI Inc. (real company)",
+      "protected": true,
+      "generationPolicy": "placeholder-or-user-supplied-licensed-only",
+      "allowedSources": [
+        "placeholder",
+        "user-supplied-licensed"
+      ],
+      "observedAssets": [
+        "public/assets/img/logo-white.svg"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": [
+            16,
+            16
+          ],
+          "anchor": "src=\"/assets/img/logo-white.svg\""
+        }
+      ],
+      "guidance": "Rig (Rig AI Inc.) is a real, live company. This role carries a real trademark/brand mark. AI generators must NEVER fabricate, redraw, approximate, trace or reproduce it. Use a neutral placeholder (source:\"placeholder\") or an asset the user supplies with a licence to use it (source:\"user-supplied-licensed\")."
+    },
+    "brand.mark": {
+      "kind": "inline-svg",
+      "owner": "Rig AI Inc. (real company)",
+      "protected": true,
+      "generationPolicy": "placeholder-or-user-supplied-licensed-only",
+      "allowedSources": [
+        "placeholder",
+        "user-supplied-licensed"
+      ],
+      "observedAssets": [
+        "inline: hero watermark, CTA logo + bloom glow, CTA oversized outline, favicon data-URI"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/Hero.jsx",
+          "lines": [
+            100,
+            100
+          ],
+          "anchor": "className=\"hero-watermark\""
+        },
+        {
+          "path": "src/components/cta/logoPaths.js",
+          "lines": [
+            1,
+            1
+          ],
+          "anchor": "Verbatim Rig mark path data"
+        }
+      ],
+      "guidance": "Rig (Rig AI Inc.) is a real, live company. This role carries a real trademark/brand mark. AI generators must NEVER fabricate, redraw, approximate, trace or reproduce it. Use a neutral placeholder (source:\"placeholder\") or an asset the user supplies with a licence to use it (source:\"user-supplied-licensed\")."
+    },
+    "meta.og-image": {
+      "kind": "png-image",
+      "owner": "Rig AI Inc. (real company)",
+      "protected": true,
+      "generationPolicy": "placeholder-or-user-supplied-licensed-only",
+      "allowedSources": [
+        "placeholder",
+        "user-supplied-licensed"
+      ],
+      "observedAssets": [
+        "public/assets/img/rig-security.png (1200x630, local; og:image is root-relative)"
+      ],
+      "evidence": [
+        {
+          "path": "index.html",
+          "lines": [
+            20,
+            20
+          ],
+          "anchor": "<meta property=\"og:image\" content=\"/assets/img/rig-security.png\" />"
+        }
+      ],
+      "guidance": "Rig (Rig AI Inc.) is a real, live company. This role carries a real trademark/brand mark. AI generators must NEVER fabricate, redraw, approximate, trace or reproduce it. Use a neutral placeholder (source:\"placeholder\") or an asset the user supplies with a licence to use it (source:\"user-supplied-licensed\"). The og:image must stay root-relative (local) - never an absolute URL."
+    },
+    "thirdparty.tool-logo": {
+      "kind": "inline-svg",
+      "owner": "third parties (OpenAI Codex, Anthropic Claude Code, OpenCode, Microsoft VS Code, a generic terminal glyph, Python Software Foundation, JavaScript, Rust Foundation, GitHub, GitLab)",
+      "protected": true,
+      "generationPolicy": "placeholder-or-user-supplied-licensed-only",
+      "allowedSources": [
+        "placeholder",
+        "user-supplied-licensed"
+      ],
+      "observedAssets": [
+        "10 inline icons in src/components/get-started/StackIcons.jsx (recon/svg/stack-*.svg)"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/GetStarted.jsx",
+          "lines": [
+            38,
+            38
+          ],
+          "anchor": "const STACK = ["
+        },
+        {
+          "path": "src/components/get-started/StackIcons.jsx",
+          "lines": [
+            5,
+            5
+          ],
+          "anchor": "export function CodexIcon() {"
+        }
+      ],
+      "guidance": "These are REAL third-party brand logos/trademarks. Never fabricate, redraw or reproduce them, and never invent new tool names: a tool name next to 'Works with your stack' is a factual integration claim. Use placeholders or user-supplied, licensed logos plus user-confirmed integration names."
+    },
+    "editorial.news-headline": {
+      "kind": "text-content",
+      "owner": "third-party publications (news outlets)",
+      "protected": true,
+      "generationPolicy": "must-not-fabricate",
+      "allowedSources": [
+        "placeholder",
+        "user-supplied-licensed"
+      ],
+      "observedAssets": [
+        "7 real news headlines in the hero ticker (outbound links removed in this clone; href '#')"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/Hero.jsx",
+          "lines": [
+            10,
+            10
+          ],
+          "anchor": "const TICKER_ITEMS = ["
+        }
+      ],
+      "guidance": "The hero ticker shows REAL headlines from real third-party publications. Generators must never fabricate headlines, never reproduce real ones, never attribute text to a real outlet, and never link out (href must be '#'). Use clearly-marked placeholders or user-supplied, verified, licensed items only."
+    },
+    "illustration.review-funnel": {
+      "kind": "inline-svg",
+      "owner": "Rig AI Inc. (proprietary illustration)",
+      "protected": false,
+      "generationPolicy": "generate-original-only",
+      "allowedSources": [
+        "generated-original",
+        "placeholder"
+      ],
+      "observedAssets": [
+        "ProblemFunnel.jsx (manual review loop), RigFunnel.jsx (with Rig)"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/problem/ProblemFunnel.jsx",
+          "lines": [
+            16,
+            16
+          ],
+          "anchor": "<figure className=\"review-funnel\">"
+        },
+        {
+          "path": "src/components/benefits/RigFunnel.jsx",
+          "lines": [
+            12,
+            12
+          ],
+          "anchor": "<figure className=\"review-funnel with-rig\">"
+        }
+      ],
+      "guidance": "Original abstract diagram (480x500 viewBox, line-art, primary/tertiary strokes). Do not trace or copy Rig's artwork."
+    },
+    "illustration.schematic": {
+      "kind": "inline-svg",
+      "owner": "Rig AI Inc. (proprietary illustration)",
+      "protected": false,
+      "generationPolicy": "generate-original-only",
+      "allowedSources": [
+        "generated-original",
+        "placeholder"
+      ],
+      "observedAssets": [
+        "src/components/how-it-works/schematic-stage-{1,2,3}.svg (400x380)"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/HowItWorks.jsx",
+          "lines": [
+            4,
+            4
+          ],
+          "anchor": "import stage1 from './how-it-works/schematic-stage-1.svg?raw'"
+        }
+      ],
+      "guidance": "Original line schematic per step. Do not trace or copy Rig's artwork."
+    },
+    "illustration.product-demo": {
+      "kind": "html-mock",
+      "owner": "Rig AI Inc. (proprietary product demo)",
+      "protected": false,
+      "generationPolicy": "generate-original-only",
+      "allowedSources": [
+        "generated-original",
+        "placeholder"
+      ],
+      "observedAssets": [
+        "figure.product-demo: fake IDE + agent chat, 4 scenes"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/IntroRig.jsx",
+          "lines": [
+            108,
+            108
+          ],
+          "anchor": "className=\"product-demo\""
+        }
+      ],
+      "guidance": "Original, clearly illustrative mock only. Never present a fabricated UI as a real product screenshot and never invent customer/vulnerability data presented as real."
+    },
+    "decor.badge-glyph": {
+      "kind": "inline-svg",
+      "owner": "Rig AI Inc.",
+      "protected": false,
+      "generationPolicy": "generate-original-only",
+      "allowedSources": [
+        "generated-original",
+        "placeholder"
+      ],
+      "observedAssets": [
+        "16px pixel-art glyphs in 6 badges (recon/svg/badge-*.svg)"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/ProblemSection.jsx",
+          "lines": [
+            45,
+            45
+          ],
+          "anchor": "width=\"16\" height=\"16\" viewBox=\"0 0 24 24\""
+        }
+      ],
+      "guidance": "Simple original 24-grid pixel glyph, fill accent.primary."
+    },
+    "decor.wave-grid": {
+      "kind": "svg-image",
+      "owner": "Rig AI Inc.",
+      "protected": false,
+      "generationPolicy": "generate-original-only",
+      "allowedSources": [
+        "generated-original",
+        "placeholder"
+      ],
+      "observedAssets": [
+        "public/assets/img/cta-wave-grid.svg (2372x814)"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/Cta.jsx",
+          "lines": [
+            19,
+            19
+          ],
+          "anchor": "<image href=\"/assets/img/cta-wave-grid.svg\""
+        }
+      ],
+      "guidance": "Original perspective wave grid backdrop. Do not reuse Rig's file for new work."
+    }
+  }
+}

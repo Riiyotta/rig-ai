@@ -1,0 +1,29 @@
+{
+  "id": "body-text",
+  "kind": "primitive",
+  "purpose": "Instrument Sans paragraph in text.body (paper-dim), 1.6-1.7 line-height.",
+  "tokens": [
+    "color.text.body",
+    "typography.body.default"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/difference.css",
+      "lines": [
+        25,
+        31
+      ],
+      "anchor": ".evidence-section .intro {"
+    }
+  ],
+  "usedBy": [
+    "problem.funnel-cards",
+    "feature.walkthrough",
+    "comparison.evidence",
+    "steps.stepper",
+    "benefits.funnel-split",
+    "setup.steps-stack",
+    "faq.accordion",
+    "shell.footer"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "product-demo",
+  "kind": "component",
+  "purpose": "Illustrative IDE + agent chat mock (2 columns >=901px, stacked below). 4 scenes driven by the walkthrough state machine.",
+  "composes": [],
+  "tokens": [
+    "color.surface.demo",
+    "radius.demo-frame",
+    "elevation.shadow-demo-frame"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/intro-rig.css",
+      "lines": [
+        157,
+        167
+      ],
+      "anchor": "#intro-rig .product-demo {"
+    }
+  ],
+  "usedBy": [
+    "feature.walkthrough"
+  ],
+  "assetRole": "illustration.product-demo"
+}

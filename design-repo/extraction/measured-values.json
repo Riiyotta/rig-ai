@@ -1,0 +1,729 @@
+{
+  "version": "1.0.0",
+  "$description": "Citation ledger for build-time evidence that lives OUTSIDE this package. All paths are relative to the cloned-site project root (the folder that contains design-repo/). extraction/verify_all.py resolves them when that tree is present and degrades to warnings (never failures) when design-repo/ is used standalone.",
+  "evidenceSources": {
+    "src/": "Clone source (React 18 + Vite 5 + Tailwind v3, preflight disabled). Authoritative for structure, copy and CSS values.",
+    "index.html": "Head/meta of the clone (og:image local; no og:url/canonical/JSON-LD).",
+    "tailwind.config.js": "Tailwind theme mapped to the CSS custom properties.",
+    "CLONE_SPEC.md": "Measured recon spec (Playwright, 2026-10-20). Strong first draft; corrections below override it.",
+    "recon/measurements/rig-measure-{1440,1280,768,390}.json": "Computed-style/rect dumps. rig-measure-1200.json was captured accidentally (not a design breakpoint).",
+    "recon/source/*.pretty.{html,css,js}": "Original live source, prettified.",
+    "assets-manifest.json": "Asset inventory (local paths partly wrong, see specCorrections)."
+  },
+  "measurements": [
+    {
+      "measurement": "recon/measurements/rig-measure-1280.json",
+      "selector": ".cta-btn",
+      "field": "h",
+      "value": 88.5,
+      "note": "CTA Book a Demo button, settled value (>=1280)"
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1280.json",
+      "selector": ".cta-btn",
+      "field": "w",
+      "value": 500
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-390.json",
+      "selector": ".cta-btn",
+      "field": "h",
+      "value": 59,
+      "note": "<=768 button height (QA-verified)"
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".cta-btn",
+      "field": "h",
+      "value": 68.1,
+      "note": "MID-TRANSITION capture (fontSize 17.4187px vs 20.8px source) - do NOT use"
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-768.json",
+      "selector": ".cta-btn",
+      "field": "h",
+      "value": 79.8,
+      "note": "MID-TRANSITION capture (fontSize 19.3589px) - do NOT use; settled is 59"
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".hero",
+      "field": "h",
+      "value": 651.3
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".hero h1",
+      "field": "fontSize",
+      "value": "112px"
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1280.json",
+      "selector": ".hero h1",
+      "field": "fontSize",
+      "value": "102.4px"
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".badge",
+      "field": "h",
+      "value": 34
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".problem-grid",
+      "field": "h",
+      "value": 420
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".chat-thread",
+      "field": "h",
+      "value": 322
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-390.json",
+      "selector": ".chat-thread",
+      "field": "h",
+      "value": 357
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".how-illustration",
+      "field": "h",
+      "value": 680
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-768.json",
+      "selector": ".how-illustration",
+      "field": "h",
+      "value": 400
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".site-nav",
+      "field": "h",
+      "value": 88.9
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".hero-ticker",
+      "field": "h",
+      "value": 42
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": "footer",
+      "field": "h",
+      "value": 429.2
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".cta-section",
+      "field": "h",
+      "value": 878.7
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": ".step-markers button",
+      "field": "w",
+      "value": 197.8
+    },
+    {
+      "measurement": "recon/measurements/rig-measure-1440.json",
+      "selector": "docH",
+      "field": null,
+      "value": 8563,
+      "note": "full document height @1440"
+    }
+  ],
+  "qaVerifiedCorrections": [
+    {
+      "id": "QA-CTA-SIZE",
+      "statement": "CTA 'Book a Demo' is 500x88.5 at >=1280 and 59px tall at <=768; the recon 68.1 (1440) / 79.8 (768) values were mid-transition.",
+      "evidence": [
+        {
+          "path": "src/styles/cta.css",
+          "lines": [
+            81,
+            89
+          ],
+          "anchor": ".cta-section .cta-btn {"
+        },
+        {
+          "path": "src/styles/cta.css",
+          "lines": [
+            128,
+            128
+          ],
+          "anchor": "padding: 1.25rem 2rem !important;"
+        }
+      ]
+    },
+    {
+      "id": "QA-WALKTHROUGH-HOVER",
+      "statement": "Walkthrough button hover tint is defined but never visible (loses on specificity). Not encoded as a hover state.",
+      "evidence": [
+        {
+          "path": "src/styles/intro-rig.css",
+          "lines": [
+            8,
+            11
+          ],
+          "anchor": "The one exception is the original `button[cid]:hover` tint."
+        },
+        {
+          "path": "src/styles/intro-rig.css",
+          "lines": [
+            150,
+            150
+          ],
+          "anchor": "#intro-rig :where(button):hover {"
+        }
+      ]
+    },
+    {
+      "id": "QA-CTA-HOVER-SHADOW",
+      "statement": ".btn-cta:hover box-shadow (4px 4px 0 secondary) is overridden on the CTA button, which keeps 0 0 40px primary-glow.",
+      "evidence": [
+        {
+          "path": "src/styles/cta.css",
+          "lines": [
+            81,
+            81
+          ],
+          "anchor": ".cta-section .cta-btn { /* scoped to match Astro cid specificity"
+        }
+      ]
+    },
+    {
+      "id": "QA-FUNNEL-NOT-PAUSED",
+      "statement": "Review-funnel loops are NOT paused off-screen; only hero, #intro-rig and CTA are.",
+      "evidence": [
+        {
+          "path": "src/components/problem/review-funnel.css",
+          "lines": [
+            6,
+            6
+          ],
+          "anchor": "the original does NOT pause these loops off-screen"
+        },
+        {
+          "path": "src/styles/hero.css",
+          "lines": [
+            186,
+            186
+          ],
+          "anchor": ".hero:not(.is-visible)"
+        },
+        {
+          "path": "src/styles/intro-rig.css",
+          "lines": [
+            546,
+            546
+          ],
+          "anchor": "#intro-rig:not(.is-visible) .product-demo * {"
+        },
+        {
+          "path": "src/styles/cta.css",
+          "lines": [
+            113,
+            113
+          ],
+          "anchor": ".cta-section:not(.is-visible)"
+        }
+      ]
+    },
+    {
+      "id": "QA-STEPPER-REDUCED-MOTION",
+      "statement": "Stepper auto-advances every 6s even under prefers-reduced-motion (only schematic loops stop).",
+      "evidence": [
+        {
+          "path": "src/styles/how-it-works.css",
+          "lines": [
+            88,
+            88
+          ],
+          "anchor": "animation: howProgressFill 6s linear forwards;"
+        },
+        {
+          "path": "src/styles/how-it-works.css",
+          "lines": [
+            346,
+            352
+          ],
+          "anchor": "@media (prefers-reduced-motion: reduce) {"
+        }
+      ]
+    },
+    {
+      "id": "QA-WALKTHROUGH-TIMING",
+      "statement": "Walkthrough: 10s steps, 1.8s sub-phases, play gate 35% visibility.",
+      "evidence": [
+        {
+          "path": "src/components/intro-rig/useWalkthrough.js",
+          "lines": [
+            26,
+            26
+          ],
+          "anchor": "const STEP_MS = 1e4"
+        },
+        {
+          "path": "src/components/intro-rig/useWalkthrough.js",
+          "lines": [
+            73,
+            73
+          ],
+          "anchor": "elapsed < 1800"
+        },
+        {
+          "path": "src/components/IntroRig.jsx",
+          "lines": [
+            81,
+            81
+          ],
+          "anchor": "threshold: 0.35"
+        }
+      ]
+    },
+    {
+      "id": "QA-TICKER-SPEED",
+      "statement": "Ticker speed 30px/s.",
+      "evidence": [
+        {
+          "path": "src/components/Hero.jsx",
+          "lines": [
+            77,
+            77
+          ],
+          "anchor": "/ 30}s`"
+        }
+      ]
+    },
+    {
+      "id": "QA-CTA-FLOW",
+      "statement": "CTA flow loops 14/16/18s.",
+      "evidence": [
+        {
+          "path": "src/components/cta/flowPaths.js",
+          "lines": [
+            7,
+            7
+          ],
+          "anchor": "duration: \"14s\","
+        },
+        {
+          "path": "src/components/cta/flowPaths.js",
+          "lines": [
+            17,
+            17
+          ],
+          "anchor": "duration: \"18s\","
+        }
+      ]
+    },
+    {
+      "id": "QA-HOW-HEIGHT",
+      "statement": "How-it-works card height tween 0.4s cubic-bezier(.25,.1,.25,1).",
+      "evidence": [
+        {
+          "path": "src/components/how-it-works/useHowStepper.js",
+          "lines": [
+            70,
+            70
+          ],
+          "anchor": "{ duration: 400, easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)' },"
+        }
+      ]
+    },
+    {
+      "id": "QA-FAQ-OPEN",
+      "statement": "FAQ opens with a 0.3s grid-template-rows transition.",
+      "evidence": [
+        {
+          "path": "src/styles/faq.css",
+          "lines": [
+            62,
+            62
+          ],
+          "anchor": "transition: grid-template-rows 0.3s ease;"
+        }
+      ]
+    }
+  ],
+  "specCorrections": [
+    {
+      "id": "SPEC-1",
+      "claim": "Walkthrough buttons hover: 8% primary tint (CLONE_SPEC §3 / §11).",
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            338,
+            338
+          ],
+          "anchor": "Hover on any of these buttons: `background: color-mix"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            645,
+            645
+          ],
+          "anchor": "Walkthrough buttons: 8% primary tint."
+        }
+      ],
+      "finding": "Never renders (specificity). Not a real hover state.",
+      "evidence": [
+        {
+          "path": "src/styles/intro-rig.css",
+          "lines": [
+            8,
+            11
+          ],
+          "anchor": "The one exception is the original `button[cid]:hover` tint."
+        }
+      ]
+    },
+    {
+      "id": "SPEC-2",
+      "claim": ".btn-cta hover adds a 4px secondary box-shadow (CLONE_SPEC §0).",
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            118,
+            118
+          ],
+          "anchor": "`.btn-cta` (bottom CTA): bg primary, text ink. Same hover as btn-dark"
+        }
+      ],
+      "finding": "The page's only .btn-cta keeps 0 0 40px primary-glow on hover (overridden).",
+      "evidence": [
+        {
+          "path": "src/styles/cta.css",
+          "lines": [
+            81,
+            81
+          ],
+          "anchor": ".cta-section .cta-btn { /* scoped to match Astro cid specificity"
+        }
+      ]
+    },
+    {
+      "id": "SPEC-3",
+      "claim": "'prefers-reduced-motion handling exists for every loop' (CLONE_SPEC §11).",
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            649,
+            649
+          ],
+          "anchor": "`prefers-reduced-motion` handling exists for every loop"
+        }
+      ],
+      "finding": "False. The original CSS has only 5 reduced-motion blocks (ticker, funnel, intro demo, schematics, CTA flow dots). Ungated: hero watermark glitch, film-grain seed, CTA glow pulse, CTA heading glitch clip, footer status blink, and the 6s stepper auto-advance.",
+      "evidence": [
+        {
+          "path": "recon/source/index.pretty.css",
+          "lines": [
+            153,
+            153
+          ],
+          "anchor": "@media (prefers-reduced-motion: reduce) {"
+        },
+        {
+          "path": "recon/source/index.pretty.css",
+          "lines": [
+            2551,
+            2551
+          ],
+          "anchor": "@media (prefers-reduced-motion: reduce) {"
+        },
+        {
+          "path": "src/styles/hero.css",
+          "lines": [
+            142,
+            142
+          ],
+          "anchor": "animation: watermark-glitch 4s infinite linear;"
+        },
+        {
+          "path": "src/styles/footer.css",
+          "lines": [
+            70,
+            70
+          ],
+          "anchor": "animation: blink 1.5s step-end infinite;"
+        }
+      ]
+    },
+    {
+      "id": "SPEC-4",
+      "claim": "Recon measurement .cta-btn h 68.1 (1440) / 79.8 (768).",
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            594,
+            594
+          ],
+          "anchor": "Computed 500×88.5 @1280."
+        }
+      ],
+      "finding": "Mid-transition captures (button transition: all .2s). Settled: 88.5 (>=1280), 59 (<=768). The spec text already uses the settled values; the raw dumps do not.",
+      "evidence": [
+        {
+          "path": "src/styles/cta.css",
+          "lines": [
+            81,
+            89
+          ],
+          "anchor": ".cta-section .cta-btn {"
+        }
+      ]
+    },
+    {
+      "id": "SPEC-5",
+      "claim": "assets-manifest.json local paths 'public/assets/<file>'.",
+      "spec": [
+        {
+          "path": "assets-manifest.json",
+          "lines": [
+            14,
+            14
+          ],
+          "anchor": "\"local\": \"public/assets/rig-wordmark.svg\""
+        }
+      ],
+      "finding": "Images actually live at public/assets/img/<file> (rig-wordmark.svg, logo-white.svg, cta-wave-grid.svg, rig-security.png); the code references /assets/img/.",
+      "evidence": [
+        {
+          "path": "src/components/Hero.jsx",
+          "lines": [
+            90,
+            90
+          ],
+          "anchor": "src=\"/assets/img/rig-wordmark.svg\""
+        },
+        {
+          "path": "index.html",
+          "lines": [
+            20,
+            20
+          ],
+          "anchor": "/assets/img/rig-security.png"
+        }
+      ]
+    },
+    {
+      "id": "SPEC-6",
+      "claim": "rig-measure-1200.json listed as a measurement width.",
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            20,
+            20
+          ],
+          "anchor": "`recon/measurements/rig-measure-{1440,1280,1200,768,390}.json`"
+        }
+      ],
+      "finding": "Accidental capture; 1200 is not a breakpoint (falls in the <=1280 band). Not used as evidence for any token.",
+      "evidence": [
+        {
+          "path": "src/index.css",
+          "lines": [
+            502,
+            502
+          ],
+          "anchor": "@media (max-width: 1280px) {"
+        }
+      ]
+    },
+    {
+      "id": "SPEC-7",
+      "claim": "Outbound hrefs (cal.com demo, news sites, x.com, linkedin), og:url/canonical and FAQPage JSON-LD (CLONE_SPEC §1, §8, §9, §10).",
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            145,
+            145
+          ],
+          "anchor": "utm_content=nav"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            520,
+            520
+          ],
+          "anchor": "It includes FAQPage JSON-LD"
+        }
+      ],
+      "finding": "Superseded by the user's explicit no-outbound-links instruction: every anchor in src/ is '#', '/', '/terms' or '/privacy'; index.html has no og:url/canonical/JSON-LD and a local og:image. This repo forbids external hrefs (INTERNAL_HREF_ONLY).",
+      "evidence": [
+        {
+          "path": "src/components/Hero.jsx",
+          "lines": [
+            7,
+            7
+          ],
+          "anchor": "const NAV_DEMO_URL = '#' // external link removed"
+        },
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": [
+            45,
+            45
+          ],
+          "anchor": "<a href=\"/terms\">Terms of Service</a>"
+        },
+        {
+          "path": "index.html",
+          "lines": [
+            20,
+            20
+          ],
+          "anchor": "<meta property=\"og:image\" content=\"/assets/img/rig-security.png\" />"
+        }
+      ]
+    }
+  ],
+  "structuralConstraints": {
+    "noExternalLinks": {
+      "statement": "All outbound links removed on request. Enforced by schema definitions.internalHref + INTERNAL_HREF_ONLY / INTERNAL_ROUTE_EXISTS.",
+      "evidence": [
+        {
+          "path": "src/components/Hero.jsx",
+          "lines": [
+            8,
+            8
+          ],
+          "anchor": "const HERO_DEMO_URL = '#' // external link removed"
+        },
+        {
+          "path": "src/components/Cta.jsx",
+          "lines": [
+            97,
+            97
+          ],
+          "anchor": "<a className=\"btn-chamfer btn-cta cta-btn\" href=\"#\">"
+        }
+      ]
+    },
+    "realCompany": {
+      "statement": "Rig (Rig AI Inc.) is a real, live company: brand marks, 10 third-party tool logos and real news headlines are protected asset roles. Do not publish this repository.",
+      "evidence": [
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": [
+            54,
+            54
+          ],
+          "anchor": "2026 Rig AI Inc. All rights reserved."
+        },
+        {
+          "path": "src/components/GetStarted.jsx",
+          "lines": [
+            38,
+            38
+          ],
+          "anchor": "const STACK = ["
+        }
+      ]
+    },
+    "deadInternalRoutes": {
+      "statement": "/terms and /privacy are linked from the footer but no such pages exist (single route, no router). Documented as dead internal links, not templates.",
+      "evidence": [
+        {
+          "path": "src/main.jsx",
+          "lines": [
+            8,
+            8
+          ],
+          "anchor": "<App />"
+        },
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": [
+            48,
+            48
+          ],
+          "anchor": "<a href=\"/privacy\">Privacy Policy</a>"
+        }
+      ]
+    },
+    "preservedTypos": {
+      "statement": "'map of of', 'bottle neck', FAQ 3 ending 'CL', FAQ 6 '..' are the live site's own copy and are kept verbatim.",
+      "evidence": [
+        {
+          "path": "src/components/HowItWorks.jsx",
+          "lines": [
+            18,
+            18
+          ],
+          "anchor": "map of of"
+        },
+        {
+          "path": "src/components/ProblemSection.jsx",
+          "lines": [
+            7,
+            7
+          ],
+          "anchor": "bottle neck"
+        },
+        {
+          "path": "src/components/Faq.jsx",
+          "lines": [
+            23,
+            23
+          ],
+          "anchor": "manually through the CL'"
+        },
+        {
+          "path": "src/components/Faq.jsx",
+          "lines": [
+            35,
+            35
+          ],
+          "anchor": "available.. Our"
+        }
+      ]
+    }
+  },
+  "staleArtifactsOutsideScope": [
+    {
+      "path": "dist/index.html",
+      "finding": "Stale production build (predates link removal): still has og:url + canonical to the live domain and a JSON-LD block; its JS bundle still contains outbound demo/news URLs. Not evidence for this repo; rebuild before shipping the clone.",
+      "evidence": [
+        {
+          "path": "dist/index.html",
+          "lines": [
+            20,
+            20
+          ],
+          "anchor": "og:url"
+        },
+        {
+          "path": "dist/index.html",
+          "lines": [
+            34,
+            34
+          ],
+          "anchor": "rel=\"canonical\""
+        },
+        {
+          "path": "dist/index.html",
+          "lines": [
+            46,
+            46
+          ],
+          "anchor": "application/ld+json"
+        }
+      ]
+    }
+  ]
+}

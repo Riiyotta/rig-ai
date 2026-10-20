@@ -1,0 +1,151 @@
+{
+  "id": "hero.headline-ticker",
+  "category": "hero",
+  "purpose": "Open the page with a bold product promise on the blue hero, a demo CTA, and a scrolling news ticker that frames the security risk.",
+  "region": "pre-main",
+  "surfaceToken": "color.surface.hero",
+  "implementedBy": "src/components/Hero.jsx",
+  "componentsUsed": [
+    "news-ticker"
+  ],
+  "evidence": {
+    "code": [
+      {
+        "path": "src/components/Hero.jsx",
+        "lines": [
+          64,
+          154
+        ],
+        "anchor": "export default function Hero() {"
+      },
+      {
+        "path": "src/styles/hero.css",
+        "lines": [
+          43,
+          53
+        ],
+        "anchor": ".hero {"
+      }
+    ],
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          131,
+          131
+        ],
+        "anchor": "## 1. Hero"
+      }
+    ]
+  },
+  "content": {
+    "fieldRefsResolveIn": "schema/pagespec.schema.json (#/definitions/...)",
+    "additionalProperties": false,
+    "required": [
+      "navLogo",
+      "navCta",
+      "headlineLines",
+      "subhead",
+      "primaryCta",
+      "ticker"
+    ],
+    "fields": {
+      "navLogo": {
+        "$ref": "#/definitions/media"
+      },
+      "navCta": {
+        "$ref": "#/definitions/cta"
+      },
+      "watermark": {
+        "$ref": "#/definitions/media"
+      },
+      "headlineLines": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1,
+        "maxItems": 3
+      },
+      "subhead": {
+        "type": "string",
+        "minLength": 1
+      },
+      "primaryCta": {
+        "$ref": "#/definitions/cta"
+      },
+      "ticker": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tickerItem"
+        },
+        "minItems": 1,
+        "maxItems": 7
+      }
+    },
+    "maxWords": {
+      "headlineLines[]": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 2 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "subhead": {
+        "maxWords": 24,
+        "basis": "observed max 18 words over 1 instance(s) -> max(3, ceil(18*1.3))"
+      },
+      "ticker[].text": {
+        "maxWords": 21,
+        "basis": "observed max 16 words over 7 instance(s) -> max(3, ceil(16*1.3))"
+      },
+      "navCta.label": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 1 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "primaryCta.label": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 1 instance(s) -> max(3, ceil(3*1.3))"
+      }
+    }
+  },
+  "observedCopy": {
+    "headlineLines": [
+      "Build Security Into",
+      "The Agent Loop"
+    ],
+    "subhead": "Find vulnerabilities as agents work, guide them through fixes, and verify the results, before findings turn into tickets.",
+    "navCta": "Get a Demo",
+    "primaryCta": "Get a Demo",
+    "ticker": "7 real third-party news headlines (see assetRole editorial.news-headline) - NOT reproduced here; never reuse them in generated output."
+  },
+  "motion": {
+    "allowedPatterns": [
+      "ticker-marquee",
+      "none"
+    ],
+    "primaryPattern": "ticker-marquee",
+    "reducedMotionFallbacks": {
+      "ticker-marquee": "ticker-static-scrollable",
+      "none": "none"
+    }
+  },
+  "assetRoles": [
+    "brand.wordmark",
+    "brand.mark",
+    "editorial.news-headline"
+  ],
+  "responsive": {
+    ">1280": "hero-content max-width calc(1200px+6rem), padding 0 3rem",
+    "<=1280": "hero-content 90%, padding 0",
+    "<=1024": "padding 0 2rem",
+    "<=768": "h1 clamp(3.5rem,12vw,7rem); sub 1rem; CTA full-row (flex 1 1 100%) padding 1.25rem 2rem; ticker gap 2rem; watermark 80%",
+    "nav": "Not sticky; no mobile menu at any width (logo + CTA only)."
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustFollow": "chrome.overlays"
+  },
+  "notes": [
+    "Hero h1 has inline margin-top 2rem.",
+    "Nav CTA and hero CTA hrefs are '#' in this clone (external demo-booking link removed)."
+  ]
+}

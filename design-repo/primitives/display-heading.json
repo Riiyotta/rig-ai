@@ -1,0 +1,39 @@
+{
+  "id": "display-heading",
+  "kind": "primitive",
+  "purpose": "Chalet display heading. Chalet ships only weight 400; headings render SYNTHESIZED bold - font-weight 700 must be set explicitly (preflight is off).",
+  "tokens": [
+    "typography.display.hero",
+    "typography.display.section",
+    "typography.display.cta"
+  ],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": [
+        147,
+        151
+      ],
+      "anchor": "h1,"
+    },
+    {
+      "path": "src/styles/hero.css",
+      "lines": [
+        67,
+        75
+      ],
+      "anchor": ".hero h1 {"
+    }
+  ],
+  "usedBy": [
+    "hero.headline-ticker",
+    "problem.funnel-cards",
+    "feature.walkthrough",
+    "comparison.evidence",
+    "steps.stepper",
+    "benefits.funnel-split",
+    "setup.steps-stack",
+    "faq.accordion",
+    "conversion.cta-glitch"
+  ]
+}

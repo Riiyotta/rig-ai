@@ -1,0 +1,178 @@
+{
+  "id": "shell.footer",
+  "category": "shell",
+  "purpose": "Close the page with the brand logo, tagline, social/legal link columns, copyright and a local-status indicator.",
+  "region": "post-main",
+  "surfaceToken": "color.surface.footer",
+  "implementedBy": "src/components/Footer.jsx",
+  "componentsUsed": [
+    "footer-column"
+  ],
+  "evidence": {
+    "code": [
+      {
+        "path": "src/components/Footer.jsx",
+        "lines": [
+          6,
+          63
+        ],
+        "anchor": "export default function Footer() {"
+      },
+      {
+        "path": "src/styles/footer.css",
+        "lines": [
+          12,
+          18
+        ],
+        "anchor": ".footer-grid {"
+      }
+    ],
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          600,
+          600
+        ],
+        "anchor": "## 10. Footer"
+      }
+    ]
+  },
+  "content": {
+    "fieldRefsResolveIn": "schema/pagespec.schema.json (#/definitions/...)",
+    "additionalProperties": false,
+    "required": [
+      "logo",
+      "logoHref",
+      "taglineLines",
+      "columns",
+      "copyright",
+      "status"
+    ],
+    "fields": {
+      "logo": {
+        "$ref": "#/definitions/media"
+      },
+      "logoHref": {
+        "$ref": "#/definitions/internalHref"
+      },
+      "taglineLines": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1,
+        "maxItems": 2
+      },
+      "columns": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "heading": {
+              "type": "string",
+              "minLength": 1
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/cta"
+              },
+              "minItems": 1,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "heading",
+            "links"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 1,
+        "maxItems": 2
+      },
+      "copyright": {
+        "type": "string",
+        "minLength": 1
+      },
+      "status": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "maxWords": {
+      "taglineLines[]": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 2 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "columns[].heading": {
+        "maxWords": 3,
+        "basis": "observed max 1 words over 2 instance(s) -> max(3, ceil(1*1.3))"
+      },
+      "columns[].links[].label": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 4 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "copyright": {
+        "maxWords": 11,
+        "basis": "observed max 8 words over 1 instance(s) -> max(3, ceil(8*1.3))"
+      },
+      "status": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 1 instance(s) -> max(3, ceil(3*1.3))"
+      }
+    }
+  },
+  "observedCopy": {
+    "taglineLines": [
+      "Realtime Security Verification",
+      "for Coding Agents"
+    ],
+    "columns": [
+      {
+        "heading": "Connect",
+        "links": [
+          "Twitter",
+          "LinkedIn"
+        ]
+      },
+      {
+        "heading": "Legal",
+        "links": [
+          "Terms of Service",
+          "Privacy Policy"
+        ]
+      }
+    ],
+    "copyright": "© 2026 Rig AI Inc. All rights reserved.",
+    "status": "All systems local"
+  },
+  "motion": {
+    "allowedPatterns": [
+      "status-blink",
+      "none"
+    ],
+    "primaryPattern": "status-blink",
+    "reducedMotionFallbacks": {
+      "status-blink": "ungated-in-source",
+      "none": "none"
+    }
+  },
+  "assetRoles": [
+    "brand.logo"
+  ],
+  "responsive": {
+    ">1024": "grid 2fr 1fr 1fr",
+    "<=1024": "2 columns, brand spans full row",
+    "<=768": "1 column; bottom row stacks; padding 3rem 0 6rem"
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustBeLast": true
+  },
+  "notes": [
+    "Connect links (Twitter/LinkedIn) are '#' in this clone - outbound links were removed on request.",
+    "/terms and /privacy are DEAD internal routes (no page exists in this single-route clone). They are allowed ONLY in footer links and must not be recreated as templates."
+  ]
+}

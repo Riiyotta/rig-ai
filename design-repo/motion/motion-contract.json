@@ -1,0 +1,255 @@
+{
+  "version": "1.0.0",
+  "$description": "Closed set of motion patterns observed on the page. Every PageSpec node declares {pattern, reducedMotionFallback}; the fallback is const-locked to the pattern and describes what the SOURCE actually does under prefers-reduced-motion ('ungated-in-source' = no reduced-motion rule exists; flagged as an accessibility gap, not a recommendation).",
+  "noEntranceAnimations": {
+    "statement": "No entrance/scroll-reveal animations exist; the global observer only pauses off-screen loops.",
+    "evidence": {
+      "path": "src/hooks/useInView.js",
+      "lines": [
+        7,
+        7
+      ],
+      "anchor": "toggles the `is-visible` class. CSS then pauses off-screen loops"
+    }
+  },
+  "offscreenPausedRegions": [
+    "hero (ticker + watermark)",
+    "#intro-rig product demo",
+    "CTA flow dots / svg animations"
+  ],
+  "fields": [
+    "pattern",
+    "reducedMotionFallback"
+  ],
+  "patterns": {
+    "none": {
+      "description": "No motion.",
+      "reducedMotionFallback": "none",
+      "offscreenPause": null,
+      "evidence": [
+        {
+          "path": "src/components/Difference.jsx",
+          "lines": [
+            6,
+            6
+          ],
+          "anchor": "Static section: no JS behaviour, no animations in the original."
+        }
+      ]
+    },
+    "film-grain-overlay": {
+      "description": "Animated SVG feTurbulence seed (0->100 over 10s) behind .noise at opacity .08, plus static scanlines + RGB fringe.",
+      "reducedMotionFallback": "ungated-in-source",
+      "offscreenPause": false,
+      "evidence": [
+        {
+          "path": "src/components/Overlays.jsx",
+          "lines": [
+            3,
+            3
+          ],
+          "anchor": "attributeName=\"seed\""
+        },
+        {
+          "path": "src/index.css",
+          "lines": [
+            192,
+            192
+          ],
+          "anchor": "filter: url(#grainy);"
+        }
+      ],
+      "accessibilityGap": "The source has no prefers-reduced-motion rule for the grain seed animation."
+    },
+    "ticker-marquee": {
+      "description": "Hero news ticker translates -50% at 30px/s (duration = group width / 30), pauses on hover/focus-within and when .hero is off-screen. Includes the ungated 4s watermark glitch.",
+      "reducedMotionFallback": "ticker-static-scrollable",
+      "offscreenPause": true,
+      "evidence": [
+        {
+          "path": "src/styles/hero.css",
+          "lines": [
+            100,
+            100
+          ],
+          "anchor": "animation: ticker var(--ticker-duration, 0s) linear infinite;"
+        },
+        {
+          "path": "src/styles/hero.css",
+          "lines": [
+            186,
+            186
+          ],
+          "anchor": ".hero:not(.is-visible)"
+        },
+        {
+          "path": "src/styles/hero.css",
+          "lines": [
+            194,
+            204
+          ],
+          "anchor": "@media (prefers-reduced-motion: reduce) {"
+        }
+      ],
+      "accessibilityGap": "hero-watermark glitch (4s) is NOT disabled under reduced motion in the source."
+    },
+    "review-funnel-loop": {
+      "description": "12s CSS loops on the review-funnel illustration (queue-build / rework / risk / finding / flow).",
+      "reducedMotionFallback": "funnel-static-frame",
+      "offscreenPause": false,
+      "offscreenPauseNote": "QA-verified: funnel loops are NOT paused off-screen (no .is-visible rule).",
+      "evidence": [
+        {
+          "path": "src/components/problem/review-funnel.css",
+          "lines": [
+            79,
+            79
+          ],
+          "anchor": "animation: queue-build 12s var(--delay) infinite;"
+        },
+        {
+          "path": "src/components/problem/review-funnel.css",
+          "lines": [
+            230,
+            248
+          ],
+          "anchor": "@media (prefers-reduced-motion: reduce) {"
+        },
+        {
+          "path": "src/components/problem/review-funnel.css",
+          "lines": [
+            6,
+            6
+          ],
+          "anchor": "the original does NOT pause these loops off-screen"
+        }
+      ]
+    },
+    "walkthrough-autoplay": {
+      "description": "4-step walkthrough, 10s per step with 1.8s sub-phases revealing chat messages; play gate = 35% visibility of .product-demo and !document.hidden; user click stops autoplay.",
+      "reducedMotionFallback": "walkthrough-manual-full-scenes",
+      "offscreenPause": true,
+      "evidence": [
+        {
+          "path": "src/components/intro-rig/useWalkthrough.js",
+          "lines": [
+            26,
+            26
+          ],
+          "anchor": "const STEP_MS = 1e4"
+        },
+        {
+          "path": "src/components/intro-rig/useWalkthrough.js",
+          "lines": [
+            39,
+            39
+          ],
+          "anchor": "let playing = !reducedMotion.matches"
+        },
+        {
+          "path": "src/styles/intro-rig.css",
+          "lines": [
+            546,
+            546
+          ],
+          "anchor": "#intro-rig:not(.is-visible) .product-demo * {"
+        }
+      ],
+      "hoverNote": "QA-verified: the walkthrough button hover tint is defined but NEVER visible (loses on specificity). Do not encode a hover state."
+    },
+    "stepper-autoadvance": {
+      "description": "How-it-works stepper: active fill runs 6s linear then advances 1->2->3->1; paused unless >=10% visible and not hovered; card height tween 0.4s cubic-bezier(.25,.1,.25,1); body reveal grid-template-rows .4s.",
+      "reducedMotionFallback": "stepper-autoadvance-schematics-static",
+      "offscreenPause": true,
+      "evidence": [
+        {
+          "path": "src/styles/how-it-works.css",
+          "lines": [
+            88,
+            88
+          ],
+          "anchor": "animation: howProgressFill 6s linear forwards;"
+        },
+        {
+          "path": "src/components/how-it-works/useHowStepper.js",
+          "lines": [
+            70,
+            70
+          ],
+          "anchor": "{ duration: 400, easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)' },"
+        },
+        {
+          "path": "src/styles/how-it-works.css",
+          "lines": [
+            346,
+            352
+          ],
+          "anchor": "@media (prefers-reduced-motion: reduce) {"
+        }
+      ],
+      "accessibilityGap": "QA-verified: the stepper keeps auto-advancing every 6s under reduced motion; only the schematic route/discovery/data-stream loops stop."
+    },
+    "disclosure-grid-rows": {
+      "description": "FAQ <details>: answer grid-template-rows 0fr->1fr over 0.3s ease; chevron rotates 180deg; native close is instant.",
+      "reducedMotionFallback": "ungated-in-source",
+      "offscreenPause": false,
+      "evidence": [
+        {
+          "path": "src/styles/faq.css",
+          "lines": [
+            62,
+            62
+          ],
+          "anchor": "transition: grid-template-rows 0.3s ease;"
+        }
+      ]
+    },
+    "cta-flow-glow-glitch": {
+      "description": "8 flow-dot paths on the wave grid (14/16/18s loops), 3s bloom glow pulse on the mark, 5s/4.5s glitch clip on the heading. Flow dots pause off-screen.",
+      "reducedMotionFallback": "flow-dots-hidden",
+      "offscreenPause": true,
+      "evidence": [
+        {
+          "path": "src/components/cta/flowPaths.js",
+          "lines": [
+            7,
+            7
+          ],
+          "anchor": "duration: \"14s\","
+        },
+        {
+          "path": "src/styles/cta.css",
+          "lines": [
+            113,
+            113
+          ],
+          "anchor": ".cta-section:not(.is-visible)"
+        },
+        {
+          "path": "src/styles/cta.css",
+          "lines": [
+            219,
+            225
+          ],
+          "anchor": "@media (prefers-reduced-motion: reduce) {"
+        }
+      ],
+      "accessibilityGap": "Glow pulse and heading glitch clip are not gated by reduced motion in the source."
+    },
+    "status-blink": {
+      "description": "Footer 6x6 status square blinks 1.5s step-end.",
+      "reducedMotionFallback": "ungated-in-source",
+      "offscreenPause": false,
+      "evidence": [
+        {
+          "path": "src/styles/footer.css",
+          "lines": [
+            70,
+            70
+          ],
+          "anchor": "animation: blink 1.5s step-end infinite;"
+        }
+      ]
+    }
+  }
+}

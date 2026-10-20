@@ -1,0 +1,38 @@
+{
+  "id": "how-step",
+  "kind": "component",
+  "purpose": "Stepper button: 2px progress rail filling 6s, mono step number, Chalet title (paper-35 -> paper when active), body revealed via grid-template-rows.",
+  "composes": [
+    "display-heading",
+    "body-text"
+  ],
+  "tokens": [
+    "stepper.progress.track",
+    "stepper.progress.fill",
+    "stepper.num.active",
+    "stepper.title.idle",
+    "stepper.title.active",
+    "stepper.advance"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/how-it-works.css",
+      "lines": [
+        46,
+        62
+      ],
+      "anchor": ".how-section .how-step {"
+    },
+    {
+      "path": "src/styles/how-it-works.css",
+      "lines": [
+        128,
+        135
+      ],
+      "anchor": ".how-section .how-step-body {"
+    }
+  ],
+  "usedBy": [
+    "steps.stepper"
+  ]
+}

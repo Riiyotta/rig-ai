@@ -1,0 +1,271 @@
+{
+  "version": "1.0.0",
+  "$description": "One template per distinct page shape. The clone is single-route (no router): exactly one template.",
+  "templates": {
+    "template.home": {
+      "id": "template.home",
+      "purpose": "Single-page product marketing homepage (security verification for AI coding agents).",
+      "routes": [
+        "/"
+      ],
+      "evidence": [
+        {
+          "path": "src/App.jsx",
+          "lines": [
+            15,
+            45
+          ],
+          "anchor": "export default function App() {"
+        },
+        {
+          "path": "src/main.jsx",
+          "lines": [
+            8,
+            8
+          ],
+          "anchor": "createRoot"
+        }
+      ],
+      "nodes": [
+        {
+          "section": "chrome.overlays",
+          "region": "chrome",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              18,
+              18
+            ],
+            "anchor": "<Overlays />"
+          }
+        },
+        {
+          "section": "hero.headline-ticker",
+          "region": "pre-main",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              19,
+              19
+            ],
+            "anchor": "<Hero />"
+          }
+        },
+        {
+          "section": "problem.funnel-cards",
+          "region": "main",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              25,
+              25
+            ],
+            "anchor": "<ProblemSection />"
+          }
+        },
+        {
+          "section": "feature.walkthrough",
+          "region": "main",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              27,
+              27
+            ],
+            "anchor": "<IntroRig />"
+          }
+        },
+        {
+          "section": "comparison.evidence",
+          "region": "main",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              29,
+              29
+            ],
+            "anchor": "<Difference />"
+          }
+        },
+        {
+          "section": "steps.stepper",
+          "region": "main",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              31,
+              31
+            ],
+            "anchor": "<HowItWorks />"
+          }
+        },
+        {
+          "section": "benefits.funnel-split",
+          "region": "main",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              33,
+              33
+            ],
+            "anchor": "<Benefits />"
+          }
+        },
+        {
+          "section": "setup.steps-stack",
+          "region": "main",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              35,
+              35
+            ],
+            "anchor": "<GetStarted />"
+          }
+        },
+        {
+          "section": "faq.accordion",
+          "region": "main",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              37,
+              37
+            ],
+            "anchor": "<Faq />"
+          }
+        },
+        {
+          "section": "conversion.cta-glitch",
+          "region": "post-main",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              43,
+              43
+            ],
+            "anchor": "<Cta />"
+          }
+        },
+        {
+          "section": "shell.footer",
+          "region": "post-main",
+          "required": true,
+          "repeatable": false,
+          "source": {
+            "path": "src/App.jsx",
+            "lines": [
+              44,
+              44
+            ],
+            "anchor": "<Footer />"
+          }
+        }
+      ],
+      "dividers": {
+        "$note": "Rendered by the template (App.jsx), not by sections: a 4rem spacer with a hairline before the first main section, a .section-divider after each of the 7 main sections, and a trailing 4rem spacer-hairline. Sections never emit their own outer dividers.",
+        "evidence": [
+          {
+            "path": "src/App.jsx",
+            "lines": [
+              22,
+              24
+            ],
+            "anchor": "<div style={{ paddingBottom: '4rem' }}>"
+          },
+          {
+            "path": "src/App.jsx",
+            "lines": [
+              39,
+              41
+            ],
+            "anchor": "<div style={{ paddingTop: '4rem' }}>"
+          }
+        ]
+      },
+      "mainWrapper": {
+        "$note": "Nodes with region 'main' are wrapped in <main className=\"content\">; hero precedes it, CTA + footer follow it.",
+        "evidence": {
+          "path": "src/App.jsx",
+          "lines": [
+            21,
+            21
+          ],
+          "anchor": "<main className=\"content\">"
+        }
+      }
+    }
+  },
+  "routes": {
+    "/": "template.home"
+  },
+  "deadInternalRoutes": {
+    "/terms": {
+      "status": "dead-internal-link",
+      "linkedFrom": "shell.footer (Legal: Terms of Service)",
+      "evidence": {
+        "path": "src/components/Footer.jsx",
+        "lines": [
+          45,
+          45
+        ],
+        "anchor": "<a href=\"/terms\">Terms of Service</a>"
+      },
+      "rule": "No page exists in this single-route clone. Do NOT recreate it as a template; links to it are allowed only inside shell.footer."
+    },
+    "/privacy": {
+      "status": "dead-internal-link",
+      "linkedFrom": "shell.footer (Legal: Privacy Policy)",
+      "evidence": {
+        "path": "src/components/Footer.jsx",
+        "lines": [
+          48,
+          48
+        ],
+        "anchor": "<a href=\"/privacy\">Privacy Policy</a>"
+      },
+      "rule": "No page exists in this single-route clone. Do NOT recreate it as a template; links to it are allowed only inside shell.footer."
+    }
+  },
+  "routingEvidence": {
+    "$note": "package.json has no router dependency; main.jsx renders <App /> directly.",
+    "evidence": [
+      {
+        "path": "package.json",
+        "lines": [
+          11,
+          14
+        ],
+        "anchor": "\"dependencies\": {"
+      },
+      {
+        "path": "src/main.jsx",
+        "lines": [
+          8,
+          8
+        ],
+        "anchor": "<App />"
+      }
+    ]
+  }
+}

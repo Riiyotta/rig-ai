@@ -1,0 +1,30 @@
+{
+  "faq": {
+    "question.type": {
+      "$value": "Chalet 400 1.2rem/1.2 -0.02em",
+      "source": {
+        "path": "src/styles/faq.css",
+        "lines": [
+          43,
+          43
+        ],
+        "anchor": "font-size: 1.2rem;"
+      }
+    },
+    "number.color": {
+      "$value": "{color.accent.primary}"
+    },
+    "chevron.color": {
+      "$value": "{color.paper-35}"
+    },
+    "chevron.open": {
+      "$value": "{color.accent.primary}"
+    },
+    "answer.color": {
+      "$value": "{color.text.body}"
+    },
+    "open": {
+      "$value": "{motion.disclosure.open}"
+    }
+  }
+}

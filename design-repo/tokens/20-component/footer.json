@@ -1,0 +1,22 @@
+{
+  "footer": {
+    "bg": {
+      "$value": "{color.surface.footer}"
+    },
+    "link": {
+      "$value": "{color.paper-50}"
+    },
+    "link.hover": {
+      "$value": "{color.accent.primary}"
+    },
+    "heading": {
+      "$value": "{color.text.muted}"
+    },
+    "status.dot": {
+      "$value": "{color.accent.primary}"
+    },
+    "transition": {
+      "$value": "{motion.link-color}"
+    }
+  }
+}

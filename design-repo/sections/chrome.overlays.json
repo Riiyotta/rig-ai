@@ -1,0 +1,68 @@
+{
+  "id": "chrome.overlays",
+  "category": "chrome",
+  "purpose": "Global film-grain / scanline / RGB-fringe / guide-line overlays that give every page its CRT texture.",
+  "region": "chrome",
+  "surfaceToken": null,
+  "implementedBy": "src/components/Overlays.jsx",
+  "componentsUsed": [
+    "film-grain-overlays"
+  ],
+  "evidence": {
+    "code": [
+      {
+        "path": "src/App.jsx",
+        "lines": [
+          18,
+          18
+        ],
+        "anchor": "<Overlays />"
+      },
+      {
+        "path": "src/components/Overlays.jsx",
+        "lines": [
+          4,
+          32
+        ],
+        "anchor": "export default function Overlays() {"
+      }
+    ],
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          82,
+          82
+        ],
+        "anchor": "### Fixed full-viewport overlays"
+      }
+    ]
+  },
+  "content": {
+    "fieldRefsResolveIn": "schema/pagespec.schema.json (#/definitions/...)",
+    "additionalProperties": false,
+    "required": [],
+    "fields": {},
+    "maxWords": {}
+  },
+  "observedCopy": {},
+  "motion": {
+    "allowedPatterns": [
+      "film-grain-overlay",
+      "none"
+    ],
+    "primaryPattern": "film-grain-overlay",
+    "reducedMotionFallbacks": {
+      "film-grain-overlay": "ungated-in-source",
+      "none": "none"
+    }
+  },
+  "assetRoles": [],
+  "responsive": {
+    "all": "Fixed 100vw x 100vh, pointer-events:none, z 10001-10003; guide lines at calc(50% - 600px) (5% <=1280, 1.25rem <=768)."
+  },
+  "constraints": {
+    "mustBeFirst": true,
+    "onePerPage": true
+  }
+}

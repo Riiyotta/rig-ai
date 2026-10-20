@@ -1,0 +1,74 @@
+{
+  "repositoryId": "rig-ai-clone-design-repo",
+  "repositoryVersion": "1.0.0",
+  "pageSpecVersion": "1.0.0",
+  "allowlistVersion": "1.0.0",
+  "versionFieldNote": "allowlistVersion is MACHINE-CHECKED: extraction/verify_all.py (VERSION_PARITY) fails if it differs from tokens/llm/component-allowlist.json. pageSpecVersion is enforced only as the schema const for PageSpec instances. repositoryVersion is documentation-only and hand-maintained; nothing checks it.",
+  "status": "design-review-pending",
+  "productionApproved": false,
+  "publishing": "DO NOT PUBLISH. Built from a real, live company's site (Rig AI Inc.): contains its proprietary marketing copy and references to its brand and to third-party trademarks. Keep private.",
+  "defaultTheme": "dark",
+  "schemaValidatedThemes": [
+    "dark"
+  ],
+  "sourceProject": {
+    "description": "Single-route React 18 + Vite 5 + Tailwind v3 clone of the rig.ai homepage (preflight disabled).",
+    "location": "the folder containing this design-repo/ (relative; never an absolute path)",
+    "routes": [
+      "/"
+    ],
+    "deadInternalRoutes": [
+      "/terms",
+      "/privacy"
+    ]
+  },
+  "structuralConstraints": [
+    "no-external-links (href: '#', '#frag' or root-relative internal only)",
+    "real-company content (protected asset roles)",
+    "dead internal routes /terms and /privacy (not templates)"
+  ],
+  "counts": {
+    "tokensFoundation": 177,
+    "tokensSemantic": 36,
+    "tokensComponent": 48,
+    "tokensLayout": 11,
+    "tokensTotal": 272,
+    "primitives": 10,
+    "components": 16,
+    "sections": 11,
+    "templates": 1,
+    "routes": 1,
+    "deadInternalRoutes": 2,
+    "assetRoles": 11,
+    "motionPatterns": 9,
+    "graphRules": 19
+  },
+  "entryPoints": {
+    "schema": "schema/pagespec.schema.json",
+    "example": "schema/example.pagespec.json",
+    "validator": "schema/semantic_validate.py",
+    "adversarialTests": "schema/tests/adversarial_test.py",
+    "verify": "extraction/verify_all.py",
+    "driftProof": "extraction/prove_drift.py",
+    "citationLedger": "extraction/measured-values.json",
+    "templates": "templates/templates.json",
+    "compatibilityGraph": "compatibility/graph.json",
+    "assetRoles": "assets/asset-roles.json",
+    "motionContract": "motion/motion-contract.json",
+    "tokenCatalog": "tokens/llm/token-catalog.json",
+    "tokenPolicy": "tokens/llm/token-policy.json",
+    "componentAllowlist": "tokens/llm/component-allowlist.json",
+    "theme": "tokens/themes/dark.json",
+    "readme": "README.md",
+    "changelog": "CHANGELOG.md"
+  },
+  "verification": {
+    "commands": [
+      "python3 extraction/verify_all.py",
+      "python3 schema/tests/adversarial_test.py",
+      "python3 extraction/prove_drift.py --workdir <empty scratch dir>",
+      "python3 schema/semantic_validate.py schema/example.pagespec.json"
+    ],
+    "requires": "python3 >= 3.9 with the `jsonschema` package (Draft7Validator)"
+  }
+}

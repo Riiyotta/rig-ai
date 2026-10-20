@@ -1,0 +1,24 @@
+{
+  "id": "text-link",
+  "kind": "primitive",
+  "purpose": "Plain text link. href is INTERNAL ONLY ('#', '/', or the dead internal routes /terms, /privacy in the footer). Footer links paper-50 -> accent.primary on hover.",
+  "tokens": [
+    "footer.link",
+    "footer.link.hover",
+    "footer.transition"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/footer.css",
+      "lines": [
+        39,
+        47
+      ],
+      "anchor": ".footer-col a {"
+    }
+  ],
+  "usedBy": [
+    "hero.headline-ticker",
+    "shell.footer"
+  ]
+}

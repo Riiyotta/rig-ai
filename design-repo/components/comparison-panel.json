@@ -1,0 +1,27 @@
+{
+  "id": "comparison-panel",
+  "kind": "component",
+  "purpose": "Bordered panel: label row, visual (code sample or execution path, 165px tall), result row with 28px icon. Runtime panel adds inset 2px primary top line + paper-04 gradient.",
+  "composes": [
+    "body-text"
+  ],
+  "tokens": [
+    "color.border.default",
+    "elevation.shadow-runtime-panel",
+    "iconSize.result-icon",
+    "iconSize.node-symbol"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/difference.css",
+      "lines": [
+        37,
+        47
+      ],
+      "anchor": ".evidence-section .analysis-panel,"
+    }
+  ],
+  "usedBy": [
+    "comparison.evidence"
+  ]
+}

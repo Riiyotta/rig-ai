@@ -1,0 +1,136 @@
+{
+  "version": "1.0.0",
+  "$description": "Rhythm/position/content rules JSON Schema cannot express. Each rule id is implemented by schema/semantic_validate.py (verify_all.py checks the two sets are identical).",
+  "rules": [
+    {
+      "id": "TEMPLATE_NODE_SEQUENCE",
+      "severity": "error",
+      "rule": "The node sequence must equal the DECLARED template's node list: same sections, same order, all required present, no foreign or repeated sections, region must match the template node's region."
+    },
+    {
+      "id": "ROUTE_MATCHES_TEMPLATE",
+      "severity": "error",
+      "rule": "spec.route must be one of the declared template's routes (only '/' exists)."
+    },
+    {
+      "id": "OVERLAYS_FIRST",
+      "severity": "error",
+      "rule": "chrome.overlays must be the first node."
+    },
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "rule": "Exactly one hero (hero.headline-ticker), immediately after chrome.overlays. No exception exists: the only template has a hero."
+    },
+    {
+      "id": "ONE_PER_PAGE",
+      "severity": "error",
+      "rule": "Every section type in this repo appears exactly once on the only observed page; no section may repeat."
+    },
+    {
+      "id": "MAIN_REGION_CONTIGUOUS",
+      "severity": "error",
+      "rule": "All region:'main' nodes must be contiguous, after the hero and before the CTA (they render inside <main class=content>)."
+    },
+    {
+      "id": "CTA_PRECEDES_FOOTER",
+      "severity": "error",
+      "rule": "conversion.cta-glitch must immediately precede shell.footer."
+    },
+    {
+      "id": "FOOTER_LAST",
+      "severity": "error",
+      "rule": "shell.footer must be the last node."
+    },
+    {
+      "id": "NO_ADJACENT_FUNNELS",
+      "severity": "warn",
+      "rule": "problem.funnel-cards and benefits.funnel-split share the review-funnel illustration; they should not be adjacent (observed 3 sections apart)."
+    },
+    {
+      "id": "MOTION_PATTERN_ALLOWED",
+      "severity": "error",
+      "rule": "node.motion.pattern must be one of the section contract's allowedPatterns."
+    },
+    {
+      "id": "REDUCED_MOTION_FALLBACK_PINNED",
+      "severity": "error",
+      "rule": "node.motion.reducedMotionFallback must be the fallback pinned to the pattern in motion/motion-contract.json."
+    },
+    {
+      "id": "MAX_WORDS",
+      "severity": "error",
+      "rule": "Every text field must respect its section contract's maxWords budget."
+    },
+    {
+      "id": "INTERNAL_HREF_ONLY",
+      "severity": "error",
+      "rule": "Every href must be '#', '#fragment' or a root-relative internal path. http(s)://, protocol-relative //, mailto:, tel:, javascript:, data: are rejected (all outbound links were removed from this clone on request)."
+    },
+    {
+      "id": "INTERNAL_ROUTE_EXISTS",
+      "severity": "error",
+      "rule": "A root-relative href must be a declared template route or a declared dead internal route."
+    },
+    {
+      "id": "DEAD_ROUTES_FOOTER_ONLY",
+      "severity": "error",
+      "rule": "Links to the dead internal routes /terms and /privacy are allowed only inside shell.footer."
+    },
+    {
+      "id": "ASSET_ROLE_ALLOWED_FOR_SECTION",
+      "severity": "error",
+      "rule": "Every assetRole used by a node must be in that section contract's assetRoles (and exist in assets/asset-roles.json)."
+    },
+    {
+      "id": "PROTECTED_ASSET_SOURCE",
+      "severity": "error",
+      "rule": "Every media/content-role item's source must be in that role's allowedSources; protected roles (real Rig marks, real third-party logos, real news headlines) only accept placeholder or user-supplied-licensed - never generated."
+    },
+    {
+      "id": "SURFACE_TOKEN_PINNED",
+      "severity": "error",
+      "rule": "node.surface must exist in tokens/llm/token-catalog.json and equal the section contract's surfaceToken (chrome.overlays has none)."
+    },
+    {
+      "id": "NO_EXTERNAL_META",
+      "severity": "error",
+      "rule": "meta.ogImage must be a protected-role media object; there is no canonical/og:url/JSON-LD field (removed from the clone)."
+    }
+  ],
+  "adjacency": {
+    "observedOrder": [
+      "chrome.overlays",
+      "hero.headline-ticker",
+      "problem.funnel-cards",
+      "feature.walkthrough",
+      "comparison.evidence",
+      "steps.stepper",
+      "benefits.funnel-split",
+      "setup.steps-stack",
+      "faq.accordion",
+      "conversion.cta-glitch",
+      "shell.footer"
+    ],
+    "evidence": {
+      "path": "src/App.jsx",
+      "lines": [
+        15,
+        45
+      ],
+      "anchor": "export default function App() {"
+    },
+    "recommendedAfter": {
+      "hero.headline-ticker": "chrome.overlays",
+      "problem.funnel-cards": "hero.headline-ticker",
+      "feature.walkthrough": "problem.funnel-cards",
+      "comparison.evidence": "feature.walkthrough",
+      "steps.stepper": "comparison.evidence",
+      "benefits.funnel-split": "steps.stepper",
+      "setup.steps-stack": "benefits.funnel-split",
+      "faq.accordion": "setup.steps-stack",
+      "conversion.cta-glitch": "faq.accordion",
+      "shell.footer": "conversion.cta-glitch"
+    }
+  }
+}

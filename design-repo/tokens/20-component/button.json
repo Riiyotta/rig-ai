@@ -1,0 +1,58 @@
+{
+  "button": {
+    "chamfer.clip": {
+      "$value": "polygon(var(--chamfer) 0, 100% 0, 100% calc(100% - var(--chamfer)), calc(100% - var(--chamfer)) 100%, 0 100%, 0 var(--chamfer))",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          220,
+          227
+        ],
+        "anchor": "clip-path: polygon("
+      }
+    },
+    "chamfer.size": {
+      "$value": "{spacing.chamfer}"
+    },
+    "padding": {
+      "$value": "{spacing.button-pad}"
+    },
+    "padding.mobile": {
+      "$value": "{spacing.button-pad-mobile}"
+    },
+    "font": {
+      "$value": "{typography.button.label}"
+    },
+    "transition": {
+      "$value": "{motion.button-transition}"
+    },
+    "dark.bg": {
+      "$value": "{color.surface.page}"
+    },
+    "dark.fg": {
+      "$value": "{color.text.primary}"
+    },
+    "cta.bg": {
+      "$value": "{color.accent.primary}"
+    },
+    "cta.fg": {
+      "$value": "{color.surface.page}"
+    },
+    "cta.large.padding": {
+      "$value": "{spacing.cta-button-pad}"
+    },
+    "cta.large.fontSize": {
+      "$value": "{fontSize.cta-button}"
+    },
+    "cta.large.shadow": {
+      "$value": "{elevation.shadow-cta-glow}"
+    },
+    "cta.large.size": {
+      "$value": "500 x 88.5 (>=1280), 59px tall (<=768)",
+      "source": {
+        "measurement": "rig-measure-1280.json#.cta-btn",
+        "note": "QA-verified; 1440/768 recon values were mid-transition"
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "layout": {
+    "container.max": {
+      "$value": "1200px",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          487,
+          487
+        ],
+        "anchor": "max-width: 1200px;"
+      }
+    },
+    "container.max.1280": {
+      "$value": "90%",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          512,
+          512
+        ],
+        "anchor": "max-width: 90%;"
+      }
+    },
+    "container.padding": {
+      "$value": "{spacing.container-x}"
+    },
+    "container.padding.1024": {
+      "$value": "{spacing.container-x-1024}"
+    },
+    "container.padding.768": {
+      "$value": "{spacing.container-x-768}"
+    },
+    "nav.max": {
+      "$value": "calc(1200px + 6rem)",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          9,
+          9
+        ],
+        "anchor": "max-width: calc(1200px + 6rem);"
+      }
+    },
+    "guides.left": {
+      "$value": "calc(50% - 600px)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          481,
+          481
+        ],
+        "anchor": "left: calc(50% - 600px);"
+      }
+    },
+    "guides.left.1280": {
+      "$value": "5%",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          504,
+          504
+        ],
+        "anchor": "left: 5%;"
+      }
+    },
+    "guides.left.768": {
+      "$value": "1.25rem",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          538,
+          538
+        ],
+        "anchor": " left: 1.25rem;"
+      }
+    },
+    "divider.height": {
+      "$value": "1px",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          498,
+          498
+        ],
+        "anchor": "height: 1px;"
+      }
+    },
+    "hero.min-height": {
+      "$value": "50vh",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          44,
+          44
+        ],
+        "anchor": "min-height: 50vh;"
+      }
+    }
+  }
+}

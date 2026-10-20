@@ -1,0 +1,23 @@
+{
+  "id": "chevron-icon",
+  "kind": "primitive",
+  "purpose": "20px stroke chevron (FAQ), paper-35 -> accent.primary when open, rotates 180deg.",
+  "tokens": [
+    "iconSize.faq-chevron",
+    "faq.chevron.color",
+    "faq.chevron.open"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/faq.css",
+      "lines": [
+        48,
+        54
+      ],
+      "anchor": ".faq-chevron {"
+    }
+  ],
+  "usedBy": [
+    "faq.accordion"
+  ]
+}

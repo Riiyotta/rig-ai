@@ -1,0 +1,172 @@
+{
+  "id": "benefits.funnel-split",
+  "category": "benefits",
+  "purpose": "Show the improved flow with Rig: illustration + claim split, then three benefit columns.",
+  "region": "main",
+  "surfaceToken": "color.surface.page",
+  "implementedBy": "src/components/Benefits.jsx",
+  "componentsUsed": [
+    "review-funnel",
+    "three-col-cell"
+  ],
+  "evidence": {
+    "code": [
+      {
+        "path": "src/components/Benefits.jsx",
+        "lines": [
+          9,
+          67
+        ],
+        "anchor": "export default function Benefits() {"
+      },
+      {
+        "path": "src/styles/benefits.css",
+        "lines": [
+          19,
+          26
+        ],
+        "anchor": ".offline-layout {"
+      }
+    ],
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          457,
+          457
+        ],
+        "anchor": "## 6. Benefits"
+      }
+    ]
+  },
+  "content": {
+    "fieldRefsResolveIn": "schema/pagespec.schema.json (#/definitions/...)",
+    "additionalProperties": false,
+    "required": [
+      "illustration",
+      "eyebrow",
+      "headline",
+      "body",
+      "columns"
+    ],
+    "fields": {
+      "illustration": {
+        "$ref": "#/definitions/media"
+      },
+      "eyebrow": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "glyph": {
+            "$ref": "#/definitions/media"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "headline": {
+        "type": "string",
+        "minLength": 1
+      },
+      "body": {
+        "type": "string",
+        "minLength": 1
+      },
+      "columns": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "body": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "title",
+            "body"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 3,
+        "maxItems": 3
+      }
+    },
+    "maxWords": {
+      "eyebrow.label": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 7 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "headline": {
+        "maxWords": 6,
+        "basis": "observed max 4 words over 1 instance(s) -> max(3, ceil(4*1.3))"
+      },
+      "body": {
+        "maxWords": 17,
+        "basis": "observed max 13 words over 1 instance(s) -> max(3, ceil(13*1.3))"
+      },
+      "columns[].title": {
+        "maxWords": 3,
+        "basis": "observed max 2 words over 3 instance(s) -> max(3, ceil(2*1.3))"
+      },
+      "columns[].body": {
+        "maxWords": 16,
+        "basis": "observed max 12 words over 3 instance(s) -> max(3, ceil(12*1.3))"
+      }
+    }
+  },
+  "observedCopy": {
+    "headline": "Fewer Vulnerabilities Reach Review",
+    "body": "Find and fix vulnerabilities while agents work in minutes, not weeks or months.",
+    "columns": [
+      {
+        "title": "Catch More",
+        "body": "Catch more vulnerabilities before they make it to review or production."
+      },
+      {
+        "title": "Chase Less",
+        "body": "Stop distracting developers with false positives so they can stay on task."
+      },
+      {
+        "title": "Ship More",
+        "body": "Your developers spend more time shipping and less time managing vulnerability findings."
+      }
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "review-funnel-loop",
+      "none"
+    ],
+    "primaryPattern": "review-funnel-loop",
+    "reducedMotionFallbacks": {
+      "review-funnel-loop": "funnel-static-frame",
+      "none": "none"
+    }
+  },
+  "assetRoles": [
+    "decor.badge-glyph",
+    "illustration.review-funnel"
+  ],
+  "responsive": {
+    ">768": "2-col grid (visual | content) with a centre hairline; then 1fr 1px 1fr 1px 1fr columns",
+    "<=1280": "gap 2rem",
+    "<=768": "content first (centered), visual second; columns stack with horizontal dividers"
+  },
+  "constraints": {
+    "onePerPage": true,
+    "exactColumns": 3
+  },
+  "notes": [
+    "Badge is left-aligned here (margin 0 0 1.5rem), unlike other badges."
+  ]
+}

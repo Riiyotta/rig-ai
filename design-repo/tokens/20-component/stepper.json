@@ -1,0 +1,28 @@
+{
+  "stepper": {
+    "progress.track": {
+      "$value": "{color.paper-faint}"
+    },
+    "progress.fill": {
+      "$value": "{color.accent.primary}"
+    },
+    "num.idle": {
+      "$value": "{color.text.faint}"
+    },
+    "num.active": {
+      "$value": "{color.accent.primary}"
+    },
+    "title.idle": {
+      "$value": "{color.text.tertiary}"
+    },
+    "title.active": {
+      "$value": "{color.text.primary}"
+    },
+    "advance": {
+      "$value": "{motion.stepper.advance}"
+    },
+    "height": {
+      "$value": "{motion.stepper.height}"
+    }
+  }
+}

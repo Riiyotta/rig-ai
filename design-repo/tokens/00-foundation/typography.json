@@ -1,0 +1,655 @@
+{
+  "$description": "Font families/sizes/weights/line-heights/letter-spacing, verbatim from CSS.",
+  "fontFamily": {
+    "display": {
+      "$type": "fontFamily",
+      "$value": "Chalet, Inter, sans-serif",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          158,
+          158
+        ],
+        "anchor": "font-family: Chalet, Inter, sans-serif;"
+      },
+      "note": "hero h1, CTA h2, .display"
+    },
+    "chalet": {
+      "$type": "fontFamily",
+      "$value": "Chalet, sans-serif",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          429,
+          429
+        ],
+        "anchor": "font-family: Chalet, sans-serif;"
+      },
+      "note": "other Chalet headings; Chalet ships ONLY a 400 face"
+    },
+    "sans": {
+      "$type": "fontFamily",
+      "$value": "\"Instrument Sans\", system-ui, sans-serif",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          136,
+          136
+        ],
+        "anchor": "font-family: \"Instrument Sans\", system-ui, sans-serif;"
+      },
+      "note": "body; variable 400-700"
+    },
+    "mono": {
+      "$type": "fontFamily",
+      "$value": "\"Chivo Mono\", monospace",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          155,
+          155
+        ],
+        "anchor": "font-family: \"Chivo Mono\", monospace;"
+      },
+      "note": "labels/buttons/code; variable 400-800"
+    },
+    "pixel": {
+      "$type": "fontFamily",
+      "$value": "\"Geist Pixel Square\", monospace",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          102,
+          102
+        ],
+        "anchor": "font-family: \"Geist Pixel Square\", monospace;"
+      },
+      "note": "hero ticker ONLY"
+    },
+    "system-mono": {
+      "$type": "fontFamily",
+      "$value": "monospace",
+      "source": {
+        "path": "src/styles/get-started.css",
+        "lines": [
+          36,
+          36
+        ],
+        "anchor": "font-family: monospace;"
+      },
+      "note": ".step-number, .stack-group h4, .cli-note first span"
+    }
+  },
+  "fontSize": {
+    "hero": {
+      "$type": "fontSize",
+      "$value": "clamp(3.5rem, 8vw, 7rem)",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          70,
+          70
+        ],
+        "anchor": "font-size: clamp(3.5rem, 8vw, 7rem);"
+      },
+      "note": "112px @1440, 102.4 @1280"
+    },
+    "hero-mobile": {
+      "$type": "fontSize",
+      "$value": "clamp(3.5rem, 12vw, 7rem)",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          163,
+          163
+        ],
+        "anchor": "font-size: clamp(3.5rem, 12vw, 7rem);"
+      },
+      "note": "<=768"
+    },
+    "cta": {
+      "$type": "fontSize",
+      "$value": "clamp(4rem, 8vw, 7rem)",
+      "source": {
+        "path": "src/styles/cta.css",
+        "lines": [
+          97,
+          97
+        ],
+        "anchor": "font-size: clamp(4rem, 8vw, 7rem);"
+      }
+    },
+    "cta-mobile": {
+      "$type": "fontSize",
+      "$value": "clamp(2.5rem, 8vw, 7rem)",
+      "source": {
+        "path": "src/styles/cta.css",
+        "lines": [
+          122,
+          122
+        ],
+        "anchor": "font-size: clamp(2.5rem, 8vw, 7rem);"
+      }
+    },
+    "section-xl": {
+      "$type": "fontSize",
+      "$value": "clamp(3rem, 5vw, 4.5rem)",
+      "source": {
+        "path": "src/styles/problem.css",
+        "lines": [
+          22,
+          22
+        ],
+        "anchor": "font-size: clamp(3rem, 5vw, 4.5rem);"
+      },
+      "note": "problem headline + intro title"
+    },
+    "section-setup": {
+      "$type": "fontSize",
+      "$value": "clamp(2.5rem, 5vw, 4rem)",
+      "source": {
+        "path": "src/styles/get-started.css",
+        "lines": [
+          18,
+          18
+        ],
+        "anchor": "font-size: clamp(2.5rem, 5vw, 4rem);"
+      }
+    },
+    "section-evidence": {
+      "$type": "fontSize",
+      "$value": "clamp(2.2rem, 4.5vw, 3.6rem)",
+      "source": {
+        "path": "src/styles/difference.css",
+        "lines": [
+          21,
+          21
+        ],
+        "anchor": "font-size: clamp(2.2rem, 4.5vw, 3.6rem);"
+      }
+    },
+    "section-benefits": {
+      "$type": "fontSize",
+      "$value": "clamp(2.5rem, 5vw, 3.5rem)",
+      "source": {
+        "path": "src/styles/benefits.css",
+        "lines": [
+          35,
+          35
+        ],
+        "anchor": "font-size: clamp(2.5rem, 5vw, 3.5rem);"
+      }
+    },
+    "section-title": {
+      "$type": "fontSize",
+      "$value": "clamp(2.5rem, 4vw, 3.5rem)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          430,
+          430
+        ],
+        "anchor": "font-size: clamp(2.5rem, 4vw, 3.5rem);"
+      },
+      "note": ".section-title (how, faq)"
+    },
+    "heading-step": {
+      "$type": "fontSize",
+      "$value": "clamp(1.5rem, 2.5vw, 2rem)",
+      "source": {
+        "path": "src/styles/how-it-works.css",
+        "lines": [
+          119,
+          119
+        ],
+        "anchor": "font-size: clamp(1.5rem, 2.5vw, 2rem);"
+      },
+      "note": "how-step h3, three-col heading"
+    },
+    "heading-walkthrough": {
+      "$type": "fontSize",
+      "$value": "clamp(1.5rem, 2.4vw, 2rem)",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          82,
+          82
+        ],
+        "anchor": "500 clamp(1.5rem, 2.4vw, 2rem) / 1.18 \"Instrument Sans\","
+      },
+      "note": "Instrument Sans 500 (not Chalet)"
+    },
+    "heading-setup-step": {
+      "$type": "fontSize",
+      "$value": "clamp(1.3rem, 2vw, 1.65rem)",
+      "source": {
+        "path": "src/styles/get-started.css",
+        "lines": [
+          44,
+          44
+        ],
+        "anchor": "font-size: clamp(1.3rem, 2vw, 1.65rem);"
+      }
+    },
+    "heading-evidence-point": {
+      "$type": "fontSize",
+      "$value": "1.5rem",
+      "source": {
+        "path": "src/styles/difference.css",
+        "lines": [
+          214,
+          214
+        ],
+        "anchor": "font-size: 1.5rem;"
+      }
+    },
+    "heading-card": {
+      "$type": "fontSize",
+      "$value": "1.35rem",
+      "source": {
+        "path": "src/styles/problem.css",
+        "lines": [
+          72,
+          72
+        ],
+        "anchor": "font-size: 1.35rem;"
+      }
+    },
+    "faq-question": {
+      "$type": "fontSize",
+      "$value": "1.2rem",
+      "source": {
+        "path": "src/styles/faq.css",
+        "lines": [
+          43,
+          43
+        ],
+        "anchor": "font-size: 1.2rem;"
+      }
+    },
+    "stack-heading": {
+      "$type": "fontSize",
+      "$value": "1.1rem",
+      "source": {
+        "path": "src/styles/get-started.css",
+        "lines": [
+          77,
+          77
+        ],
+        "anchor": "font-size: 1.1rem;"
+      }
+    },
+    "lead": {
+      "$type": "fontSize",
+      "$value": "1.5rem",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          77,
+          77
+        ],
+        "anchor": "font-size: 1.5rem;"
+      },
+      "note": "hero sub, Instrument Sans 600"
+    },
+    "cta-button": {
+      "$type": "fontSize",
+      "$value": "1.3rem",
+      "source": {
+        "path": "src/styles/cta.css",
+        "lines": [
+          83,
+          83
+        ],
+        "anchor": "font-size: 1.3rem;"
+      }
+    },
+    "body-lg": {
+      "$type": "fontSize",
+      "$value": "1.05rem",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          38,
+          38
+        ],
+        "anchor": "font-size: 1.05rem;"
+      }
+    },
+    "body": {
+      "$type": "fontSize",
+      "$value": "1rem",
+      "source": {
+        "path": "src/styles/difference.css",
+        "lines": [
+          29,
+          29
+        ],
+        "anchor": "font-size: 1rem;"
+      }
+    },
+    "body-sm": {
+      "$type": "fontSize",
+      "$value": "0.9rem",
+      "source": {
+        "path": "src/styles/faq.css",
+        "lines": [
+          74,
+          74
+        ],
+        "anchor": "font-size: 0.9rem;"
+      }
+    },
+    "body-xs": {
+      "$type": "fontSize",
+      "$value": "0.85rem",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          214,
+          214
+        ],
+        "anchor": "font-size: 0.85rem;"
+      },
+      "note": ".btn-chamfer"
+    },
+    "card-body": {
+      "$type": "fontSize",
+      "$value": "0.8rem",
+      "source": {
+        "path": "src/styles/problem.css",
+        "lines": [
+          78,
+          78
+        ],
+        "anchor": "font-size: 0.8rem;"
+      }
+    },
+    "ticker": {
+      "$type": "fontSize",
+      "$value": "0.8rem",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          103,
+          103
+        ],
+        "anchor": "font-size: 0.8rem;"
+      }
+    },
+    "label": {
+      "$type": "fontSize",
+      "$value": "0.75rem",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          436,
+          436
+        ],
+        "anchor": "font-size: 0.75rem;"
+      },
+      "note": ".mono-label / .badge"
+    },
+    "label-sm": {
+      "$type": "fontSize",
+      "$value": "0.7rem",
+      "source": {
+        "path": "src/styles/faq.css",
+        "lines": [
+          37,
+          37
+        ],
+        "anchor": "font-size: 0.7rem;"
+      }
+    },
+    "label-xs": {
+      "$type": "fontSize",
+      "$value": "0.65rem",
+      "source": {
+        "path": "src/styles/problem.css",
+        "lines": [
+          61,
+          61
+        ],
+        "anchor": "font-size: 0.65rem;"
+      }
+    },
+    "label-2xs": {
+      "$type": "fontSize",
+      "$value": "0.6rem",
+      "source": {
+        "path": "src/styles/problem.css",
+        "lines": [
+          67,
+          67
+        ],
+        "anchor": "font-size: 0.6rem;"
+      }
+    }
+  },
+  "fontWeight": {
+    "heading": {
+      "$type": "fontWeight",
+      "$value": "700",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          150,
+          150
+        ],
+        "anchor": "font-weight: 700;"
+      },
+      "note": "h1-h3; Chalet renders SYNTHESIZED bold (400-only face). Must be set explicitly (preflight off)."
+    },
+    "button": {
+      "$type": "fontWeight",
+      "$value": "700",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          150,
+          150
+        ],
+        "anchor": "font-weight: 700;"
+      },
+      "note": ".btn-chamfer"
+    },
+    "lead": {
+      "$type": "fontWeight",
+      "$value": "600",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          78,
+          78
+        ],
+        "anchor": "font-weight: 600;"
+      }
+    },
+    "medium": {
+      "$type": "fontWeight",
+      "$value": "500",
+      "source": {
+        "path": "src/styles/difference.css",
+        "lines": [
+          181,
+          181
+        ],
+        "anchor": "font-weight: 500;"
+      },
+      "note": "panel-result strong; walkthrough h3 also 500"
+    },
+    "regular": {
+      "$type": "fontWeight",
+      "$value": "400",
+      "source": {
+        "path": "src/styles/get-started.css",
+        "lines": [
+          92,
+          92
+        ],
+        "anchor": "font-weight: 400;"
+      },
+      "note": "stack-group h4; FAQ question text (span) stays Chalet 400"
+    }
+  },
+  "lineHeight": {
+    "hero": {
+      "$type": "lineHeight",
+      "$value": "0.88",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          71,
+          71
+        ],
+        "anchor": "line-height: 0.88;"
+      }
+    },
+    "cta": {
+      "$type": "lineHeight",
+      "$value": "0.9",
+      "source": {
+        "path": "src/styles/cta.css",
+        "lines": [
+          98,
+          98
+        ],
+        "anchor": "line-height: 0.9;"
+      }
+    },
+    "section-title": {
+      "$type": "lineHeight",
+      "$value": "0.92",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          431,
+          431
+        ],
+        "anchor": "line-height: 0.92;"
+      }
+    },
+    "intro-title": {
+      "$type": "lineHeight",
+      "$value": "0.96",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          31,
+          31
+        ],
+        "anchor": "line-height: 0.96;"
+      }
+    },
+    "body": {
+      "$type": "lineHeight",
+      "$value": "1.6",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          82,
+          82
+        ],
+        "anchor": "line-height: 1.6;"
+      }
+    },
+    "body-relaxed": {
+      "$type": "lineHeight",
+      "$value": "1.7",
+      "source": {
+        "path": "src/styles/difference.css",
+        "lines": [
+          30,
+          30
+        ],
+        "anchor": "line-height: 1.7;"
+      }
+    }
+  },
+  "letterSpacing": {
+    "display": {
+      "$type": "letterSpacing",
+      "$value": "-0.03em",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          159,
+          159
+        ],
+        "anchor": "letter-spacing: -0.03em;"
+      }
+    },
+    "display-heavy": {
+      "$type": "letterSpacing",
+      "$value": "-0.02em",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          163,
+          163
+        ],
+        "anchor": "letter-spacing: -0.02em;"
+      }
+    },
+    "badge": {
+      "$type": "letterSpacing",
+      "$value": "0.12em",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          422,
+          422
+        ],
+        "anchor": "letter-spacing: 0.12em;"
+      }
+    },
+    "mono-label": {
+      "$type": "letterSpacing",
+      "$value": "0.15em",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          438,
+          438
+        ],
+        "anchor": "letter-spacing: 0.15em;"
+      }
+    },
+    "ticker": {
+      "$type": "letterSpacing",
+      "$value": "0.1em",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          106,
+          106
+        ],
+        "anchor": "letter-spacing: 0.1em;"
+      }
+    },
+    "nav-cta": {
+      "$type": "letterSpacing",
+      "$value": "0.05em",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          30,
+          30
+        ],
+        "anchor": "letter-spacing: 0.05em;"
+      }
+    }
+  },
+  "fontFiles": {
+    "$note": "Local woff2 under public/assets/fonts/ (not shipped in this package).",
+    "source": {
+      "path": "src/index.css",
+      "lines": [
+        17,
+        17
+      ],
+      "anchor": "src: url(/assets/fonts/chalet_londonnineteensixty.woff2) format(\"woff2\");"
+    }
+  }
+}

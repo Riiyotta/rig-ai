@@ -1,0 +1,399 @@
+{
+  "$description": "Durations, easings, loops and observer thresholds. QA-verified corrections are noted inline.",
+  "motion": {
+    "button-transition": {
+      "$type": "transition",
+      "$value": "all 0.2s cubic-bezier(0.25, 1, 0.5, 1)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          219,
+          219
+        ],
+        "anchor": "transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);"
+      }
+    },
+    "button-glitch": {
+      "$type": "animation",
+      "$value": "btn-glitch 0.3s ease-in-out",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          242,
+          242
+        ],
+        "anchor": "animation: btn-glitch 0.3s ease-in-out;"
+      },
+      "note": "hover only"
+    },
+    "faq-disclosure": {
+      "$type": "transition",
+      "$value": "grid-template-rows 0.3s ease",
+      "source": {
+        "path": "src/styles/faq.css",
+        "lines": [
+          62,
+          62
+        ],
+        "anchor": "transition: grid-template-rows 0.3s ease;"
+      },
+      "note": "QA-verified; opening animates, native <details> closes instantly"
+    },
+    "faq-chevron": {
+      "$type": "transition",
+      "$value": "transform 0.3s ease",
+      "source": {
+        "path": "src/styles/faq.css",
+        "lines": [
+          52,
+          52
+        ],
+        "anchor": "transform 0.3s ease,"
+      }
+    },
+    "link-color": {
+      "$type": "transition",
+      "$value": "color 0.2s",
+      "source": {
+        "path": "src/styles/footer.css",
+        "lines": [
+          43,
+          43
+        ],
+        "anchor": "transition: color 0.2s;"
+      }
+    },
+    "step-copy-fade": {
+      "$type": "transition",
+      "$value": "opacity 0.3s ease",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          67,
+          67
+        ],
+        "anchor": "transition: opacity 0.3s ease;"
+      }
+    },
+    "how-body-reveal": {
+      "$type": "transition",
+      "$value": "grid-template-rows 0.4s ease",
+      "source": {
+        "path": "src/styles/how-it-works.css",
+        "lines": [
+          132,
+          132
+        ],
+        "anchor": "grid-template-rows 0.4s ease,"
+      }
+    },
+    "how-height-tween": {
+      "$type": "duration+easing",
+      "$value": "duration: 400, easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)'",
+      "source": {
+        "path": "src/components/how-it-works/useHowStepper.js",
+        "lines": [
+          70,
+          70
+        ],
+        "anchor": "{ duration: 400, easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)' },"
+      },
+      "note": "QA-verified 0.4s; original Motion animate()"
+    },
+    "how-step-duration": {
+      "$type": "animation",
+      "$value": "howProgressFill 6s linear forwards",
+      "source": {
+        "path": "src/styles/how-it-works.css",
+        "lines": [
+          88,
+          88
+        ],
+        "anchor": "animation: howProgressFill 6s linear forwards;"
+      },
+      "note": "auto-advance every 6s; NOT disabled under reduced motion (QA-verified)"
+    },
+    "walkthrough-step-ms": {
+      "$type": "duration",
+      "$value": "1e4",
+      "source": {
+        "path": "src/components/intro-rig/useWalkthrough.js",
+        "lines": [
+          26,
+          26
+        ],
+        "anchor": "const STEP_MS = 1e4"
+      },
+      "note": "10s per walkthrough step"
+    },
+    "walkthrough-phase": {
+      "$type": "duration",
+      "$value": "1800",
+      "source": {
+        "path": "src/components/intro-rig/useWalkthrough.js",
+        "lines": [
+          73,
+          73
+        ],
+        "anchor": "const phase = elapsed < 1800 ? 0 : elapsed < 3600 ? 1 : elapsed < 5400 ? 2 : 3"
+      },
+      "note": "1.8s sub-phases"
+    },
+    "ticker-speed": {
+      "$type": "rate",
+      "$value": "/ 30",
+      "source": {
+        "path": "src/components/Hero.jsx",
+        "lines": [
+          77,
+          77
+        ],
+        "anchor": "group.getBoundingClientRect().width / 30"
+      },
+      "note": "30 px/s; duration = groupWidth/30 s"
+    },
+    "funnel-loop": {
+      "$type": "animation",
+      "$value": "12s",
+      "source": {
+        "path": "src/components/problem/review-funnel.css",
+        "lines": [
+          79,
+          79
+        ],
+        "anchor": "animation: queue-build 12s var(--delay) infinite;"
+      }
+    },
+    "flow-loop-a": {
+      "$type": "duration",
+      "$value": "14s",
+      "source": {
+        "path": "src/components/cta/flowPaths.js",
+        "lines": [
+          7,
+          7
+        ],
+        "anchor": "duration: \"14s\","
+      }
+    },
+    "flow-loop-b": {
+      "$type": "duration",
+      "$value": "16s",
+      "source": {
+        "path": "src/components/cta/flowPaths.js",
+        "lines": [
+          12,
+          12
+        ],
+        "anchor": "duration: \"16s\","
+      }
+    },
+    "flow-loop-c": {
+      "$type": "duration",
+      "$value": "18s",
+      "source": {
+        "path": "src/components/cta/flowPaths.js",
+        "lines": [
+          17,
+          17
+        ],
+        "anchor": "duration: \"18s\","
+      }
+    },
+    "watermark-glitch": {
+      "$type": "animation",
+      "$value": "watermark-glitch 4s infinite linear",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          142,
+          142
+        ],
+        "anchor": "animation: watermark-glitch 4s infinite linear;"
+      }
+    },
+    "grain-seed": {
+      "$type": "duration",
+      "$value": "10s",
+      "source": {
+        "path": "src/components/Overlays.jsx",
+        "lines": [
+          20,
+          20
+        ],
+        "anchor": "dur=\"10s\""
+      }
+    },
+    "glow-pulse": {
+      "$type": "animation",
+      "$value": "hdr-glow-pulse 3s ease-in-out infinite",
+      "source": {
+        "path": "src/styles/cta.css",
+        "lines": [
+          52,
+          52
+        ],
+        "anchor": "animation: hdr-glow-pulse 3s ease-in-out infinite;"
+      }
+    },
+    "glitch-text-a": {
+      "$type": "animation",
+      "$value": "glitch-subtle-1 5s infinite linear alternate-reverse",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          311,
+          311
+        ],
+        "anchor": "animation: glitch-subtle-1 5s infinite linear alternate-reverse;"
+      }
+    },
+    "glitch-text-b": {
+      "$type": "animation",
+      "$value": "glitch-subtle-2 4.5s infinite linear alternate-reverse",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          318,
+          318
+        ],
+        "anchor": "animation: glitch-subtle-2 4.5s infinite linear alternate-reverse;"
+      }
+    },
+    "status-blink": {
+      "$type": "animation",
+      "$value": "blink 1.5s step-end infinite",
+      "source": {
+        "path": "src/styles/footer.css",
+        "lines": [
+          70,
+          70
+        ],
+        "anchor": "animation: blink 1.5s step-end infinite;"
+      }
+    },
+    "chat-progress": {
+      "$type": "animation",
+      "$value": "chat-progress 2.5s ease-in-out infinite",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          443,
+          443
+        ],
+        "anchor": "animation: chat-progress 2.5s ease-in-out infinite;"
+      }
+    },
+    "thinking-dot": {
+      "$type": "animation",
+      "$value": "thinking-dot 1.1s ease-in-out infinite",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          493,
+          493
+        ],
+        "anchor": "animation: thinking-dot 1.1s ease-in-out infinite;"
+      }
+    },
+    "scene-reveal": {
+      "$type": "animation",
+      "$value": "scene-reveal 0.35s ease both",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          503,
+          503
+        ],
+        "anchor": "animation: scene-reveal 0.35s ease both;"
+      }
+    },
+    "fix-reveal": {
+      "$type": "animation",
+      "$value": "fix-reveal 1s ease both",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          272,
+          272
+        ],
+        "anchor": "animation: fix-reveal 1s ease both;"
+      }
+    },
+    "schematic-discover": {
+      "$type": "animation",
+      "$value": "discover 3s ease-in-out infinite",
+      "source": {
+        "path": "src/styles/how-it-works.css",
+        "lines": [
+          263,
+          263
+        ],
+        "anchor": "animation: discover 3s ease-in-out infinite;"
+      }
+    },
+    "schematic-route": {
+      "$type": "animation",
+      "$value": "map-route 3s ease-out both",
+      "source": {
+        "path": "src/styles/how-it-works.css",
+        "lines": [
+          270,
+          270
+        ],
+        "anchor": "animation: map-route 3s ease-out both;"
+      }
+    },
+    "schematic-data": {
+      "$type": "animation",
+      "$value": "track-data 3s linear infinite",
+      "source": {
+        "path": "src/styles/how-it-works.css",
+        "lines": [
+          287,
+          287
+        ],
+        "anchor": "animation: track-data 3s linear infinite;"
+      }
+    },
+    "io-global": {
+      "$type": "observer",
+      "$value": "rootMargin = '200px 0px'",
+      "source": {
+        "path": "src/hooks/useInView.js",
+        "lines": [
+          38,
+          38
+        ],
+        "anchor": "const { threshold = 0, rootMargin = '200px 0px', className = 'is-visible' } = options"
+      },
+      "note": "threshold 0; toggles .is-visible"
+    },
+    "io-walkthrough": {
+      "$type": "observer",
+      "$value": "threshold: 0.35",
+      "source": {
+        "path": "src/components/IntroRig.jsx",
+        "lines": [
+          81,
+          81
+        ],
+        "anchor": "threshold: 0.35"
+      },
+      "note": "play gate 35% visibility"
+    },
+    "io-stepper": {
+      "$type": "observer",
+      "$value": "threshold: 0.1",
+      "source": {
+        "path": "src/components/HowItWorks.jsx",
+        "lines": [
+          45,
+          45
+        ],
+        "anchor": "threshold: 0.1"
+      },
+      "note": "stepper gate 10% visibility"
+    }
+  }
+}

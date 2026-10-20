@@ -1,0 +1,60 @@
+{
+  "id": "button-chamfer",
+  "kind": "primitive",
+  "purpose": "Chamfered CTA button (14px corner cuts top-left + bottom-right). Variants: dark (nav/hero), cta (bottom CTA, large).",
+  "tokens": [
+    "button.chamfer.clip",
+    "button.padding",
+    "button.font",
+    "button.transition",
+    "button.dark.bg",
+    "button.cta.bg",
+    "elevation.shadow-cta-glow"
+  ],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": [
+        207,
+        228
+      ],
+      "anchor": ".btn-chamfer {"
+    },
+    {
+      "path": "src/index.css",
+      "lines": [
+        248,
+        257
+      ],
+      "anchor": ".btn-dark:hover {"
+    },
+    {
+      "path": "src/styles/cta.css",
+      "lines": [
+        81,
+        89
+      ],
+      "anchor": ".cta-section .cta-btn {"
+    }
+  ],
+  "usedBy": [
+    "hero.headline-ticker",
+    "conversion.cta-glitch"
+  ],
+  "variants": {
+    "dark": {
+      "bg": "color.surface.page",
+      "fg": "color.text.primary",
+      "hover": "btn-glitch 0.3s + RGB text-shadow (box-shadow clipped, invisible)"
+    },
+    "cta": {
+      "bg": "color.accent.primary",
+      "fg": "color.surface.page",
+      "size": "500x88.5 >=1280; 59px tall <=768 (QA-verified)",
+      "hover": "btn-glitch + text-shadow; box-shadow STAYS 0 0 40px primary-glow (the .btn-cta:hover 4px secondary shadow is overridden, QA-verified)"
+    }
+  },
+  "states": {
+    "focusVisible": "2px solid accent.primary, offset 2px"
+  }
+}

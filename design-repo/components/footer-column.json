@@ -1,0 +1,34 @@
+{
+  "id": "footer-column",
+  "kind": "component",
+  "purpose": "Mono-label heading (paper-40) over an unstyled list of text links.",
+  "composes": [
+    "mono-label",
+    "text-link"
+  ],
+  "tokens": [
+    "footer.heading",
+    "footer.link"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/footer.css",
+      "lines": [
+        29,
+        32
+      ],
+      "anchor": ".footer-col h3 {"
+    },
+    {
+      "path": "src/components/Footer.jsx",
+      "lines": [
+        24,
+        24
+      ],
+      "anchor": "<div className=\"footer-col\">"
+    }
+  ],
+  "usedBy": [
+    "shell.footer"
+  ]
+}

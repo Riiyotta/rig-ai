@@ -1,0 +1,34 @@
+{
+  "id": "glitch-heading",
+  "kind": "component",
+  "purpose": "Heading with ::before/::after copies (content: attr(data-text)) whose clip rects animate 5s / 4.5s alternate-reverse; data-text must equal the heading text.",
+  "composes": [
+    "display-heading"
+  ],
+  "tokens": [
+    "typography.display.cta",
+    "motion.glitch-text-a",
+    "motion.glitch-text-b"
+  ],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": [
+        293,
+        296
+      ],
+      "anchor": ".glitch-text {"
+    },
+    {
+      "path": "src/components/Cta.jsx",
+      "lines": [
+        92,
+        92
+      ],
+      "anchor": "data-text=\"Ship Confidently\""
+    }
+  ],
+  "usedBy": [
+    "conversion.cta-glitch"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "schematic-card",
+  "kind": "component",
+  "purpose": "Right-hand illustration panel (min-height 680/500/400) showing one 400x380 schematic per active step; height tweens 0.4s.",
+  "composes": [],
+  "tokens": [
+    "stepper.height",
+    "color.border.default"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/how-it-works.css",
+      "lines": [
+        152,
+        163
+      ],
+      "anchor": ".how-section .how-illustration {"
+    }
+  ],
+  "usedBy": [
+    "steps.stepper"
+  ],
+  "assetRole": "illustration.schematic"
+}

@@ -1,0 +1,251 @@
+{
+  "version": "1.0.0",
+  "$description": "Closed list of what a generator may instantiate and set. verify_all.py checks parity with sections/, primitives/, components/ and with the schema's node properties.",
+  "nodeSettableProps": [
+    "id",
+    "section",
+    "region",
+    "surface",
+    "content",
+    "motion"
+  ],
+  "sections": [
+    {
+      "id": "chrome.overlays",
+      "contentFields": [],
+      "allowedPatterns": [
+        "film-grain-overlay",
+        "none"
+      ],
+      "assetRoles": []
+    },
+    {
+      "id": "hero.headline-ticker",
+      "contentFields": [
+        "headlineLines",
+        "navCta",
+        "navLogo",
+        "primaryCta",
+        "subhead",
+        "ticker",
+        "watermark"
+      ],
+      "allowedPatterns": [
+        "ticker-marquee",
+        "none"
+      ],
+      "assetRoles": [
+        "brand.wordmark",
+        "brand.mark",
+        "editorial.news-headline"
+      ]
+    },
+    {
+      "id": "problem.funnel-cards",
+      "contentFields": [
+        "cards",
+        "eyebrow",
+        "headline",
+        "illustration"
+      ],
+      "allowedPatterns": [
+        "review-funnel-loop",
+        "none"
+      ],
+      "assetRoles": [
+        "decor.badge-glyph",
+        "illustration.review-funnel"
+      ]
+    },
+    {
+      "id": "feature.walkthrough",
+      "contentFields": [
+        "demo",
+        "description",
+        "eyebrow",
+        "steps",
+        "titleLines"
+      ],
+      "allowedPatterns": [
+        "walkthrough-autoplay",
+        "none"
+      ],
+      "assetRoles": [
+        "illustration.product-demo"
+      ]
+    },
+    {
+      "id": "comparison.evidence",
+      "contentFields": [
+        "eyebrow",
+        "intro",
+        "panels",
+        "points",
+        "titleLines"
+      ],
+      "allowedPatterns": [
+        "none"
+      ],
+      "assetRoles": [
+        "decor.badge-glyph"
+      ]
+    },
+    {
+      "id": "steps.stepper",
+      "contentFields": [
+        "body",
+        "eyebrow",
+        "steps",
+        "title"
+      ],
+      "allowedPatterns": [
+        "stepper-autoadvance",
+        "none"
+      ],
+      "assetRoles": [
+        "decor.badge-glyph",
+        "illustration.schematic"
+      ]
+    },
+    {
+      "id": "benefits.funnel-split",
+      "contentFields": [
+        "body",
+        "columns",
+        "eyebrow",
+        "headline",
+        "illustration"
+      ],
+      "allowedPatterns": [
+        "review-funnel-loop",
+        "none"
+      ],
+      "assetRoles": [
+        "decor.badge-glyph",
+        "illustration.review-funnel"
+      ]
+    },
+    {
+      "id": "setup.steps-stack",
+      "contentFields": [
+        "cliNote",
+        "eyebrow",
+        "stackGroups",
+        "stackHeading",
+        "steps",
+        "titleLines"
+      ],
+      "allowedPatterns": [
+        "none"
+      ],
+      "assetRoles": [
+        "decor.badge-glyph",
+        "thirdparty.tool-logo"
+      ]
+    },
+    {
+      "id": "faq.accordion",
+      "contentFields": [
+        "eyebrow",
+        "items",
+        "title"
+      ],
+      "allowedPatterns": [
+        "disclosure-grid-rows",
+        "none"
+      ],
+      "assetRoles": [
+        "decor.badge-glyph"
+      ]
+    },
+    {
+      "id": "conversion.cta-glitch",
+      "contentFields": [
+        "backdrop",
+        "cta",
+        "heading",
+        "mark"
+      ],
+      "allowedPatterns": [
+        "cta-flow-glow-glitch",
+        "none"
+      ],
+      "assetRoles": [
+        "brand.mark",
+        "decor.wave-grid"
+      ]
+    },
+    {
+      "id": "shell.footer",
+      "contentFields": [
+        "columns",
+        "copyright",
+        "logo",
+        "logoHref",
+        "status",
+        "taglineLines"
+      ],
+      "allowedPatterns": [
+        "status-blink",
+        "none"
+      ],
+      "assetRoles": [
+        "brand.logo"
+      ]
+    }
+  ],
+  "primitives": [
+    "badge-eyebrow",
+    "body-text",
+    "button-chamfer",
+    "chevron-icon",
+    "display-heading",
+    "mono-label",
+    "pixel-glyph",
+    "section-divider",
+    "status-indicator",
+    "text-link"
+  ],
+  "components": [
+    "comparison-panel",
+    "evidence-point",
+    "faq-item",
+    "film-grain-overlays",
+    "footer-column",
+    "glitch-heading",
+    "how-step",
+    "news-ticker",
+    "problem-card",
+    "product-demo",
+    "review-funnel",
+    "schematic-card",
+    "setup-step",
+    "stack-group",
+    "three-col-cell",
+    "walkthrough-controls"
+  ],
+  "assetRoles": [
+    "brand.logo",
+    "brand.mark",
+    "brand.wordmark",
+    "decor.badge-glyph",
+    "decor.wave-grid",
+    "editorial.news-headline",
+    "illustration.product-demo",
+    "illustration.review-funnel",
+    "illustration.schematic",
+    "meta.og-image",
+    "thirdparty.tool-logo"
+  ],
+  "motionPatterns": [
+    "cta-flow-glow-glitch",
+    "disclosure-grid-rows",
+    "film-grain-overlay",
+    "none",
+    "review-funnel-loop",
+    "status-blink",
+    "stepper-autoadvance",
+    "ticker-marquee",
+    "walkthrough-autoplay"
+  ]
+}

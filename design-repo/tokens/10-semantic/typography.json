@@ -1,0 +1,62 @@
+{
+  "$description": "Semantic type roles -> foundation refs.",
+  "typography": {
+    "display.hero": {
+      "family": "{fontFamily.display}",
+      "size": "{fontSize.hero}",
+      "weight": "{fontWeight.heading}",
+      "lineHeight": "{lineHeight.hero}"
+    },
+    "display.cta": {
+      "family": "{fontFamily.display}",
+      "size": "{fontSize.cta}",
+      "weight": "{fontWeight.heading}",
+      "lineHeight": "{lineHeight.cta}",
+      "letterSpacing": "{letterSpacing.display}"
+    },
+    "display.section": {
+      "family": "{fontFamily.chalet}",
+      "size": "{fontSize.section-title}",
+      "weight": "{fontWeight.heading}",
+      "lineHeight": "{lineHeight.section-title}",
+      "letterSpacing": "{letterSpacing.display}"
+    },
+    "heading.card": {
+      "family": "{fontFamily.chalet}",
+      "size": "{fontSize.heading-card}",
+      "weight": "{fontWeight.heading}",
+      "letterSpacing": "{letterSpacing.display-heavy}"
+    },
+    "body.lead": {
+      "family": "{fontFamily.sans}",
+      "size": "{fontSize.lead}",
+      "weight": "{fontWeight.lead}",
+      "lineHeight": "{lineHeight.body}"
+    },
+    "body.default": {
+      "family": "{fontFamily.sans}",
+      "size": "{fontSize.body}",
+      "lineHeight": "{lineHeight.body-relaxed}"
+    },
+    "label.eyebrow": {
+      "family": "{fontFamily.mono}",
+      "size": "{fontSize.label}",
+      "letterSpacing": "{letterSpacing.badge}"
+    },
+    "label.mono": {
+      "family": "{fontFamily.mono}",
+      "size": "{fontSize.label}",
+      "letterSpacing": "{letterSpacing.mono-label}"
+    },
+    "label.ticker": {
+      "family": "{fontFamily.pixel}",
+      "size": "{fontSize.ticker}",
+      "letterSpacing": "{letterSpacing.ticker}"
+    },
+    "button.label": {
+      "family": "{fontFamily.mono}",
+      "size": "{fontSize.body-xs}",
+      "weight": "{fontWeight.button}"
+    }
+  }
+}

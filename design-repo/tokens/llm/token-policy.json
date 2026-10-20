@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "pageSpecTokenFields": {
+    "node.surface": {
+      "enforced": true,
+      "rule": "SURFACE_TOKEN_PINNED",
+      "allowed": "tokens/llm/token-catalog.json#surfaces, pinned per section (sections/<id>.json surfaceToken)"
+    }
+  },
+  "overrides": "PageSpecs carry no other per-instance style/token override field. All other styling is owned by section/component contracts.",
+  "rawValueRestrictions": {
+    "color": "Never emit raw values; reference the semantic role.",
+    "fontFamily": "Never emit raw values; reference the semantic role.",
+    "fontSize": "Never emit raw values; reference the semantic role.",
+    "fontWeight": "Never emit raw values; reference the semantic role.",
+    "lineHeight": "Never emit raw values; reference the semantic role.",
+    "letterSpacing": "Never emit raw values; reference the semantic role.",
+    "spacing": "Never emit raw values; reference the semantic role.",
+    "radius": "Never emit raw values; reference the semantic role.",
+    "elevation": "Never emit raw values; reference the semantic role.",
+    "motion": "Never emit raw values; reference the semantic role."
+  },
+  "rawValueRestrictionsNote": "Keys are the real category keys of the foundation token files (verify_all.py checks they resolve).",
+  "conventions": [
+    "Chalet headings require explicit font-weight 700 (synthesized bold).",
+    "No border-radius on marketing chrome; buttons use the 14px chamfer clip-path.",
+    "Single dark theme; hero is blue (accent.primary), never red (old HTML comments say RED hero - stale)."
+  ]
+}

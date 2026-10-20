@@ -1,0 +1,32 @@
+{
+  "id": "stack-group",
+  "kind": "component",
+  "purpose": "Labelled group of 24px tool logos with names (assetRole thirdparty.tool-logo - protected).",
+  "composes": [],
+  "tokens": [
+    "iconSize.stack-logo",
+    "color.text.body"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/get-started.css",
+      "lines": [
+        89,
+        98
+      ],
+      "anchor": ".stack-group h4 {"
+    },
+    {
+      "path": "src/styles/get-started.css",
+      "lines": [
+        113,
+        118
+      ],
+      "anchor": ".stack-item svg {"
+    }
+  ],
+  "usedBy": [
+    "setup.steps-stack"
+  ],
+  "assetRole": "thirdparty.tool-logo"
+}

@@ -1,0 +1,23 @@
+{
+  "$description": "Semantic motion roles -> foundation refs.",
+  "motion": {
+    "hover.glitch": {
+      "$value": "{motion.button-glitch}"
+    },
+    "disclosure.open": {
+      "$value": "{motion.faq-disclosure}"
+    },
+    "stepper.advance": {
+      "$value": "{motion.how-step-duration}"
+    },
+    "stepper.height": {
+      "$value": "{motion.how-height-tween}"
+    },
+    "walkthrough.step": {
+      "$value": "{motion.walkthrough-step-ms}"
+    },
+    "marquee.speed": {
+      "$value": "{motion.ticker-speed}"
+    }
+  }
+}

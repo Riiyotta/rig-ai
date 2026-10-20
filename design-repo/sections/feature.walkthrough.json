@@ -1,0 +1,212 @@
+{
+  "id": "feature.walkthrough",
+  "category": "feature",
+  "purpose": "Introduce the product through an auto-playing 4-step agent/Rig loop demo with synchronized step copy.",
+  "region": "main",
+  "surfaceToken": "color.surface.page",
+  "implementedBy": "src/components/IntroRig.jsx",
+  "componentsUsed": [
+    "product-demo",
+    "walkthrough-controls"
+  ],
+  "evidence": {
+    "code": [
+      {
+        "path": "src/components/IntroRig.jsx",
+        "lines": [
+          75,
+          115
+        ],
+        "anchor": "export default function IntroRig() {"
+      },
+      {
+        "path": "src/components/intro-rig/useWalkthrough.js",
+        "lines": [
+          90,
+          90
+        ],
+        "anchor": "step = (target + 4) % 4"
+      }
+    ],
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          242,
+          242
+        ],
+        "anchor": "## 3. \"Introducing Rig\""
+      }
+    ]
+  },
+  "content": {
+    "fieldRefsResolveIn": "schema/pagespec.schema.json (#/definitions/...)",
+    "additionalProperties": false,
+    "required": [
+      "eyebrow",
+      "titleLines",
+      "description",
+      "demo",
+      "steps"
+    ],
+    "fields": {
+      "eyebrow": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "titleLines": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1,
+        "maxItems": 2
+      },
+      "description": {
+        "type": "string",
+        "minLength": 1
+      },
+      "demo": {
+        "$ref": "#/definitions/media"
+      },
+      "steps": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "kicker": {
+              "type": "string",
+              "minLength": 1
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "body": {
+              "type": "string",
+              "minLength": 1
+            },
+            "marker": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "kicker",
+            "title",
+            "body",
+            "marker"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 4,
+        "maxItems": 4
+      }
+    },
+    "maxWords": {
+      "eyebrow.label": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 7 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "titleLines[]": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 2 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "description": {
+        "maxWords": 34,
+        "basis": "observed max 26 words over 1 instance(s) -> max(3, ceil(26*1.3))"
+      },
+      "demo.label": {
+        "maxWords": 28,
+        "basis": "observed max 21 words over 1 instance(s) -> max(3, ceil(21*1.3))"
+      },
+      "steps[].kicker": {
+        "maxWords": 6,
+        "basis": "observed max 4 words over 4 instance(s) -> max(3, ceil(4*1.3))"
+      },
+      "steps[].title": {
+        "maxWords": 12,
+        "basis": "observed max 9 words over 4 instance(s) -> max(3, ceil(9*1.3))"
+      },
+      "steps[].body": {
+        "maxWords": 38,
+        "basis": "observed max 29 words over 4 instance(s) -> max(3, ceil(29*1.3))"
+      },
+      "steps[].marker": {
+        "maxWords": 3,
+        "basis": "observed max 1 words over 4 instance(s) -> max(3, ceil(1*1.3))"
+      }
+    }
+  },
+  "observedCopy": {
+    "titleLines": [
+      "Automated Security",
+      "Inside the Loop"
+    ],
+    "description": "Rig checks the application when the coding agent finishes its work. Findings go straight back to the agent, while the code and context are still fresh.",
+    "steps": [
+      {
+        "kicker": "THE LOOP / 01",
+        "title": "The agent finishes a change. Rig starts a check.",
+        "body": "Rig connects to the agent’s completion hook. The check starts automatically, without a developer remembering to run a scan.",
+        "marker": "Hook"
+      },
+      {
+        "kicker": "THE LOOP / 02",
+        "title": "Rig tests the running application.",
+        "body": "Rig runs the application locally and tracks how input moves through its code. It confirms a vulnerable execution path before reporting a finding.",
+        "marker": "Test"
+      },
+      {
+        "kicker": "THE LOOP / 03",
+        "title": "The agent gets evidence and fix instructions.",
+        "body": "Each finding identifies the code location, explains the vulnerability, and gives the agent guidance for fixing it. The same agent working on the feature can act on that feedback.",
+        "marker": "Fix"
+      },
+      {
+        "kicker": "THE LOOP / 04",
+        "title": "Rig checks the updated code.",
+        "body": "After the agent makes a fix, Rig retests the reported vulnerability. The result shows whether the check passed, the issue remains, or testing could not complete.",
+        "marker": "Retest"
+      }
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "walkthrough-autoplay",
+      "none"
+    ],
+    "primaryPattern": "walkthrough-autoplay",
+    "reducedMotionFallbacks": {
+      "walkthrough-autoplay": "walkthrough-manual-full-scenes",
+      "none": "none"
+    }
+  },
+  "assetRoles": [
+    "illustration.product-demo"
+  ],
+  "responsive": {
+    ">=901": "product-demo 2-column grid (editor | chat), chat-thread 322px",
+    "<=900": "demo stacks; controls gap 1.25rem",
+    "<=700": "title clamp(2.7rem,10vw,3.8rem); step-copy 1 column; controls display:block; chat-thread 357px"
+  },
+  "constraints": {
+    "onePerPage": true,
+    "exactSteps": 4,
+    "exactStepsBasis": "state machine wraps (target + 4) % 4 and ends at step 3"
+  },
+  "notes": [
+    "Badge has no glyph.",
+    "Walkthrough button hover tint is defined in CSS but never visible (QA-verified) - do not add a hover state."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "setup-step",
+  "kind": "component",
+  "purpose": "Ordered step: border-top, system-monospace number in accent.primary, Chalet title, 0.95rem body.",
+  "composes": [
+    "display-heading",
+    "body-text"
+  ],
+  "tokens": [
+    "color.accent.primary",
+    "color.border.default"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/get-started.css",
+      "lines": [
+        30,
+        34
+      ],
+      "anchor": ".setup-steps li {"
+    },
+    {
+      "path": "src/styles/get-started.css",
+      "lines": [
+        35,
+        41
+      ],
+      "anchor": ".step-number {"
+    }
+  ],
+  "usedBy": [
+    "setup.steps-stack"
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "$description": "Stacking (z-index), shadows, blur. Overlays sit above everything with pointer-events:none.",
+  "elevation": {
+    "z-lines": {
+      "$type": "zIndex",
+      "$value": "9999",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          469,
+          469
+        ],
+        "anchor": "z-index: 9999;"
+      },
+      "note": ".content-lines guides"
+    },
+    "z-stage": {
+      "$type": "zIndex",
+      "$value": "10000",
+      "source": {
+        "path": "src/styles/hero.css",
+        "lines": [
+          52,
+          52
+        ],
+        "anchor": "z-index: 10000;"
+      },
+      "note": "hero, CTA, footer sit above the guide lines"
+    },
+    "z-noise": {
+      "$type": "zIndex",
+      "$value": "10001",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          190,
+          190
+        ],
+        "anchor": "z-index: 10001;"
+      }
+    },
+    "z-scanlines": {
+      "$type": "zIndex",
+      "$value": "10002",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          181,
+          181
+        ],
+        "anchor": "z-index: 10002;"
+      }
+    },
+    "z-fringe": {
+      "$type": "zIndex",
+      "$value": "10003",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          203,
+          203
+        ],
+        "anchor": "z-index: 10003;"
+      }
+    },
+    "shadow-cta-glow": {
+      "$type": "shadow",
+      "$value": "0 0 40px var(--primary-glow)",
+      "source": {
+        "path": "src/styles/cta.css",
+        "lines": [
+          84,
+          84
+        ],
+        "anchor": "box-shadow: 0 0 40px var(--primary-glow);"
+      },
+      "note": "CTA button; persists on hover (overrides .btn-cta:hover) and is clipped by the chamfer"
+    },
+    "shadow-btn-dark-hover": {
+      "$type": "shadow",
+      "$value": "4px 4px 0 var(--primary)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          252,
+          252
+        ],
+        "anchor": "box-shadow: 4px 4px 0 var(--primary);"
+      },
+      "note": "invisible in practice: clipped by clip-path"
+    },
+    "shadow-btn-cta-hover": {
+      "$type": "shadow",
+      "$value": "4px 4px 0 var(--secondary)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          241,
+          241
+        ],
+        "anchor": "box-shadow: 4px 4px 0 var(--secondary);"
+      },
+      "note": "NEVER applies to the only .btn-cta on the page (overridden by .cta-section .cta-btn)"
+    },
+    "shadow-runtime-panel": {
+      "$type": "shadow",
+      "$value": "inset 0 2px var(--primary)",
+      "source": {
+        "path": "src/styles/difference.css",
+        "lines": [
+          46,
+          46
+        ],
+        "anchor": "box-shadow: inset 0 2px var(--primary);"
+      }
+    },
+    "shadow-demo-frame": {
+      "$type": "shadow",
+      "$value": "0 24px 70px #0002",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          164,
+          164
+        ],
+        "anchor": "box-shadow: 0 24px 70px #0002;"
+      }
+    },
+    "blur-badge": {
+      "$type": "blur",
+      "$value": "blur(8px)",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          425,
+          425
+        ],
+        "anchor": "backdrop-filter: blur(8px);"
+      }
+    },
+    "overlay-noise-opacity": {
+      "$type": "number",
+      "$value": "0.08",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          191,
+          191
+        ],
+        "anchor": "opacity: 0.08;"
+      },
+      "note": ".noise film grain"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "news-ticker",
+  "kind": "component",
+  "purpose": "Hero marquee of headline links in Geist Pixel Square, two duplicated groups (2nd aria-hidden, tabIndex -1), bullet separators.",
+  "composes": [
+    "text-link"
+  ],
+  "tokens": [
+    "ticker.type",
+    "ticker.fg",
+    "ticker.border",
+    "ticker.opacity",
+    "ticker.speed",
+    "ticker.gap"
+  ],
+  "evidence": [
+    {
+      "path": "src/components/Hero.jsx",
+      "lines": [
+        41,
+        62
+      ],
+      "anchor": "function TickerGroup({ duplicate = false, groupRef }) {"
+    },
+    {
+      "path": "src/styles/hero.css",
+      "lines": [
+        90,
+        133
+      ],
+      "anchor": ".hero-ticker {"
+    }
+  ],
+  "usedBy": [
+    "hero.headline-ticker"
+  ],
+  "contentRole": "editorial.news-headline"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "three-col-cell",
+  "kind": "component",
+  "purpose": "Centered benefit cell (Chalet clamp(1.5rem,2.5vw,2rem) heading + 0.85rem body) separated by 1px dividers.",
+  "composes": [
+    "display-heading",
+    "body-text"
+  ],
+  "tokens": [
+    "color.border.default",
+    "color.text.body"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/benefits.css",
+      "lines": [
+        85,
+        90
+      ],
+      "anchor": ".three-col-grid {"
+    },
+    {
+      "path": "src/styles/benefits.css",
+      "lines": [
+        115,
+        121
+      ],
+      "anchor": ".three-col-heading {"
+    }
+  ],
+  "usedBy": [
+    "benefits.funnel-split"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "badge-eyebrow",
+  "kind": "primitive",
+  "purpose": "Section eyebrow pill: mono uppercase label in accent.primary on a blurred near-black chip, optional 16px pixel glyph.",
+  "tokens": [
+    "badge.bg",
+    "badge.border",
+    "badge.fg",
+    "badge.type",
+    "badge.blur",
+    "badge.padding"
+  ],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": [
+        412,
+        427
+      ],
+      "anchor": ".badge {"
+    }
+  ],
+  "usedBy": [
+    "problem.funnel-cards",
+    "feature.walkthrough",
+    "comparison.evidence",
+    "steps.stepper",
+    "benefits.funnel-split",
+    "setup.steps-stack",
+    "faq.accordion"
+  ]
+}

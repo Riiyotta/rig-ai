@@ -1,0 +1,37 @@
+{
+  "id": "faq-item",
+  "kind": "component",
+  "purpose": "<details> row: 2-digit mono number, Chalet 400 question, chevron; answer revealed via grid-template-rows 0fr->1fr 0.3s.",
+  "composes": [
+    "mono-label",
+    "chevron-icon",
+    "body-text"
+  ],
+  "tokens": [
+    "faq.question.type",
+    "faq.number.color",
+    "faq.answer.color",
+    "faq.open"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/faq.css",
+      "lines": [
+        13,
+        16
+      ],
+      "anchor": ".faq-item {"
+    },
+    {
+      "path": "src/styles/faq.css",
+      "lines": [
+        59,
+        63
+      ],
+      "anchor": ".faq-answer-wrap {"
+    }
+  ],
+  "usedBy": [
+    "faq.accordion"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "$description": "Radii. Site-level chrome has none; rounded corners exist only inside the product-demo mock and funnel SVG.",
+  "radius": {
+    "none": {
+      "$type": "dimension",
+      "$value": "0",
+      "source": {
+        "path": "src/index.css",
+        "lines": [
+          220,
+          227
+        ],
+        "anchor": "clip-path: polygon("
+      },
+      "note": "Marketing chrome is square: no border-radius on any section/badge/button (buttons use clip-path chamfer instead)."
+    },
+    "demo-frame": {
+      "$type": "dimension",
+      "$value": "8px",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          165,
+          165
+        ],
+        "anchor": "border-radius: 8px;"
+      },
+      "note": "product-demo only"
+    },
+    "demo-bubble": {
+      "$type": "dimension",
+      "$value": "8px 8px 2px",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          326,
+          326
+        ],
+        "anchor": "border-radius: 8px 8px 2px;"
+      },
+      "note": "product-demo only"
+    },
+    "demo-composer": {
+      "$type": "dimension",
+      "$value": "6px",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          452,
+          452
+        ],
+        "anchor": "border-radius: 6px;"
+      },
+      "note": "product-demo only"
+    },
+    "demo-tool": {
+      "$type": "dimension",
+      "$value": "5px",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          365,
+          365
+        ],
+        "anchor": "border-radius: 5px;"
+      },
+      "note": "product-demo only"
+    },
+    "demo-chip": {
+      "$type": "dimension",
+      "$value": "4px",
+      "source": {
+        "path": "src/styles/intro-rig.css",
+        "lines": [
+          295,
+          295
+        ],
+        "anchor": "border-radius: 4px;"
+      },
+      "note": "product-demo only"
+    },
+    "funnel-rect": {
+      "$type": "dimension",
+      "$value": "2",
+      "source": {
+        "path": "src/components/problem/ProblemFunnel.jsx",
+        "lines": [
+          35,
+          35
+        ],
+        "anchor": "rx=\"2\""
+      },
+      "note": "SVG rx on PR boxes"
+    }
+  }
+}

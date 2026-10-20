@@ -1,0 +1,26 @@
+{
+  "id": "evidence-point",
+  "kind": "component",
+  "purpose": "Numbered point: mono number in accent.primary, Chalet 1.5rem title, 0.9rem body.",
+  "composes": [
+    "display-heading",
+    "body-text"
+  ],
+  "tokens": [
+    "typography.heading.card",
+    "color.accent.primary"
+  ],
+  "evidence": [
+    {
+      "path": "src/styles/difference.css",
+      "lines": [
+        204,
+        224
+      ],
+      "anchor": ".evidence-section .point-number {"
+    }
+  ],
+  "usedBy": [
+    "comparison.evidence"
+  ]
+}

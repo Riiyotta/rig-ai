@@ -1,0 +1,31 @@
+{
+  "id": "section-divider",
+  "kind": "primitive",
+  "purpose": "1px border.default hairline, max-width 1200 (90% <=1280; calc(100% - 2.5rem) <=768). Rendered by the template between main sections, not by sections.",
+  "tokens": [
+    "layout.divider.height",
+    "color.border.default"
+  ],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": [
+        495,
+        500
+      ],
+      "anchor": ".section-divider {"
+    },
+    {
+      "path": "src/App.jsx",
+      "lines": [
+        26,
+        26
+      ],
+      "anchor": "<div className=\"section-divider\"></div>"
+    }
+  ],
+  "usedBy": [
+    "template.home",
+    "benefits.funnel-split"
+  ]
+}

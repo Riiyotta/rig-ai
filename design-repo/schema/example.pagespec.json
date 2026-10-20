@@ -1,0 +1,591 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "template": "template.home",
+  "route": "/",
+  "meta": {
+    "title": "Rig | Security Verification for AI Coding Agents",
+    "description": "Find vulnerabilities as coding agents work, guide them through fixes, and verify the results. Rig brings automated security inside the coding loop.",
+    "ogImage": {
+      "assetRole": "meta.og-image",
+      "source": "placeholder",
+      "label": "Social share image placeholder (supply a licensed image)"
+    }
+  },
+  "nodes": [
+    {
+      "id": "overlays",
+      "section": "chrome.overlays",
+      "region": "chrome",
+      "content": {},
+      "motion": {
+        "pattern": "film-grain-overlay",
+        "reducedMotionFallback": "ungated-in-source"
+      }
+    },
+    {
+      "id": "hero",
+      "section": "hero.headline-ticker",
+      "region": "pre-main",
+      "surface": "color.surface.hero",
+      "content": {
+        "navLogo": {
+          "assetRole": "brand.wordmark",
+          "source": "placeholder",
+          "label": "Brand wordmark placeholder"
+        },
+        "navCta": {
+          "label": "Get a Demo",
+          "href": "#"
+        },
+        "watermark": {
+          "assetRole": "brand.mark",
+          "source": "placeholder",
+          "label": "Faded brand mark placeholder"
+        },
+        "headlineLines": [
+          "Build Security Into",
+          "The Agent Loop"
+        ],
+        "subhead": "Find vulnerabilities as agents work, guide them through fixes, and verify the results, before findings turn into tickets.",
+        "primaryCta": {
+          "label": "Get a Demo",
+          "href": "#"
+        },
+        "ticker": [
+          {
+            "assetRole": "editorial.news-headline",
+            "source": "placeholder",
+            "text": "[Placeholder headline 1 - supply a verified, licensed news item]",
+            "href": "#"
+          },
+          {
+            "assetRole": "editorial.news-headline",
+            "source": "placeholder",
+            "text": "[Placeholder headline 2 - supply a verified, licensed news item]",
+            "href": "#"
+          },
+          {
+            "assetRole": "editorial.news-headline",
+            "source": "placeholder",
+            "text": "[Placeholder headline 3 - supply a verified, licensed news item]",
+            "href": "#"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "ticker-marquee",
+        "reducedMotionFallback": "ticker-static-scrollable"
+      }
+    },
+    {
+      "id": "problem",
+      "section": "problem.funnel-cards",
+      "region": "main",
+      "surface": "color.surface.page",
+      "content": {
+        "eyebrow": {
+          "label": "The problem",
+          "glyph": {
+            "assetRole": "decor.badge-glyph",
+            "source": "generated-original",
+            "label": "Pixel glyph for the problem eyebrow"
+          }
+        },
+        "headline": "AI is an Asset and a Risk",
+        "illustration": {
+          "assetRole": "illustration.review-funnel",
+          "source": "generated-original",
+          "label": "Security findings in review send work back into the queue."
+        },
+        "cards": [
+          {
+            "label": "Bottleneck",
+            "number": "001",
+            "title": "More to Review",
+            "body": "The new bottle neck is your team's ability to review all the code agents create."
+          },
+          {
+            "label": "Exposure",
+            "number": "002",
+            "title": "Hackers Are More Dangerous",
+            "body": "With AI, bad actors can exploit vulnerabilities faster and more easily than ever before."
+          },
+          {
+            "label": "Volume",
+            "number": "003",
+            "title": "Your Backlog is Growing",
+            "body": "Dev teams are forced to slow down to deal with vulnerability backlogs growing from dozens of static scanning tools."
+          },
+          {
+            "label": "Noise",
+            "number": "004",
+            "title": "False Positives Obscure the Reality",
+            "body": "Tools of the past can't keep up with the speed of modern teams. False positives sap valuable dev time or cause alert blindness."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "review-funnel-loop",
+        "reducedMotionFallback": "funnel-static-frame"
+      }
+    },
+    {
+      "id": "intro-rig",
+      "section": "feature.walkthrough",
+      "region": "main",
+      "surface": "color.surface.page",
+      "content": {
+        "eyebrow": {
+          "label": "Introducing Rig"
+        },
+        "titleLines": [
+          "Automated Security",
+          "Inside the Loop"
+        ],
+        "description": "Rig checks the application when the coding agent finishes its work. Findings go straight back to the agent, while the code and context are still fresh.",
+        "demo": {
+          "assetRole": "illustration.product-demo",
+          "source": "generated-original",
+          "label": "Illustrative example: an agent adds a search endpoint, Rig confirms SQL injection, the agent parameterizes the query, and Rig retests it."
+        },
+        "steps": [
+          {
+            "kicker": "THE LOOP / 01",
+            "title": "The agent finishes a change. Rig starts a check.",
+            "body": "Rig connects to the agent’s completion hook. The check starts automatically, without a developer remembering to run a scan.",
+            "marker": "Hook"
+          },
+          {
+            "kicker": "THE LOOP / 02",
+            "title": "Rig tests the running application.",
+            "body": "Rig runs the application locally and tracks how input moves through its code. It confirms a vulnerable execution path before reporting a finding.",
+            "marker": "Test"
+          },
+          {
+            "kicker": "THE LOOP / 03",
+            "title": "The agent gets evidence and fix instructions.",
+            "body": "Each finding identifies the code location, explains the vulnerability, and gives the agent guidance for fixing it. The same agent working on the feature can act on that feedback.",
+            "marker": "Fix"
+          },
+          {
+            "kicker": "THE LOOP / 04",
+            "title": "Rig checks the updated code.",
+            "body": "After the agent makes a fix, Rig retests the reported vulnerability. The result shows whether the check passed, the issue remains, or testing could not complete.",
+            "marker": "Retest"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "walkthrough-autoplay",
+        "reducedMotionFallback": "walkthrough-manual-full-scenes"
+      }
+    },
+    {
+      "id": "runtime-evidence",
+      "section": "comparison.evidence",
+      "region": "main",
+      "surface": "color.surface.page",
+      "content": {
+        "eyebrow": {
+          "label": "The Difference",
+          "glyph": {
+            "assetRole": "decor.badge-glyph",
+            "source": "generated-original",
+            "label": "Pixel glyph for the difference eyebrow"
+          }
+        },
+        "titleLines": [
+          "Static analysis reads the code.",
+          "Rig tests what it does."
+        ],
+        "intro": "Static analysis finds potential vulnerabilities in source code. Rig adds evidence from the running application, separating what could happen from what happened during a test.",
+        "panels": [
+          {
+            "kind": "static",
+            "label": "01 / STATIC ANALYSIS",
+            "tag": "Source code",
+            "visualLines": [
+              "input = request.query",
+              "query = buildQuery(input)",
+              "database.execute(query)"
+            ],
+            "resultTitle": "A potential vulnerability",
+            "resultBody": "Identified by analyzing the code."
+          },
+          {
+            "kind": "runtime",
+            "label": "02 / RIG RUNTIME TESTING",
+            "tag": "Running app",
+            "visualLines": [
+              "Test input",
+              "App code",
+              "Database"
+            ],
+            "resultTitle": "A confirmed execution path",
+            "resultBody": "Observed while testing the application."
+          }
+        ],
+        "points": [
+          {
+            "number": "01",
+            "title": "Reachability, confirmed.",
+            "body": "Static analysis can identify a potentially vulnerable path. Rig confirms that the path actually executes in the running application before reporting a finding."
+          },
+          {
+            "number": "02",
+            "title": "Runtime context, included.",
+            "body": "Static analysis models how code may behave. Rig observes how it behaves with the inputs, configuration, and dependencies present during the test."
+          },
+          {
+            "number": "03",
+            "title": "Evidence, ready to act on.",
+            "body": "A static finding can leave developers checking whether an issue is reachable. Rig includes execution evidence and the code location, giving developers and agents concrete fix instructions."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      }
+    },
+    {
+      "id": "our-approach",
+      "section": "steps.stepper",
+      "region": "main",
+      "surface": "color.surface.page",
+      "content": {
+        "eyebrow": {
+          "label": "How it Works",
+          "glyph": {
+            "assetRole": "decor.badge-glyph",
+            "source": "generated-original",
+            "label": "Pixel glyph for the how it works eyebrow"
+          }
+        },
+        "title": "Runtime and Inline",
+        "body": "Rig understands your application so it can thoroughly test it for vulnerabilities.",
+        "steps": [
+          {
+            "number": "Step 01",
+            "title": "Runtime Discovery",
+            "body": "Rig uses advanced algorithms to develop a detailed map of of your application including entry points, code paths, and sinks.",
+            "ariaLabel": "Step 1: Runtime Discovery",
+            "schematic": {
+              "assetRole": "illustration.schematic",
+              "source": "generated-original",
+              "label": "Schematic for Runtime Discovery"
+            }
+          },
+          {
+            "number": "Step 02",
+            "title": "Inline Tainting",
+            "body": "Rig runs your application and automates testing and tainting to track how data flows through your source code.",
+            "ariaLabel": "Step 2: Inline Tainting",
+            "schematic": {
+              "assetRole": "illustration.schematic",
+              "source": "generated-original",
+              "label": "Schematic for Inline Tainting"
+            }
+          },
+          {
+            "number": "Step 03",
+            "title": "Proven Exploitability",
+            "body": "Rig's runtime testing confirms the vulnerable path before reporting it, and reports exactly where vulnerabilities are located, and should be fixed.",
+            "ariaLabel": "Step 3: Static tools predict. Rig proves",
+            "schematic": {
+              "assetRole": "illustration.schematic",
+              "source": "generated-original",
+              "label": "Schematic for Proven Exploitability"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "stepper-autoadvance",
+        "reducedMotionFallback": "stepper-autoadvance-schematics-static"
+      }
+    },
+    {
+      "id": "benefits",
+      "section": "benefits.funnel-split",
+      "region": "main",
+      "surface": "color.surface.page",
+      "content": {
+        "illustration": {
+          "assetRole": "illustration.review-funnel",
+          "source": "generated-original",
+          "label": "Security checked earlier. Less rework in review."
+        },
+        "eyebrow": {
+          "label": "Benefits",
+          "glyph": {
+            "assetRole": "decor.badge-glyph",
+            "source": "generated-original",
+            "label": "Pixel glyph for the benefits eyebrow"
+          }
+        },
+        "headline": "Fewer Vulnerabilities Reach Review",
+        "body": "Find and fix vulnerabilities while agents work in minutes, not weeks or months.",
+        "columns": [
+          {
+            "title": "Catch More",
+            "body": "Catch more vulnerabilities before they make it to review or production."
+          },
+          {
+            "title": "Chase Less",
+            "body": "Stop distracting developers with false positives so they can stay on task."
+          },
+          {
+            "title": "Ship More",
+            "body": "Your developers spend more time shipping and less time managing vulnerability findings."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "review-funnel-loop",
+        "reducedMotionFallback": "funnel-static-frame"
+      }
+    },
+    {
+      "id": "setup-rig",
+      "section": "setup.steps-stack",
+      "region": "main",
+      "surface": "color.surface.page",
+      "content": {
+        "eyebrow": {
+          "label": "Get started",
+          "glyph": {
+            "assetRole": "decor.badge-glyph",
+            "source": "generated-original",
+            "label": "Pixel glyph for the get started eyebrow"
+          }
+        },
+        "titleLines": [
+          "Set up Rig where",
+          "the code gets written."
+        ],
+        "steps": [
+          {
+            "number": "01 / INSTALL",
+            "title": "Install the CLI.",
+            "body": "Rig runs on the developer’s computer, alongside the application being tested."
+          },
+          {
+            "number": "02 / CONNECT",
+            "title": "Connect the coding agent.",
+            "body": "Connect Rig to the agent’s completion hook so a finished task triggers a security check."
+          },
+          {
+            "number": "03 / CHECK",
+            "title": "Run the first check.",
+            "body": "Check the application and review the result, Rig checks subsequent work through the agent workflow."
+          }
+        ],
+        "cliNote": "Need feedback outside an agent session? Developers can also run a check directly from the CLI.",
+        "stackHeading": "Works with your stack.",
+        "stackGroups": [
+          {
+            "label": "Agents",
+            "items": [
+              {
+                "assetRole": "thirdparty.tool-logo",
+                "source": "placeholder",
+                "name": "[Tool 1]"
+              },
+              {
+                "assetRole": "thirdparty.tool-logo",
+                "source": "placeholder",
+                "name": "[Tool 2]"
+              },
+              {
+                "assetRole": "thirdparty.tool-logo",
+                "source": "placeholder",
+                "name": "[Tool 3]"
+              }
+            ]
+          },
+          {
+            "label": "Editors & terminal",
+            "items": [
+              {
+                "assetRole": "thirdparty.tool-logo",
+                "source": "placeholder",
+                "name": "[Tool 1]"
+              },
+              {
+                "assetRole": "thirdparty.tool-logo",
+                "source": "placeholder",
+                "name": "[Tool 2]"
+              }
+            ]
+          },
+          {
+            "label": "Languages",
+            "items": [
+              {
+                "assetRole": "thirdparty.tool-logo",
+                "source": "placeholder",
+                "name": "[Tool 1]"
+              },
+              {
+                "assetRole": "thirdparty.tool-logo",
+                "source": "placeholder",
+                "name": "[Tool 2]"
+              },
+              {
+                "assetRole": "thirdparty.tool-logo",
+                "source": "placeholder",
+                "name": "[Tool 3]"
+              }
+            ]
+          },
+          {
+            "label": "CI / CD",
+            "items": [
+              {
+                "assetRole": "thirdparty.tool-logo",
+                "source": "placeholder",
+                "name": "[Tool 1]"
+              },
+              {
+                "assetRole": "thirdparty.tool-logo",
+                "source": "placeholder",
+                "name": "[Tool 2]"
+              }
+            ]
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      }
+    },
+    {
+      "id": "faq",
+      "section": "faq.accordion",
+      "region": "main",
+      "surface": "color.surface.page",
+      "content": {
+        "eyebrow": {
+          "label": "FAQ",
+          "glyph": {
+            "assetRole": "decor.badge-glyph",
+            "source": "generated-original",
+            "label": "Pixel glyph for the FAQ eyebrow"
+          }
+        },
+        "title": "Frequently asked questions.",
+        "items": [
+          {
+            "question": "Does Rig work with my existing coding agents?",
+            "answer": "Rig connects to a supported coding agent through its completion hook. During the demo, we’ll review the team’s agent and application to confirm fit."
+          },
+          {
+            "question": "Who makes the code changes / fixes to reported vulnerabilities?",
+            "answer": "Your existing coding agent makes the fix. Rig supplies the finding, code location, and fix guidance, then checks the updated code."
+          },
+          {
+            "question": "Is Rig checking every keystroke?",
+            "answer": "No. The automatic check starts when the agent signals that it has finished its work. Developers can also run a check manually through the CL"
+          },
+          {
+            "question": "What happens if a fix does not work?",
+            "answer": "Rig reports that the vulnerability remains. If testing cannot complete, that is reported separately from a passed check."
+          },
+          {
+            "question": "Does a clean scan mean the entire application is secure?",
+            "answer": "No. It means Rig completed the checks within that scan’s scope without confirming a vulnerability. Untested paths are not proven safe, and incomplete checks are reported separately."
+          },
+          {
+            "question": "Will Rig Collect my Data?",
+            "answer": "No, Rig is committed to being the most secure and private security testing tool available.. Our telemetry is limited. Tests run on device and code and conversations never leave the machine."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "disclosure-grid-rows",
+        "reducedMotionFallback": "ungated-in-source"
+      }
+    },
+    {
+      "id": "cta",
+      "section": "conversion.cta-glitch",
+      "region": "post-main",
+      "surface": "color.surface.page",
+      "content": {
+        "mark": {
+          "assetRole": "brand.mark",
+          "source": "placeholder",
+          "label": "Brand mark placeholder"
+        },
+        "backdrop": {
+          "assetRole": "decor.wave-grid",
+          "source": "generated-original",
+          "label": "Perspective wave grid"
+        },
+        "heading": "Ship Confidently",
+        "cta": {
+          "label": "Book a Demo",
+          "href": "#"
+        }
+      },
+      "motion": {
+        "pattern": "cta-flow-glow-glitch",
+        "reducedMotionFallback": "flow-dots-hidden"
+      }
+    },
+    {
+      "id": "footer",
+      "section": "shell.footer",
+      "region": "post-main",
+      "surface": "color.surface.footer",
+      "content": {
+        "logo": {
+          "assetRole": "brand.logo",
+          "source": "placeholder",
+          "label": "Brand logo placeholder"
+        },
+        "logoHref": "/",
+        "taglineLines": [
+          "Realtime Security Verification",
+          "for Coding Agents"
+        ],
+        "columns": [
+          {
+            "heading": "Connect",
+            "links": [
+              {
+                "label": "Twitter",
+                "href": "#"
+              },
+              {
+                "label": "LinkedIn",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "heading": "Legal",
+            "links": [
+              {
+                "label": "Terms of Service",
+                "href": "/terms"
+              },
+              {
+                "label": "Privacy Policy",
+                "href": "/privacy"
+              }
+            ]
+          }
+        ],
+        "copyright": "© 2026 Rig AI Inc. All rights reserved.",
+        "status": "All systems local"
+      },
+      "motion": {
+        "pattern": "status-blink",
+        "reducedMotionFallback": "ungated-in-source"
+      }
+    }
+  ]
+}

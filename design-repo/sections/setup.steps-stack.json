@@ -1,0 +1,232 @@
+{
+  "id": "setup.steps-stack",
+  "category": "onboarding",
+  "purpose": "Show how to get started in three steps, a CLI note, and the tool stack it works with.",
+  "region": "main",
+  "surfaceToken": "color.surface.page",
+  "implementedBy": "src/components/GetStarted.jsx",
+  "componentsUsed": [
+    "setup-step",
+    "stack-group"
+  ],
+  "evidence": {
+    "code": [
+      {
+        "path": "src/components/GetStarted.jsx",
+        "lines": [
+          71,
+          126
+        ],
+        "anchor": "export default function GetStarted() {"
+      },
+      {
+        "path": "src/styles/get-started.css",
+        "lines": [
+          83,
+          88
+        ],
+        "anchor": ".stack-grid {"
+      }
+    ],
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          484,
+          484
+        ],
+        "anchor": "## 7. \"Get started\""
+      }
+    ]
+  },
+  "content": {
+    "fieldRefsResolveIn": "schema/pagespec.schema.json (#/definitions/...)",
+    "additionalProperties": false,
+    "required": [
+      "eyebrow",
+      "titleLines",
+      "steps",
+      "cliNote",
+      "stackHeading",
+      "stackGroups"
+    ],
+    "fields": {
+      "eyebrow": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "glyph": {
+            "$ref": "#/definitions/media"
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "titleLines": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1,
+        "maxItems": 2
+      },
+      "steps": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "number": {
+              "type": "string",
+              "minLength": 1
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "body": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "number",
+            "title",
+            "body"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 3,
+        "maxItems": 3
+      },
+      "cliNote": {
+        "type": "string",
+        "minLength": 1
+      },
+      "stackHeading": {
+        "type": "string",
+        "minLength": 1
+      },
+      "stackGroups": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/stackItem"
+              },
+              "minItems": 1,
+              "maxItems": 3
+            }
+          },
+          "required": [
+            "label",
+            "items"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 1,
+        "maxItems": 4
+      }
+    },
+    "maxWords": {
+      "eyebrow.label": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 7 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "titleLines[]": {
+        "maxWords": 6,
+        "basis": "observed max 4 words over 2 instance(s) -> max(3, ceil(4*1.3))"
+      },
+      "steps[].number": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 3 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "steps[].title": {
+        "maxWords": 6,
+        "basis": "observed max 4 words over 3 instance(s) -> max(3, ceil(4*1.3))"
+      },
+      "steps[].body": {
+        "maxWords": 20,
+        "basis": "observed max 15 words over 3 instance(s) -> max(3, ceil(15*1.3))"
+      },
+      "cliNote": {
+        "maxWords": 21,
+        "basis": "observed max 16 words over 1 instance(s) -> max(3, ceil(16*1.3))"
+      },
+      "stackHeading": {
+        "maxWords": 6,
+        "basis": "observed max 4 words over 1 instance(s) -> max(3, ceil(4*1.3))"
+      },
+      "stackGroups[].label": {
+        "maxWords": 4,
+        "basis": "observed max 3 words over 4 instance(s) -> max(3, ceil(3*1.3))"
+      },
+      "stackGroups[].items[].name": {
+        "maxWords": 3,
+        "basis": "observed max 2 words over 10 instance(s) -> max(3, ceil(2*1.3))"
+      }
+    }
+  },
+  "observedCopy": {
+    "titleLines": [
+      "Set up Rig where",
+      "the code gets written."
+    ],
+    "steps": [
+      {
+        "number": "01 / INSTALL",
+        "title": "Install the CLI.",
+        "body": "Rig runs on the developer’s computer, alongside the application being tested."
+      },
+      {
+        "number": "02 / CONNECT",
+        "title": "Connect the coding agent.",
+        "body": "Connect Rig to the agent’s completion hook so a finished task triggers a security check."
+      },
+      {
+        "number": "03 / CHECK",
+        "title": "Run the first check.",
+        "body": "Check the application and review the result, Rig checks subsequent work through the agent workflow."
+      }
+    ],
+    "cliNote": "Need feedback outside an agent session? Developers can also run a check directly from the CLI.",
+    "stackHeading": "Works with your stack.",
+    "stackGroups": "4 groups / 10 real third-party tools (Agents, Editors & terminal, Languages, CI / CD) - protected assetRole thirdparty.tool-logo; names are integration claims."
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none"
+    }
+  },
+  "assetRoles": [
+    "decor.badge-glyph",
+    "thirdparty.tool-logo"
+  ],
+  "responsive": {
+    ">1000": "steps 3 columns; stack grid 1.25fr 1fr 1.25fr 1fr",
+    "<=1000": "steps gap 1.25rem; stack grid 2 columns",
+    "<=768": "steps 1 column gap 2.5rem; cli note left-aligned"
+  },
+  "constraints": {
+    "onePerPage": true,
+    "exactSteps": 3,
+    "maxStackGroups": 4,
+    "maxItemsPerGroup": 3
+  }
+}

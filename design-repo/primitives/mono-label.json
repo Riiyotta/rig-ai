@@ -1,0 +1,22 @@
+{
+  "id": "mono-label",
+  "kind": "primitive",
+  "purpose": "Chivo Mono uppercase label (0.75rem, letter-spacing .15em).",
+  "tokens": [
+    "typography.label.mono"
+  ],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": [
+        434,
+        439
+      ],
+      "anchor": ".mono-label {"
+    }
+  ],
+  "usedBy": [
+    "faq.accordion",
+    "shell.footer"
+  ]
+}
